@@ -52,6 +52,7 @@ That’s it! \( T^2 \) (the period squared) is proportional to \( r^3 \) (the ra
 
 \[ T^2 \propto r^3 \]
 # TASK 2
+
 Let’s discuss the implications of Kepler’s Third Law—the relationship where the square of the orbital period (\( T^2 \)) is proportional to the cube of the orbital radius (\( r^3 \))—for astronomy, focusing on how it helps calculate planetary masses and distances. I’ll keep it simple and straightforward.
 
 ### Implications for Astronomy
@@ -81,3 +82,54 @@ For instance, if we know Mars takes 687 days to orbit the Sun, we can compute it
 
 ### Simple Takeaway
 Kepler’s Third Law is a tool that turns time and distance into mass and vice versa. Watch how long something orbits and how far it is, and you can weigh a planet or measure its distance from a star. It’s a simple rule that unlocks the scale of the universe!
+
+# TASK 3 
+Let’s analyze real-world examples of Kepler’s Third Law (\( T^2 = \frac{4\pi^2}{G M} r^3 \)) using the Moon’s orbit around Earth and the orbits of planets in the Solar System. I’ll keep it simple and based on the given information about orbital period and radius.
+
+### 1. The Moon’s Orbit Around Earth
+The Moon orbits Earth, so Earth’s mass (\( M \)) is the central mass in the equation. We can use Kepler’s Third Law to check how the Moon’s orbital period and radius fit together.
+
+- **Orbital Period (\( T \))**: The Moon takes about 27.3 days to orbit Earth. Convert that to seconds for consistency:  
+  \( T = 27.3 \, \text{days} \times 86,400 \, \text{s/day} \approx 2.36 \times 10^6 \, \text{seconds} \).
+- **Orbital Radius (\( r \))**: The average distance from Earth to the Moon is about 384,000 km, or \( r = 3.84 \times 10^8 \, \text{meters} \).
+- **Earth’s Mass (\( M \))**: Known to be about \( 5.972 \times 10^{24} \, \text{kg} \).
+- **Gravitational Constant (\( G \))**: \( 6.674 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2} \).
+
+Plug these into Kepler’s Third Law:  
+\[ T^2 = \frac{4\pi^2}{G M} r^3 \]
+
+First, calculate the right side:  
+- \( 4\pi^2 \approx 39.478 \),  
+- \( G M = (6.674 \times 10^{-11}) \times (5.972 \times 10^{24}) \approx 3.986 \times 10^{14} \, \text{m}^3 \text{s}^{-2} \),  
+- \( r^3 = (3.84 \times 10^8)^3 \approx 5.66 \times 10^{25} \, \text{m}^3 \),  
+- \( \frac{4\pi^2}{G M} \approx \frac{39.478}{3.986 \times 10^{14}} \approx 9.91 \times 10^{-14} \, \text{s}^2 \text{m}^{-3} \),  
+- \( T^2 \approx (9.91 \times 10^{-14}) \times (5.66 \times 10^{25}) \approx 5.61 \times 10^{12} \, \text{s}^2 \).
+
+Now the left side:  
+\[ T^2 = (2.36 \times 10^6)^2 \approx 5.57 \times 10^{12} \, \text{s}^2 \].
+
+These numbers match closely (5.57 vs. 5.61), showing Kepler’s Third Law holds for the Moon. The slight difference comes from rounding and the Moon’s slightly elliptical orbit, but for a simple circular model, it works!
+
+### 2. Planets in the Solar System
+Now let’s look at planets orbiting the Sun, with the Sun’s mass (\( M \approx 1.989 \times 10^{30} \, \text{kg} \)) as the central mass. We’ll test Earth and Mars.
+
+- **Earth**:  
+  - \( T = 1 \, \text{year} \approx 3.156 \times 10^7 \, \text{seconds} \),  
+  - \( r = 1 \, \text{AU} \approx 1.496 \times 10^{11} \, \text{meters} \).  
+  - \( r^3 = (1.496 \times 10^{11})^3 \approx 3.347 \times 10^{33} \, \text{m}^3 \),  
+  - \( G M = (6.674 \times 10^{-11}) \times (1.989 \times 10^{30}) \approx 1.327 \times 10^{20} \, \text{m}^3 \text{s}^{-2} \),  
+  - \( \frac{4\pi^2}{G M} \approx \frac{39.478}{1.327 \times 10^{20}} \approx 2.975 \times 10^{-19} \, \text{s}^2 \text{m}^{-3} \),  
+  - \( T^2 \approx (2.975 \times 10^{-19}) \times (3.347 \times 10^{33}) \approx 9.96 \times 10^{14} \, \text{s}^2 \),  
+  - Actual \( T^2 = (3.156 \times 10^7)^2 \approx 9.96 \times 10^{14} \, \text{s}^2 \).  
+  Perfect match!
+
+- **Mars**:  
+  - \( T = 687 \, \text{days} \approx 5.94 \times 10^7 \, \text{seconds} \),  
+  - \( r = 1.524 \, \text{AU} \approx 2.279 \times 10^{11} \, \text{meters} \),  
+  - \( r^3 = (2.279 \times 10^{11})^3 \approx 1.183 \times 10^{34} \, \text{m}^3 \),  
+  - \( T^2 \approx (2.975 \times 10^{-19}) \times (1.183 \times 10^{34}) \approx 3.52 \times 10^{15} \, \text{s}^2 \),  
+  - Actual \( T^2 = (5.94 \times 10^7)^2 \approx 3.53 \times 10^{15} \, \text{s}^2 \).  
+  Another close fit!
+
+### Simple Solution
+Kepler’s Third Law works in the real world. For the Moon, its 27.3-day orbit at 384,000 km fits Earth’s mass. For planets like Earth (1 year, 1 AU) and Mars (687 days, 1.524 AU), their orbits match the Sun’s mass. The law ties \( T^2 \) to \( r^3 \), letting us predict and check how things move in space. It’s a simple rule that fits the Moon and planets perfectly!
