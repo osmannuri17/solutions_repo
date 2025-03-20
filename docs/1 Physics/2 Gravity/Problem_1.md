@@ -184,5 +184,41 @@ The model calculates \( T \) from \( r \) and \( M \), and when we square \( T \
 ### Simple Solution
 This model picks distances (like 1 AU, 2 AU, 3 AU), finds the speed and period using gravity, and checks that \( T^2 \) matches \( r^3 \) times a constant. For the Sun, 1 AU gives 1 year, 2 AU gives about 2.83 years, and 3 AU gives about 5.2 years—Kepler’s Third Law is spot on every time!
 
+# Deliverables 
+
+# A detailed explanation of the subjects 
+
+
+# Orbital Period, Radius, and Kepler’s Third Law  
+
+## Orbital Period  
+The **orbital period** (\( T \)) is the time an object takes to complete one full orbit around another body.  
+- **Example**: Earth orbits the Sun in **1 year** (365.25 days), and the Moon orbits Earth in **27.3 days**.  
+
+## Orbital Radius  
+The **orbital radius** (\( r \)) is the distance between the center of the orbiting object and the body it orbits.  
+- **Example**: Earth’s orbital radius around the Sun is **1 AU (1.496 × 10¹¹ m)**.  
+
+## Kepler’s Third Law  
+Kepler’s Third Law states:  
+
+\[
+T^2 \propto r^3
+\]
+
+This means that the **square of the period** is proportional to the **cube of the radius**. In other words:  
+- **Larger orbits take longer**—if you double the radius, the period increases by about **2.83 times**.  
+- The relationship is based on gravity balancing motion.  
+
+## Why It Matters  
+Kepler’s Law helps us:  
+- Predict planetary motion.  
+- Measure masses of celestial bodies.  
+- Understand why inner planets orbit faster than outer ones.  
+
+
+
+
+
 
 
