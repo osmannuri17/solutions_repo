@@ -183,3 +183,6 @@ The model calculates \( T \) from \( r \) and \( M \), and when we square \( T \
 
 ### Simple Solution
 This model picks distances (like 1 AU, 2 AU, 3 AU), finds the speed and period using gravity, and checks that \( T^2 \) matches \( r^3 \) times a constant. For the Sun, 1 AU gives 1 year, 2 AU gives about 2.83 years, and 3 AU gives about 5.2 years—Kepler’s Third Law is spot on every time!
+
+
+
