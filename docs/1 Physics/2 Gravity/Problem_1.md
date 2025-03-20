@@ -133,3 +133,53 @@ Now let’s look at planets orbiting the Sun, with the Sun’s mass (\( M \appro
 
 ### Simple Solution
 Kepler’s Third Law works in the real world. For the Moon, its 27.3-day orbit at 384,000 km fits Earth’s mass. For planets like Earth (1 year, 1 AU) and Mars (687 days, 1.524 AU), their orbits match the Sun’s mass. The law ties \( T^2 \) to \( r^3 \), letting us predict and check how things move in space. It’s a simple rule that fits the Moon and planets perfectly!
+# TASK 4 
+Let’s implement a simple computational model to simulate circular orbits and verify Kepler’s Third Law (\( T^2 = \frac{4\pi^2}{G M} r^3 \)), based on the given information about orbital period and radius. I’ll keep it straightforward, using a basic approach you could code in something like Python, and focus on verifying the relationship.
+
+### Simple Computational Model
+We’ll simulate a planet orbiting a star (like the Sun) in a circular orbit. The idea is to calculate the orbital period (\( T \)) for a given radius (\( r \)) and mass (\( M \)), then check if \( T^2 \propto r^3 \) holds. Here’s how to do it simply:
+
+#### Step 1: Set Up the System
+- **Central Mass (\( M \))**: Use the Sun’s mass, \( M = 1.989 \times 10^{30} \, \text{kg} \).
+- **Gravitational Constant (\( G \))**: \( G = 6.674 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2} \).
+- **Orbital Radii (\( r \))**: Pick a few distances, like 1 AU, 2 AU, and 3 AU (1 AU = \( 1.496 \times 10^{11} \, \text{m} \)).
+
+#### Step 2: Calculate Orbital Speed
+For a circular orbit, the gravitational force equals the centripetal force. The orbital speed (\( v \)) is:
+\[ v = \sqrt{\frac{G M}{r}} \]
+We’ll compute this for each radius.
+
+#### Step 3: Compute Orbital Period
+The period (\( T \)) is the time to travel the circumference (\( 2\pi r \)) at speed \( v \):
+\[ T = \frac{2\pi r}{v} = \frac{2\pi r}{\sqrt{\frac{G M}{r}}} \]
+Simplify:
+\[ T = 2\pi \sqrt{\frac{r^3}{G M}} \]
+This matches Kepler’s Third Law when squared: \( T^2 = \frac{4\pi^2}{G M} r^3 \).
+
+#### Step 4: Simulate and Verify
+Let’s calculate \( T \) for a few radii, then check \( T^2 \) vs. \( r^3 \).
+
+- **\( r = 1 \, \text{AU} = 1.496 \times 10^{11} \, \text{m} \)**:  
+  - \( G M = 1.327 \times 10^{20} \, \text{m}^3 \text{s}^{-2} \),  
+  - \( r^3 = (1.496 \times 10^{11})^3 = 3.347 \times 10^{33} \, \text{m}^3 \),  
+  - \( T = 2\pi \sqrt{\frac{3.347 \times 10^{33}}{1.327 \times 10^{20}}} \approx 2\pi \sqrt{2.523 \times 10^{13}} \approx 3.156 \times 10^7 \, \text{s} \) (about 1 year),  
+  - \( T^2 \approx 9.96 \times 10^{14} \, \text{s}^2 \),  
+  - Check: \( \frac{4\pi^2}{G M} r^3 = (2.975 \times 10^{-19}) \times (3.347 \times 10^{33}) \approx 9.96 \times 10^{14} \). Matches!
+
+- **\( r = 2 \, \text{AU} = 2.992 \times 10^{11} \, \text{m} \)**:  
+  - \( r^3 = (2.992 \times 10^{11})^3 = 2.678 \times 10^{34} \, \text{m}^3 \),  
+  - \( T = 2\pi \sqrt{\frac{2.678 \times 10^{34}}{1.327 \times 10^{20}}} \approx 2\pi \sqrt{2.019 \times 10^{14}} \approx 8.93 \times 10^7 \, \text{s} \) (about 2.83 years),  
+  - \( T^2 \approx 7.97 \times 10^{15} \, \text{s}^2 \),  
+  - Check: \( \frac{4\pi^2}{G M} r^3 = (2.975 \times 10^{-19}) \times (2.678 \times 10^{34}) \approx 7.97 \times 10^{15} \). Matches!
+
+- **\( r = 3 \, \text{AU} = 4.488 \times 10^{11} \, \text{m} \)**:  
+  - \( r^3 = (4.488 \times 10^{11})^3 = 9.041 \times 10^{34} \, \text{m}^3 \),  
+  - \( T = 2\pi \sqrt{\frac{9.041 \times 10^{34}}{1.327 \times 10^{20}}} \approx 2\pi \sqrt{6.812 \times 10^{14}} \approx 1.64 \times 10^8 \, \text{s} \) (about 5.2 years),  
+  - \( T^2 \approx 2.69 \times 10^{16} \, \text{s}^2 \),  
+  - Check: \( \frac{4\pi^2}{G M} r^3 = (2.975 \times 10^{-19}) \times (9.041 \times 10^{34}) \approx 2.69 \times 10^{16} \). Matches!
+
+#### Step 5: Conclusion
+The model calculates \( T \) from \( r \) and \( M \), and when we square \( T \) and compare it to \( r^3 \), the relationship \( T^2 = \frac{4\pi^2}{G M} r^3 \) holds every time. The constant \( \frac{4\pi^2}{G M} \) stays the same for the Sun’s mass, proving the law works.
+
+### Simple Solution
+This model picks distances (like 1 AU, 2 AU, 3 AU), finds the speed and period using gravity, and checks that \( T^2 \) matches \( r^3 \) times a constant. For the Sun, 1 AU gives 1 year, 2 AU gives about 2.83 years, and 3 AU gives about 5.2 years—Kepler’s Third Law is spot on every time!
