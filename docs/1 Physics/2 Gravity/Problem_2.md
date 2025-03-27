@@ -49,12 +49,13 @@ Third = escape the star system.
 ---
 
 ### **3. Third Cosmic Velocity (Star Escape Speed)**  
+
 - **What It Is**: Speed to leave the whole star system (e.g., Sun) from a planet.  
-- **Simple Math (Rough)**:  
-  - \( v_3 \approx \sqrt{\frac{2 G M_{\text{star}}}{R}} - \text{orbit speed} + v_2 \)  
-  - \( M_{\text{star}} \): Star’s mass (like the Sun).  
-  - \( R \): Distance from star to planet.  
-  - Add planet escape speed (\( v_2 \)).  
+- **Simple Math (Rough)**:
+    -  \( v_3 \approx \sqrt{\frac{2 G M_{\text{star}}}{R}} - \text{orbit speed} + v_2 \)  
+    - \( M_{\text{star}} \): Star’s mass (like the Sun).  
+    - \( R \): Distance from star to planet.  
+    - Add planet escape speed (\( v_2 \)).  
 - **What Changes It**:  
   - Bigger star mass (\( M_{\text{star}} \)): Faster speed.  
   - Farther from star (\( R \)): Slower speed.  
