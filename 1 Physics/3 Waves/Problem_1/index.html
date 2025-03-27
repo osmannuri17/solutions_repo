@@ -172,6 +172,135 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="task1"># TASK1</h1>
+<h3 id="task-recap">Task Recap:</h3>
+<p>We need to analyze the interference patterns on a water surface due to waves emitted from point sources placed at the vertices of a regular polygon. The wave from each source is described by the Single Disturbance equation:</p>
+<div class="arithmatex">\[
+\eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(kr - \omega t + \phi)
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(\eta(x, y, t)\)</span>: Displacement of the water surface at point <span class="arithmatex">\((x, y)\)</span> at time <span class="arithmatex">\(t\)</span>,
+- <span class="arithmatex">\(A\)</span>: Amplitude of the wave,
+- <span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span>: Wave number (related to wavelength <span class="arithmatex">\(\lambda\)</span>),
+- <span class="arithmatex">\(\omega = 2\pi f\)</span>: Angular frequency (related to frequency <span class="arithmatex">\(f\)</span>),
+- <span class="arithmatex">\(r = \sqrt{(x - x_0)^2 + (y - y_0)^2}\)</span>: Distance from the source at <span class="arithmatex">\((x_0, y_0)\)</span> to the point <span class="arithmatex">\((x, y)\)</span>,
+- <span class="arithmatex">\(\phi\)</span>: Initial phase.</p>
+<h3 id="step-1-select-a-regular-polygon">Step 1: Select a Regular Polygon</h3>
+<p>Let’s choose a simple regular polygon to keep things manageable: an <strong>equilateral triangle</strong>. It has 3 vertices, which means we’ll have 3 point sources. This is a good starting point to observe interference patterns without overcomplicating the math.</p>
+<hr/>
+<h3 id="step-2-position-the-sources">Step 2: Position the Sources</h3>
+<p>Place the equilateral triangle in the <span class="arithmatex">\(xy\)</span>-plane, centered at the origin for simplicity. Let the side length of the triangle be <span class="arithmatex">\(d\)</span>. The vertices of an equilateral triangle can be positioned as follows (using basic geometry):</p>
+<ul>
+<li>Vertex 1: <span class="arithmatex">\((x_1, y_1) = (0, \frac{d}{\sqrt{3}})\)</span> (top vertex),</li>
+<li>Vertex 2: <span class="arithmatex">\((x_2, y_2) = \left(-\frac{d}{2}, -\frac{d}{2\sqrt{3}}\right)\)</span> (bottom-left vertex),</li>
+<li>Vertex 3: <span class="arithmatex">\((x_3, y_3) = \left(\frac{d}{2}, -\frac{d}{2\sqrt{3}}\right)\)</span> (bottom-right vertex).</li>
+</ul>
+<p>These coordinates ensure the triangle is equilateral and centered at the origin (the centroid of the triangle is at <span class="arithmatex">\((0, 0)\)</span>).</p>
+<hr/>
+<h3 id="step-3-wave-equations">Step 3: Wave Equations</h3>
+<p>Each source emits a circular wave described by the given equation. Let’s assume the waves have the same amplitude <span class="arithmatex">\(A\)</span>, wave number <span class="arithmatex">\(k\)</span>, angular frequency <span class="arithmatex">\(\omega\)</span>, and initial phase <span class="arithmatex">\(\phi = 0\)</span> (for simplicity, unless specified otherwise). The wave from each source at a point <span class="arithmatex">\((x, y)\)</span> on the water surface is:</p>
+<ul>
+<li>
+<p><strong>Source 1 at <span class="arithmatex">\((x_1, y_1)\)</span>:</strong>
+  [
+  r_1 = \sqrt{(x - x_1)^2 + (y - y_1)^2} = \sqrt{\left(x - 0\right)^2 + \left(y - \frac{d}{\sqrt{3}}\right)^2}
+  ]
+  [
+  \eta_1(x, y, t) = \frac{A}{\sqrt{r_1}} \cos(kr_1 - \omega t)
+  ]</p>
+</li>
+<li>
+<p><strong>Source 2 at <span class="arithmatex">\((x_2, y_2)\)</span>:</strong>
+  [
+  r_2 = \sqrt{(x - x_2)^2 + (y - y_2)^2} = \sqrt{\left(x - \left(-\frac{d}{2}\right)\right)^2 + \left(y - \left(-\frac{d}{2\sqrt{3}}\right)\right)^2}
+  ]
+  [
+  \eta_2(x, y, t) = \frac{A}{\sqrt{r_2}} \cos(kr_2 - \omega t)
+  ]</p>
+</li>
+<li>
+<p><strong>Source 3 at <span class="arithmatex">\((x_3, y_3)\)</span>:</strong>
+  [
+  r_3 = \sqrt{(x - x_3)^2 + (y - y_3)^2} = \sqrt{\left(x - \frac{d}{2}\right)^2 + \left(y - \left(-\frac{d}{2\sqrt{3}}\right)\right)^2}
+  ]
+  [
+  \eta_3(x, y, t) = \frac{A}{\sqrt{r_3}} \cos(kr_3 - \omega t)
+  ]</p>
+</li>
+</ul>
+<hr/>
+<h3 id="step-4-superposition-of-waves">Step 4: Superposition of Waves</h3>
+<p>The principle of superposition states that the total displacement at a point <span class="arithmatex">\((x, y)\)</span> is the sum of the displacements from each wave:</p>
+<div class="arithmatex">\[
+\eta_{\text{total}}(x, y, t) = \eta_1(x, y, t) + \eta_2(x, y, t) + \eta_3(x, y, t)
+\]</div>
+<p>Substitute the wave equations:</p>
+<div class="arithmatex">\[
+\eta_{\text{total}}(x, y, t) = \frac{A}{\sqrt{r_1}} \cos(kr_1 - \omega t) + \frac{A}{\sqrt{r_2}} \cos(kr_2 - \omega t) + \frac{A}{\sqrt{r_3}} \cos(kr_3 - \omega t)
+\]</div>
+<p>Factor out common terms:</p>
+<div class="arithmatex">\[
+\eta_{\text{total}}(x, y, t) = A \left( \frac{\cos(kr_1 - \omega t)}{\sqrt{r_1}} + \frac{\cos(kr_2 - \omega t)}{\sqrt{r_2}} + \frac{\cos(kr_3 - \omega t)}{\sqrt{r_3}} \right)
+\]</div>
+<hr/>
+<h3 id="step-5-analyze-the-interference-pattern-simplified">Step 5: Analyze the Interference Pattern (Simplified)</h3>
+<p>To analyze the interference pattern, we need to look for points where the waves interfere constructively (amplitudes add up) or destructively (amplitudes cancel out). This equation is complex to solve analytically for all points <span class="arithmatex">\((x, y)\)</span>, but we can make some observations:</p>
+<ul>
+<li><strong>Constructive Interference:</strong> Occurs when the phase difference between waves is a multiple of <span class="arithmatex">\(2\pi\)</span>, i.e., <span class="arithmatex">\(k(r_i - r_j) = 2\pi m\)</span> (where <span class="arithmatex">\(m\)</span> is an integer). This happens when the path difference <span class="arithmatex">\(|r_i - r_j|\)</span> is a multiple of the wavelength <span class="arithmatex">\(\lambda\)</span>:</li>
+</ul>
+<div class="arithmatex">\[
+|r_i - r_j| = m\lambda \quad \text{(since \(k = \frac{2\pi}{\lambda}\), so \(k|r_i - r_j| = \frac{2\pi}{\lambda} |r_i - r_j| = 2\pi m\))}.
+\]</div>
+<ul>
+<li><strong>Destructive Interference:</strong> Occurs when the phase difference is an odd multiple of <span class="arithmatex">\(\pi\)</span>, i.e., <span class="arithmatex">\(k(r_i - r_j) = (2m+1)\pi\)</span>, or:</li>
+</ul>
+<div class="arithmatex">\[
+|r_i - r_j| = (m + \frac{1}{2})\lambda.
+\]</div>
+<ul>
+<li><strong>Pattern Description:</strong> For three sources in an equilateral triangle, the interference pattern will be symmetric around the center. You’ll see regions of high amplitude (constructive interference) where the waves from all three sources are in phase, and regions of low amplitude (destructive interference) where they cancel out. The <span class="arithmatex">\(\frac{A}{\sqrt{r}}\)</span> term means the amplitude decreases with distance, so the pattern will be more pronounced closer to the sources.</li>
+</ul>
+<hr/>
+<h3 id="simple-solution-summary">Simple Solution Summary:</h3>
+<ul>
+<li><strong>Polygon Chosen:</strong> Equilateral triangle with side length <span class="arithmatex">\(d\)</span>.</li>
+<li><strong>Source Positions:</strong> Vertices at <span class="arithmatex">\((0, \frac{d}{\sqrt{3}})\)</span>, <span class="arithmatex">\(\left(-\frac{d}{2}, -\frac{d}{2\sqrt{3}}\right)\)</span>, and <span class="arithmatex">\(\left(\frac{d}{2}, -\frac{d}{2\sqrt{3}}\right)\)</span>.</li>
+<li><strong>Total Displacement:</strong>
+  [
+  \eta_{\text{total}}(x, y, t) = A \left( \frac{\cos(kr_1 - \omega t)}{\sqrt{r_1}} + \frac{\cos(kr_2 - \omega t)}{\sqrt{r_2}} + \frac{\cos(kr_3 - \omega t)}{\sqrt{r_3}} \right)
+  ]</li>
+<li><strong>Interference Pattern:</strong> Expect a symmetric pattern with regions of constructive interference (where path differences are multiples of <span class="arithmatex">\(\lambda\)</span>) and destructive interference (where path differences are odd multiples of <span class="arithmatex">\(\lambda/2\)</span>).</li>
+</ul>
+<p>https://files.oaiusercontent.com/file-A3iHhg47PPzAeTTbQ7HT3P?se=2025-03-27T14%3A14%3A03Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscc=max-age%3D604800%2C%20immutable%2C%20private&amp;rscd=attachment%3B%20filename%3D98822e26-209c-4d88-8076-5bbc667cbf73.webp&amp;sig=A2cAyB2PWKIZBJowMxXg2Lbu7731BiARgUUqP/n6m2U%3D</p>
+<h1 id="deliverables">DELIVERABLES</h1>
+<h1 id="2">2.</h1>
+<p>A detailed explanation of the interference patterns observed for the chosen regular polygon with the goal of understanding wave superposition.</p>
+<p>### <strong>Interference Patterns in a Regular Polygonal Wave Source Arrangement</strong> </p>
+<p>Interference patterns arise from the superposition of waves originating from multiple sources. When waves meet, their amplitudes combine according to the principle of superposition, creating regions of <strong>constructive interference</strong> (where waves reinforce each other) and <strong>destructive interference</strong> (where waves cancel each other out). The specific arrangement of sources influences the resulting pattern significantly.  </p>
+<h4 id="1-wave-sources-arranged-in-a-regular-polygon"><strong>1. Wave Sources Arranged in a Regular Polygon</strong></h4>
+<p>Consider a set of wave sources positioned at the vertices of a regular <span class="arithmatex">\( n \)</span>-sided polygon, such as a triangle, square, pentagon, or hexagon. Each vertex acts as a point source emitting circular wavefronts that propagate outward. The interference pattern observed depends on the symmetry and spacing of these sources.  </p>
+<h4 id="2-constructive-and-destructive-interference"><strong>2. Constructive and Destructive Interference</strong></h4>
+<ul>
+<li><strong>Constructive Interference:</strong> This occurs at points where the path difference between waves from different sources is an integer multiple of the wavelength (<span class="arithmatex">\( m\lambda \)</span>, where <span class="arithmatex">\( m \)</span> is an integer). Such points appear as bright or high-intensity regions.  </li>
+<li><strong>Destructive Interference:</strong> This happens where the path difference is a half-integer multiple of the wavelength (<span class="arithmatex">\( (m + 0.5)\lambda \)</span>), leading to cancellation of wave amplitudes. These regions appear as dark or low-intensity zones.  </li>
+</ul>
+<h4 id="3-symmetric-interference-patterns"><strong>3. Symmetric Interference Patterns</strong></h4>
+<ul>
+<li><strong>Triangle (Equilateral):</strong> Produces a threefold rotational symmetry in the interference pattern, forming a repeating set of high-intensity nodes at specific radial distances.  </li>
+<li><strong>Square:</strong> Interference fringes align along the symmetry axes, creating a checkerboard-like arrangement of constructive and destructive interference regions.  </li>
+<li><strong>Pentagon and Higher Polygons:</strong> As the number of sources increases, the pattern becomes increasingly intricate, with radial symmetry intensifying at the center and forming concentric nodal structures.  </li>
+</ul>
+<h4 id="4-wavelength-and-source-spacing-effects"><strong>4. Wavelength and Source Spacing Effects</strong></h4>
+<ul>
+<li>If the wavelength is large relative to the polygon size, only a few interference fringes form, appearing as broad intensity variations.  </li>
+<li>If the wavelength is small, intricate interference patterns emerge with fine spacing between constructive and destructive zones.  </li>
+</ul>
+<h4 id="5-application-in-wave-physics"><strong>5. Application in Wave Physics</strong></h4>
+<p>Understanding such interference patterns is fundamental in wave optics, acoustics, and quantum mechanics. These principles are used in diffraction gratings, antenna arrays, and even quantum wavefunctions.  </p>
+<ol>
+<li>Graphical representations of the water surface showing constructive and destructive interference regions.</li>
+</ol>
+<p><a href="file:///Users/kucukprens/Desktop/physics%20solutions/graphicss.py">text</a></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
