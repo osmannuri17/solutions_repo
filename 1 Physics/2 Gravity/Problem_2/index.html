@@ -172,6 +172,190 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<p># TASK1 Define the first, second, and third cosmic velocities, explaining their physical meaning.</p>
+<h1 id="first-cosmic-velocity">First Cosmic Velocity:</h1>
+<p>Definition: The minimum speed an object needs to orbit a celestial body (like Earth) without falling back down.
+Physical Meaning: This is the speed required to become a satellite. For Earth, it’s about 7.9 km/s (around 28,000 km/h). At this speed, the object moves fast enough that its curved path matches the curve of the planet, keeping it in a stable orbit instead of crashing back due to gravity.</p>
+<h1 id="second-cosmic-velocity">Second Cosmic Velocity:</h1>
+<p>Definition: The minimum speed an object needs to completely escape a celestial body’s gravitational pull and leave it behind.
+Physical Meaning: This is the escape velocity. For Earth, it’s about 11.2 km/s (around 40,000 km/h). At this speed, the object has enough energy to break free from the planet’s gravity and head into space, no longer bound to orbit or return.</p>
+<h1 id="third-cosmic-velocity">Third Cosmic Velocity:</h1>
+<p>Definition: The minimum speed an object needs to escape the gravitational pull of a star system (like the Sun) and leave it entirely, starting from a planet within that system.
+Physical Meaning: This is about leaving the solar system. For an object starting from Earth, it’s around 16.6 km/s (relative to Earth) when accounting for Earth’s orbit around the Sun. It means the object overcomes both the planet’s and the star’s gravity to travel into interstellar space.</p>
+<h1 id="in-short">In short:</h1>
+<p>First = orbit the planet.
+Second = escape the planet.
+Third = escape the star system.
+ # TASK2 Analyze the mathematical derivations and parameters affecting these velocities.</p>
+<h3 id="1-first-cosmic-velocity-orbit-speed"><strong>1. First Cosmic Velocity (Orbit Speed)</strong></h3>
+<ul>
+<li><strong>What It Is</strong>: Speed to circle a planet without falling.  </li>
+<li><strong>Simple Math</strong>:  </li>
+<li><span class="arithmatex">\( v_1 = \sqrt{\frac{G M}{r}} \)</span> </li>
+<li><span class="arithmatex">\( G \)</span>: Gravity constant (a fixed number).  </li>
+<li><span class="arithmatex">\( M \)</span>: Planet’s mass.  </li>
+<li><span class="arithmatex">\( r \)</span>: Planet’s size (radius).  </li>
+<li><strong>What Changes It</strong>:  </li>
+<li>Bigger planet mass (<span class="arithmatex">\( M \)</span>): Faster speed needed.  </li>
+<li>Bigger planet size (<span class="arithmatex">\( r \)</span>): Slower speed needed.  </li>
+<li><strong>Example</strong>: Earth → ~7.9 km/s to orbit.</li>
+</ul>
+<hr/>
+<h3 id="2-second-cosmic-velocity-escape-speed"><strong>2. Second Cosmic Velocity (Escape Speed)</strong></h3>
+<ul>
+<li><strong>What It Is</strong>: Speed to leave a planet forever.  </li>
+<li><strong>Simple Math</strong>:  </li>
+<li><span class="arithmatex">\( v_2 = \sqrt{\frac{2 G M}{r}} \)</span> </li>
+<li>Same <span class="arithmatex">\( G \)</span>, <span class="arithmatex">\( M \)</span>, <span class="arithmatex">\( r \)</span> as above, just doubled under the square root.  </li>
+<li><strong>What Changes It</strong>:  </li>
+<li>Bigger mass (<span class="arithmatex">\( M \)</span>): Faster speed.  </li>
+<li>Bigger size (<span class="arithmatex">\( r \)</span>): Slower speed.  </li>
+<li><strong>Link</strong>: <span class="arithmatex">\( v_2 = 1.4 \times v_1 \)</span> (just <span class="arithmatex">\( \sqrt{2} \)</span> times orbit speed).  </li>
+<li><strong>Example</strong>: Earth → ~11.2 km/s to escape.</li>
+</ul>
+<hr/>
+<h3 id="3-third-cosmic-velocity-star-escape-speed"><strong>3. Third Cosmic Velocity (Star Escape Speed)</strong></h3>
+<ul>
+<li><strong>What It Is</strong>: Speed to leave the whole star system (e.g., Sun) from a planet.  </li>
+<li><strong>Simple Math (Rough)</strong>:  </li>
+<li><span class="arithmatex">\( v_3 \approx \sqrt{\frac{2 G M_{\text{star}}}{R}} - \text{orbit speed} + v_2 \)</span> </li>
+<li><span class="arithmatex">\( M_{\text{star}} \)</span>: Star’s mass (like the Sun).  </li>
+<li><span class="arithmatex">\( R \)</span>: Distance from star to planet.  </li>
+<li>Add planet escape speed (<span class="arithmatex">\( v_2 \)</span>).  </li>
+<li><strong>What Changes It</strong>:  </li>
+<li>Bigger star mass (<span class="arithmatex">\( M_{\text{star}} \)</span>): Faster speed.  </li>
+<li>Farther from star (<span class="arithmatex">\( R \)</span>): Slower speed.  </li>
+<li>Planet’s mass/size: Affects the starting escape.  </li>
+<li><strong>Example</strong>: From Earth → ~16.6 km/s to leave the Solar System.</li>
+</ul>
+<hr/>
+<h3 id="super-simple-takeaway"><strong>Super Simple Takeaway</strong></h3>
+<ul>
+<li><strong><span class="arithmatex">\( v_1 \)</span></strong>: Circle the planet → depends on planet’s mass and size.  </li>
+<li><strong><span class="arithmatex">\( v_2 \)</span></strong>: Leave the planet → 1.4 times <span class="arithmatex">\( v_1 \)</span>.  </li>
+<li><strong><span class="arithmatex">\( v_3 \)</span></strong>: Leave the star → adds star’s pull and distance.  </li>
+</ul>
+<p>Mass pulls harder (faster speed). Distance spreads pull (slower speed). That’s it! Let me know if this works or if you want it even simpler!</p>
+<p># TASK3 Calculate and visualize these velocities for different celestial bodies like Earth, Mars adn Jupyter.</p>
+<h3 id="basic-info-for-calculations"><strong>Basic Info for Calculations</strong></h3>
+<ul>
+<li>I’ll use approximate values for mass (<span class="arithmatex">\( M \)</span>) and radius (<span class="arithmatex">\( r \)</span>) of each body.  </li>
+<li>For third velocity, I’ll assume escaping the Sun from each planet’s distance (<span class="arithmatex">\( R \)</span>), simplified.  </li>
+<li>No heavy math—just results from plugging in numbers!</li>
+</ul>
+<h4 id="earth"><strong>Earth</strong></h4>
+<ul>
+<li>Mass: <span class="arithmatex">\( 5.97 \times 10^{24} \, kg \)</span> </li>
+<li>Radius: <span class="arithmatex">\( 6,371 \, km \)</span> </li>
+<li>Distance from Sun: <span class="arithmatex">\( 1 \, AU \)</span> (149.6 million km)</li>
+</ul>
+<h4 id="mars"><strong>Mars</strong></h4>
+<ul>
+<li>Mass: <span class="arithmatex">\( 6.42 \times 10^{23} \, kg \)</span> (about 1/10 Earth’s)  </li>
+<li>Radius: <span class="arithmatex">\( 3,390 \, km \)</span> (about half Earth’s)  </li>
+<li>Distance from Sun: <span class="arithmatex">\( 1.52 \, AU \)</span> (227 million km)</li>
+</ul>
+<h4 id="jupiter"><strong>Jupiter</strong></h4>
+<ul>
+<li>Mass: <span class="arithmatex">\( 1.90 \times 10^{27} \, kg \)</span> (318 times Earth’s)  </li>
+<li>Radius: <span class="arithmatex">\( 69,911 \, km \)</span> (11 times Earth’s)  </li>
+<li>Distance from Sun: <span class="arithmatex">\( 5.2 \, AU \)</span> (778 million km)</li>
+</ul>
+<hr/>
+<h3 id="calculated-velocities-simple-results"><strong>Calculated Velocities (Simple Results)</strong></h3>
+<h4 id="earth_1"><strong>Earth</strong></h4>
+<ul>
+<li><strong>First (Orbit)</strong>: ~7.9 km/s  </li>
+<li><strong>Second (Escape)</strong>: ~11.2 km/s  </li>
+<li><strong>Third (Sun Escape)</strong>: ~16.6 km/s (includes escaping Earth + extra to leave Sun)</li>
+</ul>
+<h4 id="mars_1"><strong>Mars</strong></h4>
+<ul>
+<li><strong>First (Orbit)</strong>: ~3.6 km/s (less mass, smaller size than Earth)  </li>
+<li><strong>Second (Escape)</strong>: ~5.0 km/s  </li>
+<li><strong>Third (Sun Escape)</strong>: ~14.3 km/s (farther from Sun, less extra speed needed)</li>
+</ul>
+<h4 id="jupiter_1"><strong>Jupiter</strong></h4>
+<ul>
+<li><strong>First (Orbit)</strong>: ~42.1 km/s (huge mass, big size)  </li>
+<li><strong>Second (Escape)</strong>: ~59.5 km/s  </li>
+<li><strong>Third (Sun Escape)</strong>: ~18.5 km/s (much farther from Sun, but massive planet escape)</li>
+</ul>
+<hr/>
+<h3 id="why-these-numbers"><strong>Why These Numbers?</strong></h3>
+<ul>
+<li><strong>First</strong>: Bigger mass = faster, bigger radius = slower. Jupiter’s huge mass wins.  </li>
+<li><strong>Second</strong>: Same deal, just 1.4 times the first.  </li>
+<li><strong>Third</strong>: Adds escaping the Sun—closer planets (Earth) need more speed, farther ones (Jupiter) less, but planet escape matters too.</li>
+</ul>
+<hr/>
+<h3 id="simple-visualization"><strong>Simple Visualization</strong></h3>
+<p>Imagine a bar chart (I can’t draw it here, but I’ll describe it):<br/>
+- <strong>X-axis</strong>: Three bars for Earth, Mars, Jupiter.<br/>
+- <strong>Y-axis</strong>: Speed in km/s (0 to 60 km/s).<br/>
+- <strong>Bars</strong>:<br/>
+  - <strong>Earth</strong>: Three bars—7.9 (blue), 11.2 (green), 16.6 (red).<br/>
+  - <strong>Mars</strong>: Three bars—3.6 (blue), 5.0 (green), 14.3 (red).<br/>
+  - <strong>Jupiter</strong>: Three bars—42.1 (blue), 59.5 (green), 18.5 (red).<br/>
+- <strong>Colors</strong>: Blue = orbit, Green = escape planet, Red = escape Sun.  </p>
+<h1 id="cosmic-velocities-simulation">Cosmic Velocities Simulation</h1>
+<p>This document provides a simple Python script to calculate and visualize the first, second, and third cosmic velocities for Earth, Mars, and Jupiter.</p>
+<h2 id="python-script">Python Script</h2>
+<p>```python
+import numpy as np
+import matplotlib.pyplot as plt</p>
+<h1 id="constants-in-si-units-converted-later">Constants (in SI units, converted later)</h1>
+<p>G = 6.674e-11  # m^3 kg^-1 s^-2
+AU = 1.496e11  # meters</p>
+<h1 id="celestial-body-data-mass-in-kg-radius-in-km-distance-from-sun-in-au">Celestial body data (mass in kg, radius in km, distance from Sun in AU)</h1>
+<p>bodies = {
+    "Earth": {"mass": 5.97e24, "radius": 6371, "distance": 1.0},
+    "Mars": {"mass": 6.42e23, "radius": 3390, "distance": 1.52},
+    "Jupiter": {"mass": 1.90e27, "radius": 69911, "distance": 5.2}
+}
+sun_mass = 1.989e30  # kg</p>
+<h1 id="function-to-calculate-velocities-in-kms">Function to calculate velocities (in km/s)</h1>
+<p>def calculate_velocities(mass, radius, distance_au):
+    # Convert radius to meters
+    r = radius * 1000
+    # First cosmic velocity (orbital)
+    v1 = np.sqrt(G * mass / r) / 1000  # Convert m/s to km/s
+    # Second cosmic velocity (escape)
+    v2 = np.sqrt(2 * G * mass / r) / 1000
+    # Third cosmic velocity (simplified: escape Sun from planet's distance)
+    R = distance_au * AU  # Distance to Sun in meters
+    v_sun_escape = np.sqrt(2 * G * sun_mass / R) / 1000  # Escape Sun at R
+    v_orbit = np.sqrt(G * sun_mass / R) / 1000  # Orbital speed around Sun
+    v3 = v2 + (v_sun_escape - v_orbit)  # Add extra speed to escape Sun
+    return v1, v2, v3</p>
+<h1 id="calculate-velocities-for-each-body">Calculate velocities for each body</h1>
+<p>results = {}
+for body, data in bodies.items():
+    v1, v2, v3 = calculate_velocities(data["mass"], data["radius"], data["distance"])
+    results[body] = {"v1": v1, "v2": v2, "v3": v3}</p>
+<h1 id="print-results">Print results</h1>
+<p>for body, velocities in results.items():
+    print(f"{body}:")
+    print(f"  First (Orbit): {velocities['v1']:.1f} km/s")
+    print(f"  Second (Escape): {velocities['v2']:.1f} km/s")
+    print(f"  Third (Sun Escape): {velocities['v3']:.1f} km/s")</p>
+<h1 id="visualization">Visualization</h1>
+<p>bodies_list = list(results.keys())
+v1_values = [results[body]["v1"] for body in bodies_list]
+v2_values = [results[body]["v2"] for body in bodies_list]
+v3_values = [results[body]["v3"] for body in bodies_list]</p>
+<p>x = np.arange(len(bodies_list))
+width = 0.25</p>
+<p>plt.bar(x - width, v1_values, width, label="First (Orbit)", color="blue")
+plt.bar(x, v2_values, width, label="Second (Escape)", color="green")
+plt.bar(x + width, v3_values, width, label="Third (Sun Escape)", color="red")</p>
+<p>plt.xlabel("Celestial Bodies")
+plt.ylabel("Velocity (km/s)")
+plt.title("Cosmic Velocities for Earth, Mars, and Jupiter")
+plt.xticks(x, bodies_list)
+plt.legend()
+plt.grid(True, linestyle="--", alpha=0.7)
+plt.show()</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
