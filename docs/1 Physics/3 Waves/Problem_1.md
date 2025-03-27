@@ -148,7 +148,7 @@ Understanding such interference patterns is fundamental in wave optics, acoustic
 Graphical representations of the water surface showing constructive and destructive interference regions.
 
 
-[text](file:///Users/kucukprens/Desktop/physics%20solutions/graphicss.py)
+![alt text](Figure_12.png)
 
 
 
