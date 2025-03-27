@@ -123,7 +123,7 @@ Simplify:
 \[ T = 2\pi \sqrt{\frac{r^3}{G M}} \]
 This matches Kepler’s Third Law when squared: \( T^2 = \frac{4\pi^2}{G M} r^3 \).
 
-#### Step 5: Conclusion
+#### Step 4: Conclusion
 The model calculates \( T \) from \( r \) and \( M \), and when we square \( T \) and compare it to \( r^3 \), the relationship \( T^2 = \frac{4\pi^2}{G M} r^3 \) holds every time. The constant \( \frac{4\pi^2}{G M} \) stays the same for the Sun’s mass, proving the law works.
 
 ### Simple Solution
@@ -160,6 +160,11 @@ Kepler’s Law helps us:
 - Predict planetary motion.  
 - Measure masses of celestial bodies.  
 - Understand why inner planets orbit faster than outer ones.  
+
+
+
+
+[text](kepler_orbit.py)
 
 
 
