@@ -95,41 +95,8 @@ The Moon orbits Earth, so Earth’s mass (\( M \)) is the central mass in the eq
 - **Earth’s Mass (\( M \))**: Known to be about \( 5.972 \times 10^{24} \, \text{kg} \).
 - **Gravitational Constant (\( G \))**: \( 6.674 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2} \).
 
-Plug these into Kepler’s Third Law:  
-\[ T^2 = \frac{4\pi^2}{G M} r^3 \]
-
-First, calculate the right side:  
-- \( 4\pi^2 \approx 39.478 \),  
-- \( G M = (6.674 \times 10^{-11}) \times (5.972 \times 10^{24}) \approx 3.986 \times 10^{14} \, \text{m}^3 \text{s}^{-2} \),  
-- \( r^3 = (3.84 \times 10^8)^3 \approx 5.66 \times 10^{25} \, \text{m}^3 \),  
-- \( \frac{4\pi^2}{G M} \approx \frac{39.478}{3.986 \times 10^{14}} \approx 9.91 \times 10^{-14} \, \text{s}^2 \text{m}^{-3} \),  
-- \( T^2 \approx (9.91 \times 10^{-14}) \times (5.66 \times 10^{25}) \approx 5.61 \times 10^{12} \, \text{s}^2 \).
-
-Now the left side:  
-\[ T^2 = (2.36 \times 10^6)^2 \approx 5.57 \times 10^{12} \, \text{s}^2 \].
-
-These numbers match closely (5.57 vs. 5.61), showing Kepler’s Third Law holds for the Moon. The slight difference comes from rounding and the Moon’s slightly elliptical orbit, but for a simple circular model, it works!
-
 ### 2. Planets in the Solar System
 Now let’s look at planets orbiting the Sun, with the Sun’s mass (\( M \approx 1.989 \times 10^{30} \, \text{kg} \)) as the central mass. We’ll test Earth and Mars.
-
-- **Earth**:  
-  - \( T = 1 \, \text{year} \approx 3.156 \times 10^7 \, \text{seconds} \),  
-  - \( r = 1 \, \text{AU} \approx 1.496 \times 10^{11} \, \text{meters} \).  
-  - \( r^3 = (1.496 \times 10^{11})^3 \approx 3.347 \times 10^{33} \, \text{m}^3 \),  
-  - \( G M = (6.674 \times 10^{-11}) \times (1.989 \times 10^{30}) \approx 1.327 \times 10^{20} \, \text{m}^3 \text{s}^{-2} \),  
-  - \( \frac{4\pi^2}{G M} \approx \frac{39.478}{1.327 \times 10^{20}} \approx 2.975 \times 10^{-19} \, \text{s}^2 \text{m}^{-3} \),  
-  - \( T^2 \approx (2.975 \times 10^{-19}) \times (3.347 \times 10^{33}) \approx 9.96 \times 10^{14} \, \text{s}^2 \),  
-  - Actual \( T^2 = (3.156 \times 10^7)^2 \approx 9.96 \times 10^{14} \, \text{s}^2 \).  
-  Perfect match!
-
-- **Mars**:  
-  - \( T = 687 \, \text{days} \approx 5.94 \times 10^7 \, \text{seconds} \),  
-  - \( r = 1.524 \, \text{AU} \approx 2.279 \times 10^{11} \, \text{meters} \),  
-  - \( r^3 = (2.279 \times 10^{11})^3 \approx 1.183 \times 10^{34} \, \text{m}^3 \),  
-  - \( T^2 \approx (2.975 \times 10^{-19}) \times (1.183 \times 10^{34}) \approx 3.52 \times 10^{15} \, \text{s}^2 \),  
-  - Actual \( T^2 = (5.94 \times 10^7)^2 \approx 3.53 \times 10^{15} \, \text{s}^2 \).  
-  Another close fit!
 
 ### Simple Solution
 Kepler’s Third Law works in the real world. For the Moon, its 27.3-day orbit at 384,000 km fits Earth’s mass. For planets like Earth (1 year, 1 AU) and Mars (687 days, 1.524 AU), their orbits match the Sun’s mass. The law ties \( T^2 \) to \( r^3 \), letting us predict and check how things move in space. It’s a simple rule that fits the Moon and planets perfectly!
@@ -155,28 +122,6 @@ The period (\( T \)) is the time to travel the circumference (\( 2\pi r \)) at s
 Simplify:
 \[ T = 2\pi \sqrt{\frac{r^3}{G M}} \]
 This matches Kepler’s Third Law when squared: \( T^2 = \frac{4\pi^2}{G M} r^3 \).
-
-#### Step 4: Simulate and Verify
-Let’s calculate \( T \) for a few radii, then check \( T^2 \) vs. \( r^3 \).
-
-- **\( r = 1 \, \text{AU} = 1.496 \times 10^{11} \, \text{m} \)**:  
-  - \( G M = 1.327 \times 10^{20} \, \text{m}^3 \text{s}^{-2} \),  
-  - \( r^3 = (1.496 \times 10^{11})^3 = 3.347 \times 10^{33} \, \text{m}^3 \),  
-  - \( T = 2\pi \sqrt{\frac{3.347 \times 10^{33}}{1.327 \times 10^{20}}} \approx 2\pi \sqrt{2.523 \times 10^{13}} \approx 3.156 \times 10^7 \, \text{s} \) (about 1 year),  
-  - \( T^2 \approx 9.96 \times 10^{14} \, \text{s}^2 \),  
-  - Check: \( \frac{4\pi^2}{G M} r^3 = (2.975 \times 10^{-19}) \times (3.347 \times 10^{33}) \approx 9.96 \times 10^{14} \). Matches!
-
-- **\( r = 2 \, \text{AU} = 2.992 \times 10^{11} \, \text{m} \)**:  
-  - \( r^3 = (2.992 \times 10^{11})^3 = 2.678 \times 10^{34} \, \text{m}^3 \),  
-  - \( T = 2\pi \sqrt{\frac{2.678 \times 10^{34}}{1.327 \times 10^{20}}} \approx 2\pi \sqrt{2.019 \times 10^{14}} \approx 8.93 \times 10^7 \, \text{s} \) (about 2.83 years),  
-  - \( T^2 \approx 7.97 \times 10^{15} \, \text{s}^2 \),  
-  - Check: \( \frac{4\pi^2}{G M} r^3 = (2.975 \times 10^{-19}) \times (2.678 \times 10^{34}) \approx 7.97 \times 10^{15} \). Matches!
-
-- **\( r = 3 \, \text{AU} = 4.488 \times 10^{11} \, \text{m} \)**:  
-  - \( r^3 = (4.488 \times 10^{11})^3 = 9.041 \times 10^{34} \, \text{m}^3 \),  
-  - \( T = 2\pi \sqrt{\frac{9.041 \times 10^{34}}{1.327 \times 10^{20}}} \approx 2\pi \sqrt{6.812 \times 10^{14}} \approx 1.64 \times 10^8 \, \text{s} \) (about 5.2 years),  
-  - \( T^2 \approx 2.69 \times 10^{16} \, \text{s}^2 \),  
-  - Check: \( \frac{4\pi^2}{G M} r^3 = (2.975 \times 10^{-19}) \times (9.041 \times 10^{34}) \approx 2.69 \times 10^{16} \). Matches!
 
 #### Step 5: Conclusion
 The model calculates \( T \) from \( r \) and \( M \), and when we square \( T \) and compare it to \( r^3 \), the relationship \( T^2 = \frac{4\pi^2}{G M} r^3 \) holds every time. The constant \( \frac{4\pi^2}{G M} \) stays the same for the Sun’s mass, proving the law works.
