@@ -164,7 +164,7 @@ Kepler’s Law helps us:
 
 
 
-[text](kepler_orbit.py)
+vscode-vfs://github/osmannuri17/solutions_repo/docs/1%20Physics/2%20Gravity/kepler_orbit.py
 
 
 
