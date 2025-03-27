@@ -1,5 +1,8 @@
 # Problem 2
- # TASK1 Define the first, second, and third cosmic velocities, explaining their physical meaning.
+ # TASK1 
+
+ Define the first, second, and third cosmic velocities, explaining their physical meaning.
+ 
 #  First Cosmic Velocity:
 Definition: The minimum speed an object needs to orbit a celestial body (like Earth) without falling back down.
 Physical Meaning: This is the speed required to become a satellite. For Earth, it’s about 7.9 km/s (around 28,000 km/h). At this speed, the object moves fast enough that its curved path matches the curve of the planet, keeping it in a stable orbit instead of crashing back due to gravity.
@@ -13,7 +16,9 @@ Physical Meaning: This is about leaving the solar system. For an object starting
 First = orbit the planet.
 Second = escape the planet.
 Third = escape the star system.
- # TASK2 Analyze the mathematical derivations and parameters affecting these velocities.
+
+ # TASK2 
+ Analyze the mathematical derivations and parameters affecting these velocities.
 
 ### **1. First Cosmic Velocity (Orbit Speed)**  
 - **What It Is**: Speed to circle a planet without falling.  
