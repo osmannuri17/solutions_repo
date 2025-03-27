@@ -123,6 +123,9 @@ Imagine a bar chart (I can’t draw it here, but I’ll describe it):
   - **Mars**: Three bars—3.6 (blue), 5.0 (green), 14.3 (red).  
   - **Jupiter**: Three bars—42.1 (blue), 59.5 (green), 18.5 (red).  
 - **Colors**: Blue = orbit, Green = escape planet, Red = escape Sun.  
+$$
+ # Deliverables
+$$
 
 # Cosmic Velocities Simulation
 
