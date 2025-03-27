@@ -34,33 +34,7 @@ These coordinates ensure the triangle is equilateral and centered at the origin 
 ---
 
 ### Step 3: Wave Equations
-Each source emits a circular wave described by the given equation. Let’s assume the waves have the same amplitude \(A\), wave number \(k\), angular frequency \(\omega\), and initial phase \(\phi = 0\) (for simplicity, unless specified otherwise). The wave from each source at a point \((x, y)\) on the water surface is:
-
-- **Source 1 at \((x_1, y_1)\):**
-  \[
-  r_1 = \sqrt{(x - x_1)^2 + (y - y_1)^2} = \sqrt{\left(x - 0\right)^2 + \left(y - \frac{d}{\sqrt{3}}\right)^2}
-  \]
-  \[
-  \eta_1(x, y, t) = \frac{A}{\sqrt{r_1}} \cos(kr_1 - \omega t)
-  \]
-
-- **Source 2 at \((x_2, y_2)\):**
-  \[
-  r_2 = \sqrt{(x - x_2)^2 + (y - y_2)^2} = \sqrt{\left(x - \left(-\frac{d}{2}\right)\right)^2 + \left(y - \left(-\frac{d}{2\sqrt{3}}\right)\right)^2}
-  \]
-  \[
-  \eta_2(x, y, t) = \frac{A}{\sqrt{r_2}} \cos(kr_2 - \omega t)
-  \]
-
-- **Source 3 at \((x_3, y_3)\):**
-  \[
-  r_3 = \sqrt{(x - x_3)^2 + (y - y_3)^2} = \sqrt{\left(x - \frac{d}{2}\right)^2 + \left(y - \left(-\frac{d}{2\sqrt{3}}\right)\right)^2}
-  \]
-  \[
-  \eta_3(x, y, t) = \frac{A}{\sqrt{r_3}} \cos(kr_3 - \omega t)
-  \]
-
----
+Each source emits a circular wave described by the given equation. Let’s assume the waves have the same amplitude \(A\), wave number \(k\), angular frequency \(\omega\), and initial phase \(\phi = 0\) (for simplicity, unless specified otherwise). The wave from each source at a point \((x, y)\) on the water surface.
 
 ### Step 4: Superposition of Waves
 The principle of superposition states that the total displacement at a point \((x, y)\) is the sum of the displacements from each wave:
@@ -111,7 +85,6 @@ To analyze the interference pattern, we need to look for points where the waves 
   \]
 - **Interference Pattern:** Expect a symmetric pattern with regions of constructive interference (where path differences are multiples of \(\lambda\)) and destructive interference (where path differences are odd multiples of \(\lambda/2\)).
 
-https://files.oaiusercontent.com/file-A3iHhg47PPzAeTTbQ7HT3P?se=2025-03-27T14%3A14%3A03Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D98822e26-209c-4d88-8076-5bbc667cbf73.webp&sig=A2cAyB2PWKIZBJowMxXg2Lbu7731BiARgUUqP/n6m2U%3D
 
 # DELIVERABLES
 
