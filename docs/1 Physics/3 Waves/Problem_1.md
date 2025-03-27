@@ -117,7 +117,8 @@ Understanding such interference patterns is fundamental in wave optics, acoustic
 
 
 
-3. 
+# 3.
+
 Graphical representations of the water surface showing constructive and destructive interference regions.
 
 
