@@ -1,5 +1,6 @@
 # Problem 3
- # TASK1 
+
+ # # TASK1 
 
  Analyze the possible trajectories (e.g., parabolic, hyperbolic, elliptical) of a payload released near Earth.
 
@@ -98,7 +99,8 @@ Parabolic: Just escapes, barely breaking free (escape).
 Hyperbolic: Flies off fast (escape).
 
 
- # TASK4 
+#  # TASK4 
+
  Develop a computational tool to simulate and visualize the motion of the payload under Earth's gravity, accounting for initial velocities and directions.
 
  # step-by-step simulator that:
