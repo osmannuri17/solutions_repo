@@ -44,3 +44,5 @@ This control makes possible technologies from cancer treatments to space propuls
 # The simulation of particle motion
 
 ![alt text](image.png)
+
+[text](file:///Users/kucukprens/Desktop/parameter_exploration)
