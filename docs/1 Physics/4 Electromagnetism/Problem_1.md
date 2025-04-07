@@ -48,3 +48,7 @@ This control makes possible technologies from cancer treatments to space propuls
 # Parameter exploration:
 
 ![alt text](b_field_strength_0.png),  ![alt text](charge_0.png),  ![alt text](charge_mass_ratio_0.png), ![alt text](e_field_strength_0.png)
+
+# Visualization:
+
+![alt text](combined_fields.png),  ![alt text](pure_magnetic_field.png) 
