@@ -45,4 +45,6 @@ This control makes possible technologies from cancer treatments to space propuls
 
 ![alt text](image.png)
 
-[text](file:///Users/kucukprens/Desktop/parameter_exploration)
+# Parameter exploration:
+
+![alt text](b_field_strength_0.png),  ![alt text](charge_0.png),  ![alt text](charge_mass_ratio_0.png), ![alt text](e_field_strength_0.png)
