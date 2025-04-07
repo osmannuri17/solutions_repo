@@ -33,3 +33,7 @@ Beam focusing
 Sorting particles by properties
 
 This control makes possible technologies from cancer treatments to space propulsion systems.
+
+
+
+![alt text](image.png)
