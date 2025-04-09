@@ -128,7 +128,7 @@ S --(6.44)-- T
 
 The algorithm handles nested combinations—like parallel resistors within a series chain—by reducing the graph layer by layer.
 
-** In this example:**
+# * In this example:*
 
 Nested Structure: Initially, A–B (4 ohms) and B–T (6 ohms) form a series chain, while A–T (8 ohms) is a parallel path. This is a series-parallel mix.
 
