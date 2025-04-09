@@ -123,3 +123,19 @@ S --(6.44)-- T
 
 #### Result
 - **Equivalent Resistance**: 6.44 ohms between S and T.
+
+# How the Algorithm Handles Nested Combinations
+
+The algorithm handles nested combinations—like parallel resistors within a series chain—by reducing the graph layer by layer.
+
+** In this example:**
+
+Nested Structure: Initially, A–B (4 ohms) and B–T (6 ohms) form a series chain, while A–T (8 ohms) is a parallel path. This is a series-parallel mix.
+
+**Layer-by-Layer Reduction:**
+
+**First pass:** The series A–B–T (4 + 6 = 10 ohms) simplifies, adding a new A–T edge.
+
+**Second pass:** This creates a parallel combination with the existing A–T (8 ohms), reduced to 4.44 ohms.
+
+**Final pass:** The result (4.44 ohms) is in series with S–A (2 ohms), yielding 6.44 ohms.
