@@ -182,7 +182,9 @@
 <li><strong><em>*Identifies series connections</em>*:</strong></li>
 </ol>
 <p>Two edges sharing a node with only two connections are combined by adding their resistances (<span class="arithmatex">\( R_{\text{eq}} = R_1 + R_2 \)</span>).</p>
-<p>3.# ** <strong>Iteratively reduces</strong>:**</p>
+<ol>
+<li>** <strong>Iteratively reduces</strong>:**</li>
+</ol>
 <p>Repeats until only one edge remains between S and T.</p>
 <p>Nested combinations (e.g., series within parallel) are handled by reducing step-by-step—each iteration simplifies the graph, revealing new series or parallel opportunities.</p>
 <h3 id="pseudocode">Pseudocode</h3>
@@ -203,9 +205,88 @@
 
 return weight of edge (S, T)
 </code></pre>
-<h1 id="handling-nested-combinations">### Handling Nested Combinations</h1>
-<p>The algorithm naturally processes nested setups (like parallel resistors in a series chain) by reducing the graph layer by layer. Each pass simplifies part of the structure, making new series or parallel connections visible for the next pass, until everything collapses into one resistance.</p>
-<p>That’s it—short, sweet, and to the point!</p>
+<h1 id="example-walkthrough-equivalent-resistance-calculation">### Example Walkthrough: Equivalent Resistance Calculation</h1>
+<h4 id="circuit-description">Circuit Description</h4>
+<ul>
+<li><strong>Nodes</strong>: S, A, B, T</li>
+<li><strong>Edges (Resistors)</strong>:</li>
+<li>S–A: 2 ohms</li>
+<li>A–B: 4 ohms</li>
+<li>A–T: 8 ohms</li>
+<li>B–T: 6 ohms</li>
+<li><strong>Goal</strong>: Find the equivalent resistance between S and T.</li>
+</ul>
+<h4 id="initial-graph">Initial Graph</h4>
+<pre><code>S --(2)-- A --(4)-- B --(6)-- T
+          |
+         (8)
+          |
+          T
+</code></pre>
+<h4 id="algorithm-steps">Algorithm Steps</h4>
+<p>We’ll use the algorithm to iteratively reduce the graph by identifying series and parallel connections until only S and T remain with one edge.</p>
+<h5 id="step-1-check-for-parallel-connections">Step 1: Check for Parallel Connections</h5>
+<ul>
+<li><strong>Look at node pairs</strong>:</li>
+<li>S–A: 1 edge (2 ohms)</li>
+<li>A–B: 1 edge (4 ohms)</li>
+<li>B–T: 1 edge (6 ohms)</li>
+<li>A–T: 1 edge (8 ohms)</li>
+<li><strong>Result</strong>: No parallel edges (no multiple edges between any pair).</li>
+<li><strong>Graph unchanged</strong>:</li>
+</ul>
+<pre><code>S --(2)-- A --(4)-- B --(6)-- T
+          |
+         (8)
+          |
+          T
+</code></pre>
+<h5 id="step-2-check-for-series-connections">Step 2: Check for Series Connections</h5>
+<ul>
+<li><strong>Look at nodes (excluding S and T)</strong>:</li>
+<li>Node A: Degree 3 (S, B, T) – not series.</li>
+<li>Node B: Degree 2 (A, T) – series candidate!</li>
+<li><strong>Reduce series at B</strong>:</li>
+<li>Edges: A–B (4 ohms), B–T (6 ohms)</li>
+<li>Formula: <span class="arithmatex">\( R_{\text{eq}} = 4 + 6 = 10 \)</span> ohms</li>
+<li>Remove B and edges A–B, B–T; add edge A–T (10 ohms).</li>
+<li><strong>Updated Graph</strong>:</li>
+</ul>
+<pre><code>S --(2)-- A --(10)-- T
+          |
+         (8)
+          |
+          T
+</code></pre>
+<h5 id="step-3-check-for-parallel-connections">Step 3: Check for Parallel Connections</h5>
+<ul>
+<li><strong>Look at node pairs</strong>:</li>
+<li>S–A: 1 edge (2 ohms)</li>
+<li>A–T: 2 edges (10 ohms, 8 ohms) – parallel!</li>
+<li><strong>Reduce parallel at A–T</strong>:</li>
+<li>Formula: <span class="arithmatex">\( \frac{1}{R_{\text{eq}}} = \frac{1}{10} + \frac{1}{8} = 0.1 + 0.125 = 0.225 \)</span></li>
+<li><span class="arithmatex">\( R_{\text{eq}} = \frac{1}{0.225} \approx 4.44 \)</span> ohms</li>
+<li>Replace A–T (10 ohms and 8 ohms) with A–T (4.44 ohms).</li>
+<li><strong>Updated Graph</strong>:</li>
+</ul>
+<pre><code>S --(2)-- A --(4.44)-- T
+</code></pre>
+<h5 id="step-4-check-for-series-connections">Step 4: Check for Series Connections</h5>
+<ul>
+<li><strong>Look at nodes</strong>:</li>
+<li>Node A: Degree 2 (S, T) – series!</li>
+<li><strong>Reduce series at A</strong>:</li>
+<li>Edges: S–A (2 ohms), A–T (4.44 ohms)</li>
+<li>Formula: <span class="arithmatex">\( R_{\text{eq}} = 2 + 4.44 = 6.44 \)</span> ohms</li>
+<li>Remove A and edges S–A, A–T; add edge S–T (6.44 ohms).</li>
+<li><strong>Final Graph</strong>:</li>
+</ul>
+<pre><code>S --(6.44)-- T
+</code></pre>
+<h4 id="result">Result</h4>
+<ul>
+<li><strong>Equivalent Resistance</strong>: 6.44 ohms between S and T.</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
