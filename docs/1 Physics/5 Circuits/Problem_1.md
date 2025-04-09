@@ -12,7 +12,7 @@ The algorithm takes a circuit as a graph (nodes are junctions, edges are resisto
 
  Two edges sharing a node with only two connections are combined by adding their resistances (\( R_{\text{eq}} = R_1 + R_2 \)).
 
-3.# ** **Iteratively reduces**:**
+3. ** **Iteratively reduces**:**
 
  Repeats until only one edge remains between S and T.
 
@@ -39,7 +39,87 @@ Algorithm CalculateEquivalentResistance(Graph G, Node S, Node T)
     return weight of edge (S, T)
 
 
-# ### Handling Nested Combinations
-The algorithm naturally processes nested setups (like parallel resistors in a series chain) by reducing the graph layer by layer. Each pass simplifies part of the structure, making new series or parallel connections visible for the next pass, until everything collapses into one resistance.
 
-That’s it—short, sweet, and to the point!
+# ### Example Walkthrough: Equivalent Resistance Calculation
+
+#### Circuit Description
+- **Nodes**: S, A, B, T
+- **Edges (Resistors)**:
+  - S–A: 2 ohms
+  - A–B: 4 ohms
+  - A–T: 8 ohms
+  - B–T: 6 ohms
+- **Goal**: Find the equivalent resistance between S and T.
+
+#### Initial Graph
+```
+S --(2)-- A --(4)-- B --(6)-- T
+          |
+         (8)
+          |
+          T
+```
+
+#### Algorithm Steps
+We’ll use the algorithm to iteratively reduce the graph by identifying series and parallel connections until only S and T remain with one edge.
+
+##### Step 1: Check for Parallel Connections
+- **Look at node pairs**:
+  - S–A: 1 edge (2 ohms)
+  - A–B: 1 edge (4 ohms)
+  - B–T: 1 edge (6 ohms)
+  - A–T: 1 edge (8 ohms)
+- **Result**: No parallel edges (no multiple edges between any pair).
+- **Graph unchanged**:
+```
+S --(2)-- A --(4)-- B --(6)-- T
+          |
+         (8)
+          |
+          T
+```
+
+##### Step 2: Check for Series Connections
+- **Look at nodes (excluding S and T)**:
+  - Node A: Degree 3 (S, B, T) – not series.
+  - Node B: Degree 2 (A, T) – series candidate!
+- **Reduce series at B**:
+  - Edges: A–B (4 ohms), B–T (6 ohms)
+  - Formula: \( R_{\text{eq}} = 4 + 6 = 10 \) ohms
+  - Remove B and edges A–B, B–T; add edge A–T (10 ohms).
+- **Updated Graph**:
+```
+S --(2)-- A --(10)-- T
+          |
+         (8)
+          |
+          T
+```
+
+##### Step 3: Check for Parallel Connections
+- **Look at node pairs**:
+  - S–A: 1 edge (2 ohms)
+  - A–T: 2 edges (10 ohms, 8 ohms) – parallel!
+- **Reduce parallel at A–T**:
+  - Formula: \( \frac{1}{R_{\text{eq}}} = \frac{1}{10} + \frac{1}{8} = 0.1 + 0.125 = 0.225 \)
+  - \( R_{\text{eq}} = \frac{1}{0.225} \approx 4.44 \) ohms
+  - Replace A–T (10 ohms and 8 ohms) with A–T (4.44 ohms).
+- **Updated Graph**:
+```
+S --(2)-- A --(4.44)-- T
+```
+
+##### Step 4: Check for Series Connections
+- **Look at nodes**:
+  - Node A: Degree 2 (S, T) – series!
+- **Reduce series at A**:
+  - Edges: S–A (2 ohms), A–T (4.44 ohms)
+  - Formula: \( R_{\text{eq}} = 2 + 4.44 = 6.44 \) ohms
+  - Remove A and edges S–A, A–T; add edge S–T (6.44 ohms).
+- **Final Graph**:
+```
+S --(6.44)-- T
+```
+
+#### Result
+- **Equivalent Resistance**: 6.44 ohms between S and T.
