@@ -172,6 +172,40 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="algorithm-description">### Algorithm Description</h1>
+<p>The algorithm takes a circuit as a graph (nodes are junctions, edges are resistors with weights) and finds the equivalent resistance between a source node (S) and sink node (T). It:</p>
+<ol>
+<li><strong><em>*Identifies parallel connections</em>*:</strong></li>
+</ol>
+<p>Multiple edges between two nodes are combined using <span class="arithmatex">\( \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots \)</span>.</p>
+<ol>
+<li><strong><em>*Identifies series connections</em>*:</strong></li>
+</ol>
+<p>Two edges sharing a node with only two connections are combined by adding their resistances (<span class="arithmatex">\( R_{\text{eq}} = R_1 + R_2 \)</span>).</p>
+<p>3.# ** <strong>Iteratively reduces</strong>:**</p>
+<p>Repeats until only one edge remains between S and T.</p>
+<p>Nested combinations (e.g., series within parallel) are handled by reducing step-by-step—each iteration simplifies the graph, revealing new series or parallel opportunities.</p>
+<h3 id="pseudocode">Pseudocode</h3>
+<p>Algorithm CalculateEquivalentResistance(Graph G, Node S, Node T)
+    while G has more than 2 nodes OR more than 1 edge between S and T
+        // Parallel reduction
+        for each pair of nodes (u, v) in G
+            if multiple edges between u and v
+                R_eq = 1 / (sum of 1/R for each edge)
+                Replace all edges (u, v) with one edge of weight R_eq</p>
+<pre><code>    // Series reduction
+    for each node n in G (not S or T)
+        if degree(n) == 2
+            u, v = neighbors of n
+            R_eq = weight(u, n) + weight(n, v)
+            Remove n and its edges
+            Add edge (u, v) with weight R_eq
+
+return weight of edge (S, T)
+</code></pre>
+<h1 id="handling-nested-combinations">### Handling Nested Combinations</h1>
+<p>The algorithm naturally processes nested setups (like parallel resistors in a series chain) by reducing the graph layer by layer. Each pass simplifies part of the structure, making new series or parallel connections visible for the next pass, until everything collapses into one resistance.</p>
+<p>That’s it—short, sweet, and to the point!</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
