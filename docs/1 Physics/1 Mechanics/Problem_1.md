@@ -1,17 +1,20 @@
 # Problem 1
 
-
- ### # Theoretical Foundation
+# Theoretical Foundation
 
 Projectile motion starts with two simple ideas: horizontally, a projectile moves at a steady speed because nothing pushes it side-to-side; vertically, gravity pulls it down at a constant rate (9.81 m/s² on Earth). These rules create a curved path, like throwing a ball. The path changes based on:
 
-***Speed:*** Throw faster, it goes farther and higher.
+***Speed:*** 
+Throw faster, it goes farther and higher.
 
-***Angle:*** Low angles favor distance; high angles give height.
+***Angle:***
+ Low angles favor distance; high angles give height.
 
-***Starting height:*** Throwing from higher up extends the flight.
+***Starting height:*** 
+Throwing from higher up extends the flight.
 
-***Gravity:*** Weaker gravity (like the Moon’s) stretches the path
+***Gravity:*** 
+Weaker gravity (like the Moon’s) stretches the path
 .
 This creates a “family” of paths—each mix of speed, angle, height, or gravity gives a unique curve. For example, a hard throw at 45°
  travels far, while a soft throw straight up lands close. These variations fit many scenarios, from sports to space launches.
