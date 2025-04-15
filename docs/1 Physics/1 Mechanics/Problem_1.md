@@ -63,4 +63,26 @@ In soccer, a well-angled kick clears defenders and reaches the goal. Golfers aim
 To make it realistic, we can add air resistance or terrain shapes, often using numerical simulations to handle complex effects, as shown in the script below.
 
 
-[text](file:///Users/kucukprens/Desktop/physics%20solutions/air%20resistance.py)
+# Implementation
+
+![alt text](Figure.png)
+
+### What the plot shows:
+
+***Angles:***
+ Range peaks near 45° for flat ground, slightly lower with height or airresistance.
+
+***Speed:***
+ 20 m/s throws go farther than 10 m/s.
+
+***Height:*** 
+Starting 5 m up increases range.
+
+***Moon:*** 
+Lower gravity boosts range a lot.
+
+***Air resistance:***
+ Shortens range and shifts the best angle to ~35°–40°.
+
+***This matches our analysis:***
+45° is best without complications, but speed, height, gravity, or air change the outcome.
