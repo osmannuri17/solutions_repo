@@ -158,3 +158,136 @@ The Euler method is a simple first-order numerical method. It can introduce sign
 
 Understanding these fundamental trajectory types and the velocities associated with them is crucial for planning and executing any space mission, whether it's placing a satellite in orbit, returning astronauts to Earth, or sending probes to explore the solar system.
 
+
+
+# Computational tool to simulate and visualize the motion of the payload under Earth's gravity
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.widgets import Slider, Button
+
+G = 6.67430e-11
+M_earth = 5.972e24
+R_earth = 6.371e6
+
+initial_altitude = 300e3
+initial_speed = 7800.0
+initial_angle_deg = 45.0
+
+time_step = 10.0
+total_time = 5000.0
+num_steps = int(total_time / time_step)
+
+fig, ax = plt.subplots(figsize=(8, 8))
+plt.subplots_adjust(bottom=0.4)
+
+def initialize_payload(altitude, speed, angle_deg):
+    radius = R_earth + altitude
+    angle_rad = np.deg2rad(angle_deg)
+    initial_position = np.array([radius, 0.0])
+    initial_velocity = np.array([speed * np.cos(angle_rad), speed * np.sin(angle_rad)])
+    return initial_position, initial_velocity
+
+initial_position, initial_velocity = initialize_payload(initial_altitude, initial_speed, initial_angle_deg)
+
+trajectory, = ax.plot([], [], 'r-', label='Payload')
+earth_circle = plt.Circle((0, 0), R_earth, color='blue', alpha=0.3, label='Earth')
+ax.add_patch(earth_circle)
+ax.set_xlabel('X Position (m)')
+ax.set_ylabel('Y Position (m)')
+ax.set_title('Payload Trajectory Near Earth')
+ax.axhline(0, color='black', linewidth=0.5)
+ax.axvline(0, color='black', linewidth=0.5)
+ax.grid(True)
+ax.axis('equal')
+ax.set_xlim(-(R_earth + 2e6), (R_earth + 2e6))
+ax.set_ylim(-(R_earth + 2e6), (R_earth + 2e6))
+ax.legend()
+
+def calculate_acceleration(position):
+    r = np.linalg.norm(position)
+    if r == 0:
+        return np.array([0.0, 0.0])
+    acceleration = -G * M_earth / (r**3) * position
+    return acceleration
+
+def simulate_trajectory(initial_pos, initial_vel, time_s, dt):
+    num = int(time_s / dt)
+    traj = np.zeros((num + 1, 2))
+    vel_history = np.zeros((num + 1, 2))
+    traj[0] = initial_pos
+    vel_history[0] = initial_vel
+    for i in range(num):
+        current_pos = traj[i]
+        current_vel = vel_history[i]
+        accel = calculate_acceleration(current_pos)
+        next_vel = current_vel + accel * dt
+        vel_history[i + 1] = next_vel
+        next_pos = current_pos + next_vel * dt
+        traj[i + 1] = next_pos
+    return traj
+
+ax_altitude = plt.axes([0.25, 0.1, 0.65, 0.03])
+slider_altitude = Slider(
+    ax=ax_altitude,
+    label='Altitude (km)',
+    valmin=0,
+    valmax=1000,
+    valinit=initial_altitude / 1e3,
+    valstep=10
+)
+
+ax_speed = plt.axes([0.25, 0.15, 0.65, 0.03])
+slider_speed = Slider(
+    ax=ax_speed,
+    label='Speed (km/s)',
+    valmin=1,
+    valmax=15,
+    valinit=initial_speed / 1e3,
+    valstep=0.1
+)
+
+ax_angle = plt.axes([0.25, 0.20, 0.65, 0.03])
+slider_angle = Slider(
+    ax=ax_angle,
+    label='Angle (deg)',
+    valmin=0,
+    valmax=360,
+    valinit=initial_angle_deg,
+    valstep=1
+)
+
+def update(val):
+    altitude_km = slider_altitude.val
+    speed_kms = slider_speed.val
+    angle_deg = slider_angle.val
+
+    initial_pos, initial_vel = initialize_payload(altitude_km * 1e3, speed_kms * 1e3, angle_deg)
+    new_trajectory = simulate_trajectory(initial_pos, initial_vel, total_time, time_step)
+    trajectory.set_data(new_trajectory[:, 0], new_trajectory[:, 1])
+
+    max_dist = np.max(np.linalg.norm(new_trajectory, axis=1))
+    ax.set_xlim(-max_dist * 1.1, max_dist * 1.1)
+    ax.set_ylim(-max_dist * 1.1, max_dist * 1.1)
+
+    fig.canvas.draw_idle()
+
+slider_altitude.on_changed(update)
+slider_speed.on_changed(update)
+slider_angle.on_changed(update)
+
+resetax = plt.axes([0.8, 0.025, 0.1, 0.04])
+button_reset = Button(resetax, 'Reset', hovercolor='0.975')
+
+def reset(event):
+    slider_altitude.reset()
+    slider_speed.reset()
+    slider_angle.reset()
+
+button_reset.on_clicked(reset)
+
+plt.show()
+```
+![alt text](image-3.png) 
+
