@@ -67,11 +67,22 @@ Similar to orbital velocity, a more massive body has a stronger gravitational pu
 
 * **Simplified Explanation of Parameters:**
 
- The third cosmic velocity is more complex as it involves escaping the gravitational influence of both Earth and the Sun. It depends on:
-    * **Sun's Mass:** The primary factor determining the overall escape speed from the solar system at Earth's orbital distance.
-    * **Earth's Orbital Velocity:** Earth is already moving around the Sun at a significant speed. Launching in the direction of Earth's motion allows us to use this existing velocity as part of the escape velocity.
-    * **Earth's Mass and Radius:** These determine the escape velocity from Earth's surface, which is the initial "push" needed to get away from our planet's gravity before focusing on escaping the Sun.
-    * **Launch Trajectory:** The direction of the initial velocity relative to Earth's orbital motion around the Sun significantly affects the required speed. Launching in Earth's direction of travel is most efficient.
+ The third cosmic velocity is more complex as it involves escaping the gravitational influence of both Earth and the Sun.
+ It depends on:
+    * **Sun's Mass:**
+
+ The primary factor determining the overall escape speed from the solar system at Earth's orbital distance.
+ * **Earth's Orbital Velocity:**
+
+Earth is already moving around the Sun at a significant speed. Launching in the direction of Earth's motion allows us to use this existing velocity as part of the escape velocity.
+
+* **Earth's Mass and Radius:**
+
+ These determine the escape velocity from Earth's surface, which is the initial "push" needed to get away from our planet's gravity before focusing on escaping the Sun.
+
+* **Launch Trajectory:**
+
+The direction of the initial velocity relative to Earth's orbital motion around the Sun significantly affects the required speed. Launching in Earth's direction of travel is most efficient.
 
 * **Approximate Calculation (Conceptual):**
     1.  Calculate the escape velocity from the Sun's gravity at Earth's orbital distance.
@@ -80,8 +91,6 @@ Similar to orbital velocity, a more massive body has a stronger gravitational pu
      We also need to account for escaping Earth's gravity initially.
 
     The precise mathematical derivation involves energy conservation in both gravitational fields and is more involved than the first two cosmic velocities. The commonly cited value of approximately 16.7 km/s relative to Earth is the result of these more complex calculations and takes into account an optimal launch trajectory.
-
-In summary, the first and second cosmic velocities are primarily determined by the mass and radius (or orbital distance) of the celestial body being escaped or orbited. The third cosmic velocity is influenced by the mass of the Sun, Earth's orbital motion, and the initial escape from Earth's gravitational pull.
 
 
 
