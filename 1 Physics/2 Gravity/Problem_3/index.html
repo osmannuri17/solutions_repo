@@ -300,21 +300,35 @@ This function takes the current position of the payload and calculates the gravi
 </ul>
 </li>
 </ol>
-<p><strong>How to Use and Explore:</strong></p>
-<ul>
-<li><strong>Change <code>initial_altitude</code> and <code>initial_velocity</code>:</strong> Experiment with different starting altitudes and speeds. For example:<ul>
-<li>Try a lower initial velocity (e.g., 7000 m/s) to see an elliptical decay.</li>
-<li>Try a velocity closer to the escape velocity at that altitude (approximately <span class="arithmatex">\(\sqrt{2 \times G \times M_{earth} / (R_{earth} + initial\_altitude)}\)</span>) to see a more open trajectory.</li>
-<li>Try a velocity significantly higher than escape velocity to see a hyperbolic trajectory.</li>
-<li>Change the direction of the initial velocity (e.g., give it an x-component).</li>
-</ul>
-</li>
-<li><strong>Adjust <code>time_step</code> and <code>total_time</code>:</strong> A smaller <code>time_step</code> will generally give more accurate results but will take longer to compute. Increase <code>total_time</code> to see the trajectory over a longer period.</li>
-<li><strong>Observe the Shape:</strong></li>
-</ul>
-<p>Note whether the trajectory forms a closed ellipse, a parabola-like shape that doesn't close, or a hyperbola-like shape that curves away.</p>
 <p><strong>Limitations of the Euler Method:</strong></p>
 <p>The Euler method is a simple first-order numerical method. It can introduce significant errors, especially for longer simulations or larger time steps. For more accurate results, more sophisticated numerical methods like the Runge-Kutta methods (e.g., RK4) would be preferred. However, for a basic visualization of the trajectory types, the Euler method can be sufficient.</p>
+<h1 id="discussing-how-these-trajectories-relate-to-orbital-insertion-reentry-or-escape-scenarios">Discussing how these trajectories relate to orbital insertion, reentry, or escape scenarios.</h1>
+<p><strong>1. Orbital Insertion:</strong></p>
+<ul>
+<li>To insert a spacecraft or payload into a stable orbit, the goal is to achieve an <strong>elliptical trajectory</strong> with a periapsis (closest point to Earth) above the atmosphere.</li>
+<li>Launch vehicles typically propel the payload to a certain altitude and velocity. The final stage of the launch involves precisely firing engines to adjust the trajectory into the desired elliptical orbit.</li>
+<li>If the velocity at the insertion point is too low, the ellipse's periapsis might intersect the atmosphere, leading to reentry. If the velocity is too high (but below escape velocity), a highly elliptical orbit is achieved, which might require further maneuvers to circularize.</li>
+</ul>
+<p><strong>2. Reentry:</strong></p>
+<ul>
+<li>Reentry involves transitioning from an orbit (elliptical trajectory) to a path that intersects the Earth's atmosphere.</li>
+<li>This is achieved by reducing the spacecraft's velocity, typically through a retrograde burn (firing engines opposite to the direction of motion).</li>
+<li>The resulting trajectory is still initially elliptical but with a periapsis that dips into the atmosphere. Atmospheric drag then plays a significant role in slowing down and heating the spacecraft.</li>
+<li>The angle of the reentry trajectory is critical. Too shallow an angle can cause the spacecraft to skip off the atmosphere, while too steep an angle can lead to excessive heating and deceleration.</li>
+</ul>
+<p><strong>3. Escape Scenarios:</strong></p>
+<ul>
+<li>To escape Earth's gravitational influence, a spacecraft must achieve at least the <strong>parabolic trajectory</strong> (escape velocity).</li>
+<li>For interplanetary missions, spacecraft are often launched into a highly elliptical transfer orbit. A final, powerful burn is executed at the perigee of this orbit to increase the velocity to or above escape velocity, resulting in a <strong>hyperbolic trajectory</strong> relative to Earth.</li>
+<li>The excess velocity above escape velocity determines the speed at which the spacecraft will leave Earth's sphere of influence and begin its heliocentric (Sun-centered) trajectory.</li>
+</ul>
+<p><strong>In essence:</strong></p>
+<ul>
+<li><strong>Elliptical trajectories</strong> are the foundation of orbital mechanics, used for staying in orbit and for transferring between different orbits (e.g., Hohmann transfer orbits, which are elliptical).</li>
+<li><strong>Parabolic trajectories</strong> represent the minimum energy path to escape a celestial body's gravity.</li>
+<li><strong>Hyperbolic trajectories</strong> are used when a spacecraft needs to leave a planet's vicinity with a certain excess velocity for interplanetary travel.</li>
+</ul>
+<p>Understanding these fundamental trajectory types and the velocities associated with them is crucial for planning and executing any space mission, whether it's placing a satellite in orbit, returning astronauts to Earth, or sending probes to explore the solar system.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
