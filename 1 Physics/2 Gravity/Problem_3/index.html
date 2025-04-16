@@ -172,6 +172,149 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-3">Problem 3</h1>
+<p>Imagine throwing a ball upwards. What happens depends on how fast you throw it:</p>
+<ul>
+<li>
+<p><strong>Too slow:</strong>
+It goes up and comes right back down in an <strong>elliptical</strong> path (a curve like a stretched circle). This is like a satellite in orbit – it's constantly falling but also moving forward, so it keeps going around.</p>
+</li>
+<li>
+<p><strong>Just right (escape velocity):</strong>
+If you throw it with exactly the right speed, it will go up, and its speed will slowly decrease until it almost stops infinitely far away.
+This path is a <strong>parabola</strong> (a U-shaped curve that never closes).
+It's the edge case where the object barely escapes Earth's pull.</p>
+</li>
+<li>
+<p><strong>Too fast:</strong>
+If you throw it even faster than the "just right" speed, it will fly away from Earth and still have some speed left even when it's very far away.
+This path is a <strong>hyperbola</strong> (a wider U-shaped curve).</p>
+</li>
+</ul>
+<p><strong>What determines the path?</strong></p>
+<p>The main thing is the <strong>speed</strong> of the payload when it's released.</p>
+<ul>
+<li><strong>Slow speed:</strong> Leads to an elliptical orbit (it stays around Earth).</li>
+<li><strong>Medium speed (escape velocity):</strong> Leads to a parabolic path (it barely escapes).</li>
+<li><strong>High speed:</strong> Leads to a hyperbolic path (it definitely escapes).</li>
+</ul>
+<p>The <strong>direction</strong> of the release also matters for the <em>shape</em> of the ellipse or hyperbola, but the <em>type</em> of path (elliptical, parabolic, or hyperbolic) is mainly decided by the speed compared to the <strong>escape velocity</strong> at that location.
+Escape velocity is like the "break free" speed from Earth's gravity at a certain distance.</p>
+<p>So, the possible paths are:</p>
+<ul>
+<li><strong>Elliptical:</strong> For payloads that don't have enough speed to escape Earth.</li>
+<li><strong>Parabolic:</strong> For payloads released at the exact speed needed to just barely escape Earth's gravity.</li>
+<li><strong>Hyperbolic:</strong> For payloads released with more than enough speed to escape Earth's gravity.</li>
+</ul>
+<h1 id="perform-a-numerical-analysis-to-compute-the-path-of-a-payload-released-near-earth">Perform a numerical analysis to compute the path of a payload released near Earth</h1>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+G = 6.67430e-11
+M_earth = 5.972e24
+R_earth = 6.371e6
+
+initial_altitude = 300e3
+initial_position = np.array([R_earth + initial_altitude, 0.0])
+initial_velocity = np.array([0.0, 7800.0])
+
+time_step = 10.0
+total_time = 5000.0
+num_steps = int(total_time / time_step)
+
+trajectory = np.zeros((num_steps + 1, 2))
+velocity_history = np.zeros((num_steps + 1, 2))
+time_points = np.linspace(0, total_time, num_steps + 1)
+
+trajectory[0] = initial_position
+velocity_history[0] = initial_velocity
+
+def calculate_acceleration(position):
+    r = np.linalg.norm(position)
+    if r == 0:
+        return np.array([0.0, 0.0])
+    acceleration = -G * M_earth / (r**3) * position
+    return acceleration
+
+for i in range(num_steps):
+    current_position = trajectory[i]
+    current_velocity = velocity_history[i]
+    acceleration = calculate_acceleration(current_position)
+
+    next_velocity = current_velocity + acceleration * time_step
+    velocity_history[i + 1] = next_velocity
+
+    next_position = current_position + next_velocity * time_step
+    trajectory[i + 1] = next_position
+
+plt.figure(figsize=(8, 8))
+plt.plot(trajectory[:, 0], trajectory[:, 1], label='Payload Trajectory')
+
+earth_circle = plt.Circle((0, 0), R_earth, color='blue', alpha=0.3, label='Earth')
+plt.gca().add_patch(earth_circle)
+
+plt.xlabel('X Position (m)')
+plt.ylabel('Y Position (m)')
+plt.title('Payload Trajectory Near Earth')
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
+plt.grid(True)
+plt.legend()
+plt.axis('equal')
+plt.show()
+</code></pre>
+<p><img alt="alt text" src="../image-4.png"/></p>
+<p><strong>Explanation:</strong></p>
+<ol>
+<li><strong>Constants and Initial Conditions:</strong></li>
+</ol>
+<p>We define Earth's gravitational constant, mass, and radius. We then set initial values for the payload's altitude, position (in a 2D plane for simplicity), and velocity. You can change these initial conditions to explore different trajectories.</p>
+<ol>
+<li><strong>Simulation Parameters:</strong></li>
+</ol>
+<p>We set the time step for the numerical integration and the total simulation time. The number of steps is calculated accordingly.</p>
+<ol>
+<li><strong>Data Storage:</strong></li>
+</ol>
+<p>We create NumPy arrays to store the payload's position (trajectory) and velocity at each time step.</p>
+<ol>
+<li>
+<p><strong><code>calculate_acceleration(position)</code> Function:</strong>
+This function takes the current position of the payload and calculates the gravitational acceleration vector acting on it due to Earth.</p>
+</li>
+<li>
+<p><strong>Numerical Integration Loop:</strong></p>
+<ul>
+<li>In each step, we get the current position and velocity.</li>
+<li>We calculate the acceleration at the current position.</li>
+<li>We update the velocity using the Euler method: <span class="arithmatex">\(\mathbf{v}_{i+1} = \mathbf{v}_i + \mathbf{a}_i \Delta t\)</span>.</li>
+<li>We update the position using the Euler method: <span class="arithmatex">\(\mathbf{r}_{i+1} = \mathbf{r}_i + \mathbf{v}_{i+1} \Delta t\)</span>.</li>
+<li>The new velocity and position are stored in the respective arrays.</li>
+</ul>
+</li>
+<li><strong>Visualization:</strong><ul>
+<li>We plot the y-position against the x-position to visualize the trajectory.</li>
+<li>We add a circle representing Earth for reference.</li>
+<li>We label the axes, add a title, and include a grid.</li>
+<li><code>plt.axis('equal')</code> ensures that the scaling of the x and y axes is the same, so Earth appears circular.</li>
+<li><code>plt.show()</code> displays the plot.</li>
+</ul>
+</li>
+</ol>
+<p><strong>How to Use and Explore:</strong></p>
+<ul>
+<li><strong>Change <code>initial_altitude</code> and <code>initial_velocity</code>:</strong> Experiment with different starting altitudes and speeds. For example:<ul>
+<li>Try a lower initial velocity (e.g., 7000 m/s) to see an elliptical decay.</li>
+<li>Try a velocity closer to the escape velocity at that altitude (approximately <span class="arithmatex">\(\sqrt{2 \times G \times M_{earth} / (R_{earth} + initial\_altitude)}\)</span>) to see a more open trajectory.</li>
+<li>Try a velocity significantly higher than escape velocity to see a hyperbolic trajectory.</li>
+<li>Change the direction of the initial velocity (e.g., give it an x-component).</li>
+</ul>
+</li>
+<li><strong>Adjust <code>time_step</code> and <code>total_time</code>:</strong> A smaller <code>time_step</code> will generally give more accurate results but will take longer to compute. Increase <code>total_time</code> to see the trajectory over a longer period.</li>
+<li><strong>Observe the Shape:</strong></li>
+</ul>
+<p>Note whether the trajectory forms a closed ellipse, a parabola-like shape that doesn't close, or a hyperbola-like shape that curves away.</p>
+<p><strong>Limitations of the Euler Method:</strong></p>
+<p>The Euler method is a simple first-order numerical method. It can introduce significant errors, especially for longer simulations or larger time steps. For more accurate results, more sophisticated numerical methods like the Runge-Kutta methods (e.g., RK4) would be preferred. However, for a basic visualization of the trajectory types, the Euler method can be sufficient.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
