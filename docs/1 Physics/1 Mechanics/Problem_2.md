@@ -19,7 +19,7 @@ A key behavior is **resonance**.
   This is when the system absorbs the most energy from the driving force. Understanding these basics helps explore how the interplay of damping, forcing, and the pendulum's properties leads to its diverse dynamics.
 
 
-  # Analysis of Dynamics:
+# Analysis of Dynamics:
 
 **1. How Parameters Influence Motion:**
 
