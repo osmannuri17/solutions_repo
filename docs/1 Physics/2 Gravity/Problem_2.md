@@ -168,6 +168,23 @@ print("\nNote: The third cosmic velocity is specific to escaping the solar syste
 ![alt text](Figure_3.png) 
 
 
+# Cosmic velocities are crucial for space exploration:
+
+***First Cosmic Velocity (Orbital):***
+
+The speed needed to put satellites into orbit around a planet. Essential for communication,observation, etc.
+
+***Second Cosmic Velocity (Escape):***
+
+The speed to leave a planet's gravity, necessary for interplanetary travel (e.g., missions to Mars).
+
+***Third Cosmic Velocity (Solar System Escape):***
+
+The speed to exit our solar system, a requirement for future interstellar travel.
+
+**These velocities dictate the energy needed for different space missions and are fundamental for planning and achieving space exploration goals.**
+
+
 
 
 
