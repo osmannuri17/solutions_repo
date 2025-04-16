@@ -241,6 +241,79 @@
 <li><strong>Chaotic:</strong></li>
 </ul>
 <p>Represents a highly sensitive, unstable state where the system never settles into a repeating pattern due to the complex interplay between the driving force, damping, and the pendulum's non-linear response.</p>
+<h1 id="implementation">Implementation</h1>
+<pre><code class="language-python">import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+
+def pendulum_ode(t, y, beta, omega0_sq, A, omega_D):
+    """
+    System of ODEs for the forced damped pendulum.
+    y[0] = theta (angle)
+    y[1] = omega (angular velocity)
+    """
+    theta, omega = y
+    dtheta_dt = omega
+    domega_dt = -2 * beta * omega - omega0_sq * np.sin(theta) + A * np.cos(omega_D * t)
+    return [dtheta_dt, domega_dt]
+
+g = 9.81
+L = 1.0
+omega0 = np.sqrt(g / L)
+omega0_sq = g / L
+
+beta = 0.2
+A = 1.5
+omega_D = 1.0 * omega0 
+
+y0 = [np.pi / 2, 0.0]
+
+t_start = 0
+t_end = 100            
+num_points = 2000      
+t_span = [t_start, t_end]
+t_eval = np.linspace(t_start, t_end, num_points) 
+
+
+sol = solve_ivp(
+    pendulum_ode,
+    t_span,
+    y0,
+    args=(beta, omega0_sq, A, omega_D),
+    dense_output=True, 
+    t_eval=t_eval  
+)
+
+if not sol.success:
+    print(f"ODE solver failed: {sol.message}")
+else:
+    print("ODE solver successful.")
+
+    theta_t = sol.y[0]
+    omega_t = sol.y[1]
+    times = sol.t
+
+    theta_t_adjusted = np.arctan2(np.sin(theta_t), np.cos(theta_t))
+
+    plt.figure(figsize=(10, 4))
+    plt.plot(times, theta_t_adjusted)
+    plt.title('Pendulum Angle vs Time')
+    plt.xlabel('Time (s)')
+    plt.ylabel('Angle (radians)')
+    plt.grid(True)
+    plt.show()
+
+    plt.figure(figsize=(6, 6))
+    plt.plot(theta_t_adjusted, omega_t, lw=0.5) 
+    plt.title('Phase Portrait')
+    plt.xlabel('Angle (radians)')
+    plt.ylabel('Angular Velocity (rad/s)')
+    plt.grid(True)
+    plt.show()
+
+</code></pre>
+<p><img alt="alt text" src="../image.png"/></p>
+<p><img alt="alt text" src="../image-1.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
