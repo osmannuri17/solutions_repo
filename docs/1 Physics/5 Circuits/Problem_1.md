@@ -1,6 +1,6 @@
 # Problem 1
 
-# ### Algorithm Description
+# Algorithm Description
 
 The algorithm takes a circuit as a graph (nodes are junctions, edges are resistors with weights) and finds the equivalent resistance between a source node (S) and sink node (T). It:
 
