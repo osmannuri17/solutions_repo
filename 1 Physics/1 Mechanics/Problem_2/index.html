@@ -172,6 +172,75 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="theoretical-foundation">Theoretical Foundation:</h1>
+<p>The motion of a forced damped pendulum is governed by the equation <span class="arithmatex">\(\frac{d^2\theta}{dt^2} + b \frac{d\theta}{dt} + \frac{g}{L} \sin \theta = A \cos(\omega t)\)</span>.</p>
+<p>This equation accounts for the pendulum's natural tendency to swing back due to gravity (related to <span class="arithmatex">\(g/L\)</span>), the slowing effect of damping or friction (the <span class="arithmatex">\(b\)</span> term), and an external force pushing it back and forth with strength <span class="arithmatex">\(A\)</span> and frequency <span class="arithmatex">\(\omega\)</span>.</p>
+<p>For small swings (small angles <span class="arithmatex">\(\theta\)</span>), the behavior simplifies because <span class="arithmatex">\(\sin \theta\)</span> is approximately equal to <span class="arithmatex">\(\theta\)</span>.</p>
+<p>In this case, the pendulum acts much like simpler systems such as a mass on a spring with friction that's being pushed. </p>
+<p>It will eventually synchronize its swing to the frequency <span class="arithmatex">\(\omega\)</span> of the external force.</p>
+<p>A key behavior is <strong>resonance</strong>.</p>
+<p>Similar to how pushing a swing at its natural rhythm makes it go much higher, if the frequency <span class="arithmatex">\(\omega\)</span> of the external force closely matches the pendulum's natural frequency (related to <span class="arithmatex">\(g/L\)</span> for small angles), the pendulum's swings become very large.</p>
+<p>This is when the system absorbs the most energy from the driving force. Understanding these basics helps explore how the interplay of damping, forcing, and the pendulum's properties leads to its diverse dynamics.</p>
+<p># Analysis of Dynamics:</p>
+<p><strong>1. How Parameters Influence Motion:</strong></p>
+<ul>
+<li>
+<p><strong>Damping Coefficient (<span class="arithmatex">\(\beta\)</span>):</strong></p>
+<ul>
+<li>
+<p>Higher damping tends to make the motion simpler (like settling into a regular swing following the driver) and prevents chaos.</p>
+</li>
+<li>
+<p>Lower damping allows for more complex behavior, including larger swings (resonance) and the possibility of chaos.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Driving Amplitude (<span class="arithmatex">\(A\)</span>):</strong></p>
+<ul>
+<li>
+<p>Small amplitude usually results in simple, predictable, periodic motion.</p>
+</li>
+<li>
+<p>Increasing the amplitude provides more energy, which can lead to more complex periodic motions (e.g., swinging differently on successive cycles) and eventually trigger chaotic motion.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Driving Frequency (<span class="arithmatex">\(\omega_D\)</span>):</strong></p>
+<ul>
+<li>
+<p>Affects resonance: If the driving frequency is near the pendulum's natural frequency (<span class="arithmatex">\(\omega_0\)</span>), swings can become very large (especially with low damping).</p>
+</li>
+<li>
+<p>Different frequencies can lead to different types of motion – the pendulum might sync up with the driver, follow a more complex repeating pattern, or become chaotic.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. Transition Between Regular and Chaotic Motion:</strong></p>
+<ul>
+<li><strong>Regular Motion:</strong></li>
+</ul>
+<p>The pendulum's movement is predictable and repeats over time (e.g., swinging back and forth in the exact same way every cycle or every few cycles).</p>
+<ul>
+<li><strong>Chaotic Motion:</strong></li>
+</ul>
+<p>The movement is unpredictable, erratic, and never exactly repeats. Tiny changes in the starting condition lead to vastly different swings later on.</p>
+<ul>
+<li><strong>The Transition:</strong></li>
+</ul>
+<p>As a parameter like the driving amplitude (<span class="arithmatex">\(A\)</span>) is gradually increased, the pendulum's motion can shift from regular to chaotic.</p>
+<p>This often happens in stages, where the motion pattern becomes progressively more complex (e.g., taking twice as long to repeat, then four times, etc. – "period-doubling") before becoming fully chaotic.</p>
+<p><strong>Physical Interpretations:</strong></p>
+<ul>
+<li><strong>Regular:</strong></li>
+</ul>
+<p>Represents stable, predictable states where the energy input, damping, and pendulum's natural swing find a repeating balance.</p>
+<ul>
+<li><strong>Chaotic:</strong></li>
+</ul>
+<p>Represents a highly sensitive, unstable state where the system never settles into a repeating pattern due to the complex interplay between the driving force, damping, and the pendulum's non-linear response.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
