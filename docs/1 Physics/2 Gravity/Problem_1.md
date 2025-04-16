@@ -2,15 +2,15 @@
 
 1. **Balance in Orbit:**
 
- For a planet to orbit the Sun (or a moon to orbit a planet), there's a balance. The pull of gravity trying to draw it inwards is matched by the planet's tendency to keep moving forward and outward.
+For a planet to orbit the Sun (or a moon to orbit a planet), there's a balance. The pull of gravity trying to draw it inwards is matched by the planet's tendency to keep moving forward and outward.
 
 2. **Effect of Distance on Gravity:**
 
- Gravity gets weaker the farther away you are. A planet far from the Sun feels a weaker pull than a planet close to the Sun.
+Gravity gets weaker the farther away you are. A planet far from the Sun feels a weaker pull than a planet close to the Sun.
 
 3. **Effect of Distance on Speed:**
 
- Because gravity is weaker farther out, a distant planet doesn't need to move as fast to stay in its balanced orbit.
+Because gravity is weaker farther out, a distant planet doesn't need to move as fast to stay in its balanced orbit.
 
 Closer planets feel a stronger pull and need to zip around much faster to avoid falling in. So,
 
@@ -41,7 +41,7 @@ The square of the time ($T^2$) increases exactly in step with the cube of the di
 
 ***So, the logical steps are:***
 
- farther distance -> weaker gravity -> slower speed -> longer path -> *much* longer orbital time, following the specific relationship $T^2 \propto R^3$.
+farther distance -> weaker gravity -> slower speed -> longer path -> *much* longer orbital time, following the specific relationship $T^2 \propto R^3$.
 
 
 ***key implications of the $T^2 \propto R^3$ relationship:***
@@ -141,6 +141,8 @@ plt.show()
 ![alt text](image-1.png)
 
 ![alt text](image-2.png)
+
+![alt text](6d3f917c-56d6-465c-a3e5-0242c8126b8f.png)
 
 
 
