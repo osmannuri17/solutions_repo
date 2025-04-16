@@ -185,6 +185,74 @@ The speed to exit our solar system, a requirement for future interstellar travel
 **These velocities dictate the energy needed for different space missions and are fundamental for planning and achieving space exploration goals.**
 
 
+# Graphical representations of escape velocities and cosmic velocities for various celestial bodies.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+G = 6.67430e-11
+
+celestial_bodies_data = [
+    {"name": "Earth", "mass": 5.972e24, "radius": 6.371e6, "color": "blue"},
+    {"name": "Mars", "mass": 6.39e23, "radius": 3.390e6, "color": "red"},
+    {"name": "Jupiter", "mass": 1.898e27, "radius": 6.9911e7, "color": "orange"},
+    {"name": "Moon", "mass": 7.348e22, "radius": 1.737e6, "color": "gray"},
+    {"name": "Sun", "mass": 1.989e30, "radius": 6.957e8, "color": "yellow"},
+]
+
+def calculate_escape_velocity(mass, radius):
+    return np.sqrt((2 * G * mass) / radius) / 1000
+
+def calculate_orbital_velocity(mass, radius):
+    return np.sqrt((G * mass) / radius) / 1000
+
+for body in celestial_bodies_data:
+    body["escape_velocity"] = calculate_escape_velocity(body["mass"], body["radius"])
+    body["orbital_velocity"] = calculate_orbital_velocity(body["mass"], body["radius"])
+
+body_names = [body["name"] for body in celestial_bodies_data]
+escape_velocities = [body["escape_velocity"] for body in celestial_bodies_data]
+orbital_velocities = [body["orbital_velocity"] for body in celestial_bodies_data]
+colors = [body["color"] for body in celestial_bodies_data]
+
+plt.figure(figsize=(10, 6))
+plt.bar(body_names, escape_velocities, color=colors)
+plt.ylabel("Escape Velocity (km/s)")
+plt.title("Escape Velocities of Various Celestial Bodies")
+plt.grid(axis='y', linestyle='--')
+plt.show()
+
+plt.figure(figsize=(10, 6))
+plt.bar(body_names, orbital_velocities, color=colors)
+plt.ylabel("Orbital Velocity (km/s)")
+plt.title("Orbital Velocities (at Surface) of Various Celestial Bodies")
+plt.grid(axis='y', linestyle='--')
+plt.show()
+
+x = np.arange(len(body_names))
+width = 0.35
+
+fig, ax = plt.subplots(figsize=(12, 7))
+rects1 = ax.bar(x - width/2, escape_velocities, width, label='Escape Velocity', color=colors)
+rects2 = ax.bar(x + width/2, orbital_velocities, width, label='Orbital Velocity', color=colors, alpha=0.6)
+
+ax.set_ylabel('Velocity (km/s)')
+ax.set_title('Comparison of Escape and Orbital Velocities')
+ax.set_xticks(x)
+ax.set_xticklabels(body_names)
+ax.legend()
+ax.grid(axis='y', linestyle='--')
+fig.tight_layout()
+plt.show()
+```
+
+![alt text](Figure_1-1.png)
+
+![alt text](<Figure_2 kopyası.png>)
+
+![alt text](Figure_3-1.png) 
+
 
 
 
