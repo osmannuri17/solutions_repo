@@ -88,9 +88,84 @@ The direction of the initial velocity relative to Earth's orbital motion around 
     1.  Calculate the escape velocity from the Sun's gravity at Earth's orbital distance.
     2.  Consider Earth's orbital velocity around the Sun.
     3.  The third cosmic velocity is roughly the speed needed (relative to Earth) so that the vector sum of this speed and Earth's orbital velocity equals the escape velocity from the Sun.
-     We also need to account for escaping Earth's gravity initially.
 
-    The precise mathematical derivation involves energy conservation in both gravitational fields and is more involved than the first two cosmic velocities. The commonly cited value of approximately 16.7 km/s relative to Earth is the result of these more complex calculations and takes into account an optimal launch trajectory.
+ We also need to account for escaping Earth's gravity initially.
+
+The precise mathematical derivation involves energy conservation in both gravitational fields and is more involved than the first two cosmic velocities. The commonly cited value of approximately 16.7 km/s relative to Earth is the result of these more complex calculations and takes into account an optimal launch trajectory.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+G = 6.67430e-11
+
+celestial_bodies_data = [
+    {"name": "Earth", "mass": 5.972e24, "radius": 6.371e6, "color": "blue"},
+    {"name": "Mars", "mass": 6.39e23, "radius": 3.390e6, "color": "red"},
+    {"name": "Jupiter", "mass": 1.898e27, "radius": 6.9911e7, "color": "orange"},
+]
+
+def calculate_escape_velocity(mass, radius):
+    return np.sqrt((2 * G * mass) / radius) / 1000
+
+def calculate_orbital_velocity(mass, radius):
+    return np.sqrt((G * mass) / radius) / 1000
+
+for body in celestial_bodies_data:
+    body["escape_velocity"] = calculate_escape_velocity(body["mass"], body["radius"])
+    body["orbital_velocity"] = calculate_orbital_velocity(body["mass"], body["radius"])
+
+print("Calculated Escape and Orbital Velocities (km/s):")
+for body in celestial_bodies_data:
+    print(f"{body['name']}:")
+    print(f"  Escape Velocity: {body['escape_velocity']:.2f} km/s")
+    print(f"  Orbital Velocity: {body['orbital_velocity']:.2f} km/s")
+    print("-" * 20)
+
+body_names = [body["name"] for body in celestial_bodies_data]
+escape_velocities = [body["escape_velocity"] for body in celestial_bodies_data]
+orbital_velocities = [body["orbital_velocity"] for body in celestial_bodies_data]
+colors = [body["color"] for body in celestial_bodies_data]
+
+plt.figure(figsize=(8, 5))
+plt.bar(body_names, escape_velocities, color=colors)
+plt.ylabel("Escape Velocity (km/s)")
+plt.title("Escape Velocities of Earth, Mars, and Jupiter")
+plt.grid(axis='y', linestyle='--')
+plt.show()
+
+plt.figure(figsize=(8, 5))
+plt.bar(body_names, orbital_velocities, color=colors)
+plt.ylabel("Orbital Velocity (km/s)")
+plt.title("Orbital Velocities (at Surface) of Earth, Mars, and Jupiter")
+plt.grid(axis='y', linestyle='--')
+plt.show()
+
+x = np.arange(len(body_names))
+width = 0.35
+
+fig, ax = plt.subplots(figsize=(10, 6))
+rects1 = ax.bar(x - width/2, escape_velocities, width, label='Escape Velocity', color=colors)
+rects2 = ax.bar(x + width/2, orbital_velocities, width, label='Orbital Velocity', color=colors, alpha=0.6)
+
+ax.set_ylabel('Velocity (km/s)')
+ax.set_title('Comparison of Escape and Orbital Velocities')
+ax.set_xticks(x)
+ax.set_xticklabels(body_names)
+ax.legend()
+ax.grid(axis='y', linestyle='--')
+
+fig.tight_layout()
+plt.show()
+
+print("\nNote: The third cosmic velocity is specific to escaping the solar system from Earth and is not directly calculated or visualized here for individual planets.")
+```
+
+![alt text](Figure_1.png)
+
+![alt text](Figure_2.png)
+
+![alt text](Figure_3.png) 
 
 
 
