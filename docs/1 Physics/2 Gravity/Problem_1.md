@@ -1,16 +1,14 @@
 # Problem 1
 
-# 1
-
-1.  **Balance in Orbit:**
+1. **Balance in Orbit:**
 
  For a planet to orbit the Sun (or a moon to orbit a planet), there's a balance. The pull of gravity trying to draw it inwards is matched by the planet's tendency to keep moving forward and outward.
 
-2.  **Effect of Distance on Gravity:**
+2. **Effect of Distance on Gravity:**
 
  Gravity gets weaker the farther away you are. A planet far from the Sun feels a weaker pull than a planet close to the Sun.
 
-3.  **Effect of Distance on Speed:**
+3. **Effect of Distance on Speed:**
 
  Because gravity is weaker farther out, a distant planet doesn't need to move as fast to stay in its balanced orbit.
 
@@ -18,7 +16,7 @@ Closer planets feel a stronger pull and need to zip around much faster to avoid 
 
 **planets farther away move slower.**
 
-4.  **Effect of Distance on Path:** 
+4. **Effect of Distance on Path:** 
 
 A planet farther from the Sun also has a much bigger circle (orbit) to travel around.
 
@@ -30,24 +28,27 @@ Now, consider the time it takes to complete one orbit (the period):
 
 ***The planet is moving **slower***.
 
-***It has a **longer path** to travel.***
+***It has a longer path to travel.***
 
 * Both these things mean it takes *significantly more time* for a distant planet to complete one orbit compared to a closer one.
 
-6.  **The Specific Rule Found:**
+6. **The Specific Rule Found:**
+
  When astronomers carefully observed and measured this, they found a very specific pattern connecting the orbital time (Period, T) and the distance (Radius, R):
+
 The square of the time ($T^2$) increases exactly in step with the cube of the distance ($R^3$).
 
 ***So, the logical steps are:***
+
  farther distance -> weaker gravity -> slower speed -> longer path -> *much* longer orbital time, following the specific relationship $T^2 \propto R^3$.
 
-# 2
+
 ***key implications of the $T^2 \propto R^3$ relationship:***
 
 1.  **Mapping the Solar System:** 
 
 It allows astronomers to figure out the distances of planets from the Sun by measuring how long their orbits take (their periods).
- If you know one distance accurately, you can find all the others.
+If you know one distance accurately, you can find all the others.
 
 2.  **Weighing Celestial Objects:**
 
@@ -61,8 +62,7 @@ It explains why planets farther out move slower and take much, much longer to co
 
 Helps determine how far planets are from their stars, which is key to understanding if they might be habitable.
 
-
-# 4 Implementation
+# Implementation
 
 ```python
 import numpy as np
