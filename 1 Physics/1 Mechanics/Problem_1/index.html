@@ -208,6 +208,43 @@ In soccer, a well-angled kick clears defenders and reaches the goal. Golfers aim
 <p><strong><em>Space:</em></strong> On Mars or the Moon, lower gravity means rovers or probes travel farther, helping plan landings.</p>
 <p>To make it realistic, we can add air resistance or terrain shapes, often using numerical simulations to handle complex effects, as shown in the script below.</p>
 <h1 id="implementation">Implementation</h1>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+g = 9.81 
+
+def calculate_range(v0, theta_deg, y0=0):
+    """Calculate the range for given initial velocity, angle, and launch height."""
+    theta = np.radians(theta_deg)
+    if y0 == 0:
+        t_flight = 2 * v0 * np.sin(theta) / g
+        R = v0 * np.cos(theta) * t_flight
+    else:
+        a = -g / 2
+        b = v0 * np.sin(theta)
+        c = y0
+        t_flight = (-b + np.sqrt(b**2 - 4*a*c)) / (2*a) 
+        R = v0 * np.cos(theta) * t_flight
+    return R
+
+v0_values = [10, 20, 30]  
+y0_values = [0, 10]       
+theta_deg = np.linspace(0, 90, 91)  
+
+plt.figure(figsize=(10, 6))
+for v0 in v0_values:
+    for y0 in y0_values:
+        R = [calculate_range(v0, th, y0) for th in theta_deg]
+        label = f'v0={v0} m/s, y0={y0} m'
+        plt.plot(theta_deg, R, label=label)
+
+plt.title('Range vs. Angle of Projection')
+plt.xlabel('Angle (degrees)')
+plt.ylabel('Range (meters)')
+plt.grid(True)
+plt.legend()
+plt.show()
+</code></pre>
 <p><img alt="alt text" src="../Figure.png"/></p>
 <h3 id="what-the-plot-shows">What the plot shows:</h3>
 <p><strong><em>Angles:</em></strong>
