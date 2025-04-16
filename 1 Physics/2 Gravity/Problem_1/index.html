@@ -172,119 +172,130 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<h1 id="task-1">Task 1</h1>
-<p>Let’s derive Kepler’s Third Law for circular orbits in a simpler way, focusing on the key ideas with less algebra.</p>
-<p>Imagine a planet orbiting a star with mass <span class="arithmatex">\( M \)</span> in a circle. The orbital radius is <span class="arithmatex">\( r \)</span>, and the orbital period is <span class="arithmatex">\( T \)</span>, the time for one full trip around. Two forces are at play: gravity pulls the planet toward the star, and the planet’s circular motion needs a force to keep it from flying off. Gravity provides that force.</p>
-<p>Gravity’s strength is:</p>
-<div class="arithmatex">\[ F_g = \frac{G M m}{r^2} \]</div>
-<p>where <span class="arithmatex">\( m \)</span> is the planet’s mass and <span class="arithmatex">\( G \)</span> is the gravitational constant. For circular motion, the centripetal force depends on speed <span class="arithmatex">\( v \)</span> and radius <span class="arithmatex">\( r \)</span>:</p>
-<div class="arithmatex">\[ F_c = \frac{m v^2}{r} \]</div>
-<p>Since gravity is the centripetal force, they’re equal:</p>
-<div class="arithmatex">\[ \frac{G M m}{r^2} = \frac{m v^2}{r} \]</div>
-<p>Cancel <span class="arithmatex">\( m \)</span> (it’s not zero) and simplify:</p>
-<div class="arithmatex">\[ \frac{G M}{r^2} = \frac{v^2}{r} \]</div>
-<p>Multiply both sides by <span class="arithmatex">\( r \)</span>:</p>
-<div class="arithmatex">\[ v^2 = \frac{G M}{r} \]</div>
-<p>Now, the speed <span class="arithmatex">\( v \)</span> is how fast the planet moves around the circle. One orbit’s distance is the circumference, <span class="arithmatex">\( 2\pi r \)</span>, and it takes time <span class="arithmatex">\( T \)</span>, so:</p>
-<div class="arithmatex">\[ v = \frac{2\pi r}{T} \]</div>
-<p>Square it:</p>
-<div class="arithmatex">\[ v^2 = \frac{4\pi^2 r^2}{T^2} \]</div>
-<p>Set the two expressions for <span class="arithmatex">\( v^2 \)</span> equal:</p>
-<div class="arithmatex">\[ \frac{4\pi^2 r^2}{T^2} = \frac{G M}{r} \]</div>
-<p>Multiply both sides by <span class="arithmatex">\( T^2 \)</span> and divide by <span class="arithmatex">\( \frac{G M}{r} \)</span> (or cross-multiply):</p>
-<div class="arithmatex">\[ 4\pi^2 r^2 = \frac{G M}{r} \cdot T^2 \]</div>
-<p>Multiply both sides by <span class="arithmatex">\( r \)</span>:</p>
-<div class="arithmatex">\[ 4\pi^2 r^3 = G M T^2 \]</div>
-<p>Divide by <span class="arithmatex">\( G M \)</span>:</p>
-<div class="arithmatex">\[ T^2 = \frac{4\pi^2}{G M} r^3 \]</div>
-<p>That’s it! <span class="arithmatex">\( T^2 \)</span> (the period squared) is proportional to <span class="arithmatex">\( r^3 \)</span> (the radius cubed), with <span class="arithmatex">\( \frac{4\pi^2}{G M} \)</span> as the constant. This is Kepler’s Third Law, simplified: </p>
-<div class="arithmatex">\[ T^2 \propto r^3 \]</div>
-<h1 id="task-2">TASK 2</h1>
-<p>Let’s discuss the implications of Kepler’s Third Law—the relationship where the square of the orbital period (<span class="arithmatex">\( T^2 \)</span>) is proportional to the cube of the orbital radius (<span class="arithmatex">\( r^3 \)</span>)—for astronomy, focusing on how it helps calculate planetary masses and distances. I’ll keep it simple and straightforward.</p>
-<h3 id="implications-for-astronomy">Implications for Astronomy</h3>
-<p>Kepler’s Third Law, <span class="arithmatex">\( T^2 = \frac{4\pi^2}{G M} r^3 \)</span>, connects a planet’s orbit to the mass of the object it orbits (like a star or planet) and the distance between them. This is a big deal because it lets astronomers figure out things about space without needing to visit planets or stars. It’s like a cosmic ruler and scale rolled into one.</p>
-<h4 id="1-calculating-planetary-masses">1. Calculating Planetary Masses</h4>
-<p>If something (like a moon or satellite) orbits a planet, we can use the law to find the planet’s mass. Here’s how:
-- Measure the orbital period <span class="arithmatex">\( T \)</span> (how long one orbit takes) and the radius <span class="arithmatex">\( r \)</span> (distance from the planet’s center).
-- Plug those into the equation: <span class="arithmatex">\( T^2 = \frac{4\pi^2}{G M} r^3 \)</span>.
-- Rearrange to solve for <span class="arithmatex">\( M \)</span> (the planet’s mass): <span class="arithmatex">\( M = \frac{4\pi^2 r^3}{G T^2} \)</span>.
-- Since <span class="arithmatex">\( G \)</span> is a known constant (<span class="arithmatex">\( 6.674 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2} \)</span>), and we can observe <span class="arithmatex">\( T \)</span> and <span class="arithmatex">\( r \)</span>, we calculate <span class="arithmatex">\( M \)</span>.</p>
-<p>For example, Earth’s moon orbits in about 27.3 days (<span class="arithmatex">\( T \)</span>) at a distance of roughly 384,000 km (<span class="arithmatex">\( r \)</span>). Using these, astronomers calculated Earth’s mass long ago. The same trick works for any planet with a moon or for the Sun with planets orbiting it.</p>
-<h4 id="2-measuring-distances">2. Measuring Distances</h4>
-<p>If we know the mass of the central body (like the Sun), we can flip the law to find distances:
-- Measure <span class="arithmatex">\( T \)</span> (say, a planet’s year).
-- Use the Sun’s known mass (<span class="arithmatex">\( M \approx 1.989 \times 10^{30} \, \text{kg} \)</span>) and solve for <span class="arithmatex">\( r \)</span>: <span class="arithmatex">\( r^3 = \frac{G M T^2}{4\pi^2} \)</span>, then take the cube root.
-- This gives the average distance from the Sun to the planet.</p>
-<p>For instance, if we know Mars takes 687 days to orbit the Sun, we can compute its distance from the Sun using the Sun’s mass. This helped map our solar system before telescopes got super precise.</p>
-<h4 id="3-broader-impact">3. Broader Impact</h4>
-<ul>
-<li><strong>Solar System Design</strong>: The law shows why inner planets (like Mercury) orbit fast and outer ones (like Neptune) take longer—bigger <span class="arithmatex">\( r \)</span> means bigger <span class="arithmatex">\( T \)</span>.</li>
-<li><strong>Exoplanets</strong>: Astronomers spot planets around other stars by watching how long they take to orbit (<span class="arithmatex">\( T \)</span>) and estimating their distance (<span class="arithmatex">\( r \)</span>), then guessing the star’s mass.</li>
-<li><strong>Satellites</strong>: We use it to place satellites at the right distance from Earth for specific orbit times, like 24 hours for GPS satellites.</li>
-</ul>
-<h3 id="simple-takeaway">Simple Takeaway</h3>
-<p>Kepler’s Third Law is a tool that turns time and distance into mass and vice versa. Watch how long something orbits and how far it is, and you can weigh a planet or measure its distance from a star. It’s a simple rule that unlocks the scale of the universe!</p>
-<h1 id="task-3">TASK 3</h1>
-<p>Let’s analyze real-world examples of Kepler’s Third Law (<span class="arithmatex">\( T^2 = \frac{4\pi^2}{G M} r^3 \)</span>) using the Moon’s orbit around Earth and the orbits of planets in the Solar System. I’ll keep it simple and based on the given information about orbital period and radius.</p>
-<h3 id="1-the-moons-orbit-around-earth">1. The Moon’s Orbit Around Earth</h3>
-<p>The Moon orbits Earth, so Earth’s mass (<span class="arithmatex">\( M \)</span>) is the central mass in the equation. We can use Kepler’s Third Law to check how the Moon’s orbital period and radius fit together.</p>
-<ul>
-<li><strong>Orbital Period (<span class="arithmatex">\( T \)</span>)</strong>: The Moon takes about 27.3 days to orbit Earth. Convert that to seconds for consistency:<br/>
-<span class="arithmatex">\( T = 27.3 \, \text{days} \times 86,400 \, \text{s/day} \approx 2.36 \times 10^6 \, \text{seconds} \)</span>.</li>
-<li><strong>Orbital Radius (<span class="arithmatex">\( r \)</span>)</strong>: The average distance from Earth to the Moon is about 384,000 km, or <span class="arithmatex">\( r = 3.84 \times 10^8 \, \text{meters} \)</span>.</li>
-<li><strong>Earth’s Mass (<span class="arithmatex">\( M \)</span>)</strong>: Known to be about <span class="arithmatex">\( 5.972 \times 10^{24} \, \text{kg} \)</span>.</li>
-<li><strong>Gravitational Constant (<span class="arithmatex">\( G \)</span>)</strong>: <span class="arithmatex">\( 6.674 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2} \)</span>.</li>
-</ul>
-<h3 id="2-planets-in-the-solar-system">2. Planets in the Solar System</h3>
-<p>Now let’s look at planets orbiting the Sun, with the Sun’s mass (<span class="arithmatex">\( M \approx 1.989 \times 10^{30} \, \text{kg} \)</span>) as the central mass. We’ll test Earth and Mars.</p>
-<h3 id="simple-solution">Simple Solution</h3>
-<p>Kepler’s Third Law works in the real world. For the Moon, its 27.3-day orbit at 384,000 km fits Earth’s mass. For planets like Earth (1 year, 1 AU) and Mars (687 days, 1.524 AU), their orbits match the Sun’s mass. The law ties <span class="arithmatex">\( T^2 \)</span> to <span class="arithmatex">\( r^3 \)</span>, letting us predict and check how things move in space. It’s a simple rule that fits the Moon and planets perfectly!</p>
-<h1 id="task-4">TASK 4</h1>
-<p>Let’s implement a simple computational model to simulate circular orbits and verify Kepler’s Third Law (<span class="arithmatex">\( T^2 = \frac{4\pi^2}{G M} r^3 \)</span>), based on the given information about orbital period and radius. I’ll keep it straightforward, using a basic approach you could code in something like Python, and focus on verifying the relationship.</p>
-<h3 id="simple-computational-model">Simple Computational Model</h3>
-<p>We’ll simulate a planet orbiting a star (like the Sun) in a circular orbit. The idea is to calculate the orbital period (<span class="arithmatex">\( T \)</span>) for a given radius (<span class="arithmatex">\( r \)</span>) and mass (<span class="arithmatex">\( M \)</span>), then check if <span class="arithmatex">\( T^2 \propto r^3 \)</span> holds. Here’s how to do it simply:</p>
-<h4 id="step-1-set-up-the-system">Step 1: Set Up the System</h4>
-<ul>
-<li><strong>Central Mass (<span class="arithmatex">\( M \)</span>)</strong>: Use the Sun’s mass, <span class="arithmatex">\( M = 1.989 \times 10^{30} \, \text{kg} \)</span>.</li>
-<li><strong>Gravitational Constant (<span class="arithmatex">\( G \)</span>)</strong>: <span class="arithmatex">\( G = 6.674 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2} \)</span>.</li>
-<li><strong>Orbital Radii (<span class="arithmatex">\( r \)</span>)</strong>: Pick a few distances, like 1 AU, 2 AU, and 3 AU (1 AU = <span class="arithmatex">\( 1.496 \times 10^{11} \, \text{m} \)</span>).</li>
-</ul>
-<h4 id="step-2-calculate-orbital-speed">Step 2: Calculate Orbital Speed</h4>
-<p>For a circular orbit, the gravitational force equals the centripetal force. The orbital speed (<span class="arithmatex">\( v \)</span>) is:
-[ v = \sqrt{\frac{G M}{r}} ]
-We’ll compute this for each radius.</p>
-<h4 id="step-3-compute-orbital-period">Step 3: Compute Orbital Period</h4>
-<p>The period (<span class="arithmatex">\( T \)</span>) is the time to travel the circumference (<span class="arithmatex">\( 2\pi r \)</span>) at speed <span class="arithmatex">\( v \)</span>:
-[ T = \frac{2\pi r}{v} = \frac{2\pi r}{\sqrt{\frac{G M}{r}}} ]
-Simplify:
-[ T = 2\pi \sqrt{\frac{r^3}{G M}} ]
-This matches Kepler’s Third Law when squared: <span class="arithmatex">\( T^2 = \frac{4\pi^2}{G M} r^3 \)</span>.</p>
-<h4 id="step-4-conclusion">Step 4: Conclusion</h4>
-<p>The model calculates <span class="arithmatex">\( T \)</span> from <span class="arithmatex">\( r \)</span> and <span class="arithmatex">\( M \)</span>, and when we square <span class="arithmatex">\( T \)</span> and compare it to <span class="arithmatex">\( r^3 \)</span>, the relationship <span class="arithmatex">\( T^2 = \frac{4\pi^2}{G M} r^3 \)</span> holds every time. The constant <span class="arithmatex">\( \frac{4\pi^2}{G M} \)</span> stays the same for the Sun’s mass, proving the law works.</p>
-<h3 id="simple-solution_1">Simple Solution</h3>
-<p>This model picks distances (like 1 AU, 2 AU, 3 AU), finds the speed and period using gravity, and checks that <span class="arithmatex">\( T^2 \)</span> matches <span class="arithmatex">\( r^3 \)</span> times a constant. For the Sun, 1 AU gives 1 year, 2 AU gives about 2.83 years, and 3 AU gives about 5.2 years—Kepler’s Third Law is spot on every time!</p>
-<h1 id="deliverables">Deliverables</h1>
-<h1 id="a-detailed-explanation-of-the-subjects">A detailed explanation of the subjects</h1>
-<h1 id="orbital-period-radius-and-keplers-third-law">Orbital Period, Radius, and Kepler’s Third Law</h1>
-<h2 id="orbital-period">Orbital Period</h2>
-<p>The <strong>orbital period</strong> (<span class="arithmatex">\( T \)</span>) is the time an object takes to complete one full orbit around another body.<br/>
-- <strong>Example</strong>: Earth orbits the Sun in <strong>1 year</strong> (365.25 days), and the Moon orbits Earth in <strong>27.3 days</strong>.  </p>
-<h2 id="orbital-radius">Orbital Radius</h2>
-<p>The <strong>orbital radius</strong> (<span class="arithmatex">\( r \)</span>) is the distance between the center of the orbiting object and the body it orbits.<br/>
-- <strong>Example</strong>: Earth’s orbital radius around the Sun is <strong>1 AU (1.496 × 10¹¹ m)</strong>.  </p>
-<h2 id="keplers-third-law">Kepler’s Third Law</h2>
-<p>Kepler’s Third Law states:  </p>
-<div class="arithmatex">\[
-T^2 \propto r^3
-\]</div>
-<p>This means that the <strong>square of the period</strong> is proportional to the <strong>cube of the radius</strong>. In other words:<br/>
-- <strong>Larger orbits take longer</strong>—if you double the radius, the period increases by about <strong>2.83 times</strong>.<br/>
-- The relationship is based on gravity balancing motion.  </p>
-<h2 id="why-it-matters">Why It Matters</h2>
-<p>Kepler’s Law helps us:<br/>
-- Predict planetary motion.<br/>
-- Measure masses of celestial bodies.<br/>
-- Understand why inner planets orbit faster than outer ones.  </p>
+<h1 id="1">1</h1>
+<ol>
+<li><strong>Balance in Orbit:</strong></li>
+</ol>
+<p>For a planet to orbit the Sun (or a moon to orbit a planet), there's a balance. The pull of gravity trying to draw it inwards is matched by the planet's tendency to keep moving forward and outward.</p>
+<ol>
+<li><strong>Effect of Distance on Gravity:</strong></li>
+</ol>
+<p>Gravity gets weaker the farther away you are. A planet far from the Sun feels a weaker pull than a planet close to the Sun.</p>
+<ol>
+<li><strong>Effect of Distance on Speed:</strong></li>
+</ol>
+<p>Because gravity is weaker farther out, a distant planet doesn't need to move as fast to stay in its balanced orbit.</p>
+<p>Closer planets feel a stronger pull and need to zip around much faster to avoid falling in. So,</p>
+<p><strong>planets farther away move slower.</strong></p>
+<ol>
+<li><strong>Effect of Distance on Path:</strong> </li>
+</ol>
+<p>A planet farther from the Sun also has a much bigger circle (orbit) to travel around.</p>
+<p><strong>Its path is longer.</strong></p>
+<ol>
+<li><strong>Combining Effects on Time (Period):</strong></li>
+</ol>
+<p>Now, consider the time it takes to complete one orbit (the period):
+    * The planet is moving <strong>slower</strong>.
+    * It has a <strong>longer path</strong> to travel.
+    * Both these things mean it takes <em>significantly more time</em> for a distant planet to complete one orbit compared to a closer one.</p>
+<ol>
+<li><strong>The Specific Rule Found:</strong>
+ When astronomers carefully observed and measured this, they found a very specific pattern connecting the orbital time (Period, T) and the distance (Radius, R): The square of the time (<span class="arithmatex">\(T^2\)</span>) increases exactly in step with the cube of the distance (<span class="arithmatex">\(R^3\)</span>).</li>
+</ol>
+<p>So, the logical steps are: farther distance -&gt; weaker gravity -&gt; slower speed -&gt; longer path -&gt; <em>much</em> longer orbital time, following the specific relationship <span class="arithmatex">\(T^2 \propto R^3\)</span>.</p>
+<h1 id="2">2</h1>
+<p><strong><em>key implications of the <span class="arithmatex">\(T^2 \propto R^3\)</span> relationship:</em></strong></p>
+<ol>
+<li><strong>Mapping the Solar System:</strong> </li>
+</ol>
+<p>It allows astronomers to figure out the distances of planets from the Sun by measuring how long their orbits take (their periods).
+ If you know one distance accurately, you can find all the others.</p>
+<ol>
+<li><strong>Weighing Celestial Objects:</strong></li>
+</ol>
+<p>This is a major use! By observing something in orbit (like a moon around a planet, or a planet around a star) and measuring its period (<span class="arithmatex">\(T\)</span>) and orbital size (<span class="arithmatex">\(R\)</span>), astronomers can calculate the <strong>mass</strong> of the central object it's orbiting. This is how we know the mass of the Sun, planets with moons, and even distant stars.</p>
+<ol>
+<li><strong>Understanding Speed and Time:</strong> </li>
+</ol>
+<p>It explains why planets farther out move slower and take much, much longer to complete one orbit.</p>
+<ol>
+<li><strong>Studying Exoplanets:</strong></li>
+</ol>
+<p>Helps determine how far planets are from their stars, which is key to understanding if they might be habitable.</p>
+<h1 id="4-implementation">4 Implementation</h1>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+G = 6.67430e-11
+M_sun = 1.989e30
+
+AU = 1.496e11
+radii = np.array([0.4, 1.0, 1.5, 5.2, 10.0]) * AU
+
+periods_squared = []
+radii_cubed = []
+periods = []
+kepler_ratios = []
+
+GM = G * M_sun
+
+for R in radii:
+    T_squared = (4 * np.pi**2 * R**3) / GM
+    T = np.sqrt(T_squared)
+    periods.append(T)
+    periods_squared.append(T_squared)
+    radii_cubed.append(R**3)
+    ratio = T_squared / (R**3)
+    kepler_ratios.append(ratio)
+
+expected_ratio = (4 * np.pi**2) / GM
+
+plt.figure(figsize=(8, 6))
+plt.plot(radii_cubed, periods_squared, 'bo-', label='Calculated Data')
+plt.title("Verification of Kepler's Third Law ($T^2$ vs $R^3$)")
+plt.xlabel("Orbital Radius Cubed ($R^3$) [$m^3$]")
+plt.ylabel("Orbital Period Squared ($T^2$) [$s^2$]")
+plt.grid(True)
+plt.ticklabel_format(style='sci', axis='both', scilimits=(0,0))
+plt.legend()
+plt.show()
+
+plt.figure(figsize=(8, 6))
+log_T = np.log10(np.array(periods))
+log_R = np.log10(radii)
+slope, intercept = np.polyfit(log_R, log_T, 1)
+plt.plot(log_R, log_T, 'go', label='Calculated Data')
+plt.plot(log_R, slope * log_R + intercept, 'r-', label=f'Fit (slope={slope:.3f})')
+plt.title("Verification of Kepler's Third Law (log-log plot)")
+plt.xlabel("log10(Orbital Radius R [m])")
+plt.ylabel("log10(Orbital Period T [s])")
+plt.grid(True)
+plt.legend()
+plt.show()
+
+R_orbit = AU
+T_orbit = np.sqrt((4 * np.pi**2 * R_orbit**3) / GM)
+omega = 2 * np.pi / T_orbit
+t_orbit_points = np.linspace(0, T_orbit, 200)
+x_orbit = R_orbit * np.cos(omega * t_orbit_points)
+y_orbit = R_orbit * np.sin(omega * t_orbit_points)
+
+plt.figure(figsize=(6, 6))
+plt.plot(x_orbit, y_orbit, 'b-')
+plt.plot(0, 0, 'yo', markersize=10, label='Sun')
+plt.title(f'Simulated Circular Orbit (R = {R_orbit/AU:.1f} AU)')
+plt.xlabel("X Position (m)")
+plt.ylabel("Y Position (m)")
+plt.gca().set_aspect('equal', adjustable='box')
+plt.grid(True)
+plt.legend()
+plt.ticklabel_format(style='sci', axis='both', scilimits=(0,0))
+plt.show()
+</code></pre>
+<p><img alt="alt text" src="../image.png"/></p>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<p><img alt="alt text" src="../image-2.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
