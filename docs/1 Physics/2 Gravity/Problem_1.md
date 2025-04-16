@@ -24,17 +24,22 @@ A planet farther from the Sun also has a much bigger circle (orbit) to travel ar
 
  **Its path is longer.**
 
-5.  **Combining Effects on Time (Period):**
+5. **Combining Effects on Time (Period):**
 
- Now, consider the time it takes to complete one orbit (the period):
-    * The planet is moving **slower**.
-    * It has a **longer path** to travel.
-    * Both these things mean it takes *significantly more time* for a distant planet to complete one orbit compared to a closer one.
+Now, consider the time it takes to complete one orbit (the period):
+
+***The planet is moving **slower***.
+
+***It has a **longer path** to travel.***
+
+* Both these things mean it takes *significantly more time* for a distant planet to complete one orbit compared to a closer one.
 
 6.  **The Specific Rule Found:**
- When astronomers carefully observed and measured this, they found a very specific pattern connecting the orbital time (Period, T) and the distance (Radius, R): The square of the time ($T^2$) increases exactly in step with the cube of the distance ($R^3$).
+ When astronomers carefully observed and measured this, they found a very specific pattern connecting the orbital time (Period, T) and the distance (Radius, R):
+The square of the time ($T^2$) increases exactly in step with the cube of the distance ($R^3$).
 
-So, the logical steps are: farther distance -> weaker gravity -> slower speed -> longer path -> *much* longer orbital time, following the specific relationship $T^2 \propto R^3$.
+***So, the logical steps are:***
+ farther distance -> weaker gravity -> slower speed -> longer path -> *much* longer orbital time, following the specific relationship $T^2 \propto R^3$.
 
 # 2
 ***key implications of the $T^2 \propto R^3$ relationship:***
