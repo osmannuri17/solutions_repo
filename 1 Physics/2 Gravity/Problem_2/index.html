@@ -172,6 +172,87 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="define-velocities">Define velocities:</h1>
+<p><strong><em>First Cosmic Velocity (Orbital Velocity):</em></strong></p>
+<p>The speed to orbit a celestial body without falling back. Gravity pulls it down, but its speed keeps it moving forward, resulting in a continuous circle.</p>
+<p><strong><em>Second Cosmic Velocity (Escape Velocity):</em></strong></p>
+<p>The speed to break free from a celestial body's gravity completely and never return. It's the point where the object has enough energy to overcome the gravitational pull.</p>
+<p><strong><em>Third Cosmic Velocity (Solar System Escape Velocity):</em></strong>
+The speed needed, when launching from Earth, to escape the Sun's gravity and leave the entire solar system. It's about overcoming the Sun's pull while already moving with Earth.</p>
+<h1 id="analyzing-mathematical-derivations-of-velocities">Analyzing mathematical derivations of velocities:</h1>
+<h3 id="first-cosmic-velocity-orbital-velocity">First Cosmic Velocity (Orbital Velocity)</h3>
+<ul>
+<li><strong>Simplified Derivation:</strong></li>
+</ul>
+<p>For a stable circular orbit, the gravitational force pulling the object towards the center of the celestial body must equal the centripetal force needed to keep it moving in a circle.
+    <span class="arithmatex">\(<span class="arithmatex">\(\frac{GMm}{r^2} = \frac{mv_1^2}{r}\)</span>\)</span>
+    Where:
+    * <span class="arithmatex">\(G\)</span> is the universal gravitational constant.
+    * <span class="arithmatex">\(M\)</span> is the mass of the celestial body.
+    * <span class="arithmatex">\(m\)</span> is the mass of the orbiting object (which cancels out).
+    * <span class="arithmatex">\(r\)</span> is the radius of the orbit (approximately the radius of the celestial body if orbiting just above the surface).
+    * <span class="arithmatex">\(v_1\)</span> is the first cosmic velocity.</p>
+<pre><code>Solving for \(v_1\), we get:
+$$v_1 = \sqrt{\frac{GM}{r}}$$
+</code></pre>
+<ul>
+<li><strong>Parameters Affecting <span class="arithmatex">\(v_1\)</span>:</strong><ul>
+<li><strong>Mass of the Celestial Body (<span class="arithmatex">\(M\)</span>):</strong> A more massive body exerts a stronger gravitational pull, requiring a higher orbital velocity to maintain a stable orbit. <span class="arithmatex">\(v_1\)</span> is directly proportional to the square root of <span class="arithmatex">\(M\)</span>.</li>
+<li><strong>Radius of the Orbit (<span class="arithmatex">\(r\)</span>):</strong> The closer the orbit is to the center of the celestial body (smaller <span class="arithmatex">\(r\)</span>), the stronger the gravitational force and the higher the required orbital velocity. <span class="arithmatex">\(v_1\)</span> is inversely proportional to the square root of <span class="arithmatex">\(r\)</span>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="second-cosmic-velocity-escape-velocity">Second Cosmic Velocity (Escape Velocity)</h3>
+<ul>
+<li><strong>Simplified Derivation:</strong> Escape velocity is achieved when the kinetic energy of an object is equal to the magnitude of its gravitational potential energy.
+    <span class="arithmatex">(<span class="arithmatex">\(\frac{1}{2}mv_e^2 = \frac{GMm}{r}\)</span>\)</span>
+    Where:<ul>
+<li><span class="arithmatex">\(G\)</span> is the universal gravitational constant.</li>
+<li><span class="arithmatex">\(M\)</span> is the mass of the celestial body.</li>
+<li><span class="arithmatex">\(m\)</span> is the mass of the escaping object (which cancels out).</li>
+<li><span class="arithmatex">\(r\)</span> is the initial distance from the center of the celestial body (typically its radius).</li>
+<li><span class="arithmatex">\(v_e\)</span> is the escape velocity.</li>
+</ul>
+</li>
+</ul>
+<p>Solving for <span class="arithmatex">\(v_e\)</span>, we get:
+    <span class="arithmatex">\(<span class="arithmatex">\(v_e = \sqrt{\frac{2GM}{r}}\)</span>\)</span></p>
+<p>Notice that <span class="arithmatex">\(v_e = \sqrt{2} \cdot v_1\)</span>.</p>
+<ul>
+<li>
+<p><strong>Parameters Affecting <span class="arithmatex">\(v_e\)</span>:</strong></p>
+</li>
+<li>
+<p><strong>Mass of the Celestial Body (<span class="arithmatex">\(M\)</span>):</strong></p>
+</li>
+</ul>
+<p>Similar to orbital velocity, a more massive body has a stronger gravitational pull, requiring a higher escape velocity. <span class="arithmatex">\(v_e\)</span> is directly proportional to the square root of <span class="arithmatex">\(M\)</span>.</p>
+<ul>
+<li><strong>Initial Distance from the Center (<span class="arithmatex">\(r\)</span>):</strong></li>
+</ul>
+<p>The closer the object starts to the center (smaller <span class="arithmatex">\(r\)</span>), the stronger the gravitational pull it needs to overcome, resulting in a higher escape velocity. <span class="arithmatex">\(v_e\)</span> is inversely proportional to the square root of <span class="arithmatex">\(r\)</span>.</p>
+<h3 id="third-cosmic-velocity-solar-system-escape-velocity-from-earths-orbit">Third Cosmic Velocity (Solar System Escape Velocity from Earth's Orbit)</h3>
+<ul>
+<li><strong>Simplified Explanation of Parameters:</strong></li>
+</ul>
+<p>The third cosmic velocity is more complex as it involves escaping the gravitational influence of both Earth and the Sun. It depends on:
+    * <strong>Sun's Mass:</strong> The primary factor determining the overall escape speed from the solar system at Earth's orbital distance.
+    * <strong>Earth's Orbital Velocity:</strong> Earth is already moving around the Sun at a significant speed. Launching in the direction of Earth's motion allows us to use this existing velocity as part of the escape velocity.
+    * <strong>Earth's Mass and Radius:</strong> These determine the escape velocity from Earth's surface, which is the initial "push" needed to get away from our planet's gravity before focusing on escaping the Sun.
+    * <strong>Launch Trajectory:</strong> The direction of the initial velocity relative to Earth's orbital motion around the Sun significantly affects the required speed. Launching in Earth's direction of travel is most efficient.</p>
+<ul>
+<li>
+<p><strong>Approximate Calculation (Conceptual):</strong></p>
+<ol>
+<li>Calculate the escape velocity from the Sun's gravity at Earth's orbital distance.</li>
+<li>Consider Earth's orbital velocity around the Sun.</li>
+<li>The third cosmic velocity is roughly the speed needed (relative to Earth) so that the vector sum of this speed and Earth's orbital velocity equals the escape velocity from the Sun.
+ We also need to account for escaping Earth's gravity initially.</li>
+</ol>
+<p>The precise mathematical derivation involves energy conservation in both gravitational fields and is more involved than the first two cosmic velocities. The commonly cited value of approximately 16.7 km/s relative to Earth is the result of these more complex calculations and takes into account an optimal launch trajectory.</p>
+</li>
+</ul>
+<p>In summary, the first and second cosmic velocities are primarily determined by the mass and radius (or orbital distance) of the celestial body being escaped or orbited. The third cosmic velocity is influenced by the mass of the Sun, Earth's orbital motion, and the initial escape from Earth's gravitational pull.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
