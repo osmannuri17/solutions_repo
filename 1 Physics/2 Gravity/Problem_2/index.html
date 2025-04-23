@@ -175,10 +175,72 @@
 <h1 id="define-velocities">Define velocities:</h1>
 <p><strong><em>First Cosmic Velocity (Orbital Velocity):</em></strong></p>
 <p>The speed to orbit a celestial body without falling back. Gravity pulls it down, but its speed keeps it moving forward, resulting in a continuous circle.</p>
+<ol>
+<li><strong>Gravity equals centripetal force:</strong> </li>
+</ol>
+<p>For a stable low orbit, the gravitational force (<span class="arithmatex">\(G \frac{Mm}{R^2}\)</span>) equals the centripetal force (<span class="arithmatex">\(m \frac{v_1^2}{R}\)</span>).</p>
+<ol>
+<li>
+<p><strong>Equation:</strong></p>
+<div class="arithmatex">\[G \frac{Mm}{R^2} = m \frac{v_1^2}{R}\]</div>
+</li>
+<li>
+<p><strong>Solve for <span class="arithmatex">\(v_1\)</span>:</strong></p>
+<ul>
+<li>Cancel <span class="arithmatex">\(m\)</span>:  <span class="arithmatex">\(G \frac{M}{R^2} = \frac{v_1^2}{R}\)</span></li>
+<li>Multiply by <span class="arithmatex">\(R\)</span>: <span class="arithmatex">\(G \frac{M}{R} = v_1^2\)</span></li>
+<li>Take square root: <span class="arithmatex">\(v_1 = \sqrt{\frac{GM}{R}}\)</span></li>
+</ul>
+</li>
+<li>
+<p><strong>Using surface gravity (<span class="arithmatex">\(g = \frac{GM}{R^2}\)</span>):</strong></p>
+<p><span class="arithmatex">\(v_1 = \sqrt{\frac{GM}{R}} = \sqrt{\frac{GM}{R^2} \cdot R} = \sqrt{gR}\)</span></p>
+</li>
+</ol>
+<p><strong>Formula for First Cosmic Velocity:</strong></p>
+<div class="arithmatex">\[v_1 = \sqrt{\frac{GM}{R}} \quad \text{or} \quad v_1 = \sqrt{gR}\]</div>
 <p><strong><em>Second Cosmic Velocity (Escape Velocity):</em></strong></p>
 <p>The speed to break free from a celestial body's gravity completely and never return. It's the point where the object has enough energy to overcome the gravitational pull.</p>
+<ol>
+<li><strong>Conservation of Energy:</strong></li>
+</ol>
+<p>For an object to escape the gravitational pull of a celestial body, its initial kinetic energy must be at least equal to the magnitude of its initial gravitational potential energy.</p>
+<ol>
+<li>
+<p><strong>Energy Equation:</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{1}{2} m v_2^2 - G \frac{Mm}{R} = 0\)</span>\)</span>
+    where:</p>
+<ul>
+<li><span class="arithmatex">\(v_2\)</span> is the second cosmic velocity.</li>
+<li><span class="arithmatex">\(m\)</span> is the mass of the escaping object.</li>
+<li><span class="arithmatex">\(M\)</span> is the mass of the celestial body.</li>
+<li><span class="arithmatex">\(R\)</span> is the distance from the center of the celestial body (typically its radius when launching from the surface).</li>
+<li><span class="arithmatex">\(G\)</span> is the universal gravitational constant.</li>
+</ul>
+</li>
+<li>
+<p><strong>Solve for <span class="arithmatex">\(v_2\)</span>:</strong></p>
+<ul>
+<li>Move the potential energy term to the right side:
+    <span class="arithmatex">\(<span class="arithmatex">\(\frac{1}{2} m v_2^2 = G \frac{Mm}{R}\)</span>\)</span></li>
+<li>Cancel out the mass of the escaping object (<span class="arithmatex">\(m\)</span>):
+    <span class="arithmatex">\(<span class="arithmatex">\(\frac{1}{2} v_2^2 = G \frac{M}{R}\)</span>\)</span></li>
+<li>Multiply by 2:
+    <span class="arithmatex">\(<span class="arithmatex">\(v_2^2 = 2 G \frac{M}{R}\)</span>\)</span></li>
+<li>Take the square root:
+    <span class="arithmatex">\(<span class="arithmatex">\(v_2 = \sqrt{\frac{2GM}{R}}\)</span>\)</span></li>
+</ul>
+</li>
+<li>
+<p><strong>Using surface gravity (<span class="arithmatex">\(g = \frac{GM}{R^2}\)</span>):</strong></p>
+<div class="arithmatex">\[v_2 = \sqrt{2 \cdot \frac{GM}{R} \cdot \frac{R}{R}} = \sqrt{2 \cdot \frac{GM}{R^2} \cdot R} = \sqrt{2gR}\]</div>
+</li>
+</ol>
+<p><strong>Formula for Second Cosmic Velocity:</strong></p>
+<div class="arithmatex">\[v_2 = \sqrt{\frac{2GM}{R}} \quad \text{or} \quad v_2 = \sqrt{2gR}\]</div>
 <p><strong><em>Third Cosmic Velocity (Solar System Escape Velocity):</em></strong>
 The speed needed, when launching from Earth, to escape the Sun's gravity and leave the entire solar system. It's about overcoming the Sun's pull while already moving with Earth.</p>
+<p>The generally accepted value is approximately 16.7 km/s.</p>
 <h1 id="analyzing-mathematical-derivations-of-velocities">Analyzing mathematical derivations of velocities:</h1>
 <h3 id="first-cosmic-velocity-orbital-velocity">First Cosmic Velocity (Orbital Velocity)</h3>
 <ul>
