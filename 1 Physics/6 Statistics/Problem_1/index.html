@@ -250,6 +250,43 @@ plt.show()
 
 </code></pre>
 <p><img alt="alt text" src="../Unknown-3.png"/> </p>
+<h1 id="parameter-exploration">Parameter Exploration:</h1>
+<p><strong><em>Investigating the effects of the original distribution and sample size.</em></strong></p>
+<p>We’ll explore how:</p>
+<p>The shape of the original distribution (uniform, exponential, binomial) affects the rate of convergence to a normal distribution as the sample size increases.</p>
+<p>The population variance influences the spread of the sample mean distribution.</p>
+<p><strong><em>Key Insights to Explore:</em></strong></p>
+<h2 id="shape-of-the-original-distribution">Shape of the original distribution:</h2>
+<h3 id="for-uniform">For uniform:</h3>
+<p>The distribution is already flat, so it might converge to normality fairly quickly.</p>
+<h3 id="for-exponential">For exponential:</h3>
+<p>This is right-skewed, and convergence to normal might take a bit longer.</p>
+<h3 id="for-binomial">For binomial:</h3>
+<p>Symmetry can form quickly, depending on the number of trials (n) and the probability (p).</p>
+<h3 id="effect-of-population-variance">Effect of population variance:</h3>
+<p>Larger variances in the population will lead to wider spread (more variability) in the sample mean distribution, even as the sample size increases.</p>
+<pre><code class="language-python">def calculate_variance(sample_means):
+    return np.var(sample_means)
+uniform_variances = {}
+exponential_variances = {}
+binomial_variances = {}
+for size in sample_sizes:
+    uniform_variances[size] = calculate_variance(uniform_sample_means[size])
+    exponential_variances[size] = calculate_variance(exponential_sample_means[size])
+    binomial_variances[size] = calculate_variance(binomial_sample_means[size])
+
+plt.figure(figsize=(10, 6))
+plt.plot(sample_sizes, list(uniform_variances.values()), label='Uniform', marker='o', color='green')
+plt.plot(sample_sizes, list(exponential_variances.values()), label='Exponential', marker='o', color='red')
+plt.plot(sample_sizes, list(binomial_variances.values()), label='Binomial', marker='o', color='blue')
+plt.title('Variance of Sample Means vs. Sample Size')
+plt.xlabel('Sample Size')
+plt.ylabel('Variance of Sample Means')
+plt.legend()
+plt.grid(True)
+plt.show()
+</code></pre>
+<p><img alt="alt text" src="../graphics.png"/> </p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
