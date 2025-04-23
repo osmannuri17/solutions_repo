@@ -20,7 +20,47 @@ Closer planets feel a stronger pull and need to zip around much faster to avoid 
 
 A planet farther from the Sun also has a much bigger circle (orbit) to travel around.
 
- **Its path is longer.**
+ Alright, here are a few more formulas related to circular orbits that build upon the relationship between the orbital period and the orbital radius:
+
+1.  **Orbital Speed ($v$):**
+
+    The speed of an object in a circular orbit is constant and can be expressed in terms of the orbital radius ($r$) and the orbital period ($T$):
+    
+    $$v = \frac{2\pi r}{T}$$
+
+2.  **Orbital Speed in terms of Central Mass and Radius:**
+
+    By combining the relationship $T^2 = \frac{4\pi^2}{GM} r^3$ with the orbital speed formula, we can express the speed directly in terms of the central mass ($M$) and the orbital radius ($r$):
+
+    $$v = \sqrt{\frac{GM}{r}}$$
+
+    This shows that for a given central mass, the orbital speed decreases as the orbital radius increases.
+
+3.  **Angular Velocity ($\omega$):**
+
+    The angular velocity is the rate at which the orbiting object sweeps out an angle. For a circular orbit, it's constant:
+
+    $$\omega = \frac{2\pi}{T}$$
+
+    Using the relationship between $T$ and $r$, we can also write this as:
+
+    $$\omega = \sqrt{\frac{GM}{r^3}}$$
+
+4.  **Total Energy ($E$):**
+
+    The total mechanical energy of an object in a circular orbit is the sum of its kinetic energy and gravitational potential energy:
+
+    $$E = K + U = \frac{1}{2}mv^2 - \frac{GMm}{r}$$
+
+    Substituting the expression for orbital speed ($v = \sqrt{\frac{GM}{r}}$),
+
+   ***we get:***
+
+    $$E = \frac{1}{2}m\left(\frac{GM}{r}\right) - \frac{GMm}{r} = -\frac{GMm}{2r}$$
+    The negative sign indicates that the orbit is bound.
+
+
+
 
 5. **Combining Effects on Time (Period):**
 
