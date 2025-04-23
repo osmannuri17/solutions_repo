@@ -225,6 +225,37 @@ This creates a “family” of paths—each mix of speed, angle, height, or grav
 <p><strong><em>Best angle:</em></strong> Around 45° usually gives the farthest range on flat ground, balancing height and distance.</p>
 <p><strong><em>Symmetry:</em></strong> Angles like 30° and 60° give the same range, but less than 45°.</p>
 <p><strong><em>No range:</em></strong> Throwing straight up (90°) or flat (0°) means it doesn’t go anywhere horizontally.</p>
+<p>You're right, I got a bit carried away with the explanation! Let's get straight to the formula for the horizontal range of a projectile and how it's derived.</p>
+<p><strong>Derivation of the Horizontal Range Formula</strong></p>
+<ol>
+<li>
+<p><strong>Initial Velocity Components:</strong>
+    A projectile is launched with an initial velocity <span class="arithmatex">\(v_0\)</span> at an angle <span class="arithmatex">\(\theta\)</span> to the horizontal. We break this velocity into horizontal (<span class="arithmatex">\(v_{0x}\)</span>) and vertical (<span class="arithmatex">\(v_{0y}\)</span>) components:
+    <span class="arithmatex">\(<span class="arithmatex">\(v_{0x} = v_0 \cos(\theta)\)</span>\)</span> <span class="arithmatex">\(<span class="arithmatex">\(v_{0y} = v_0 \sin(\theta)\)</span>\)</span></p>
+</li>
+<li>
+<p><strong>Time of Flight:</strong>
+    The projectile lands when its vertical displacement is zero (<span class="arithmatex">\(y=0\)</span>). Using the vertical motion equation:
+    <span class="arithmatex">\(<span class="arithmatex">\(y(t) = v_{0y} t - \frac{1}{2} g t^2\)</span>\)</span>
+    Setting <span class="arithmatex">\(y(T) = 0\)</span> (where <span class="arithmatex">\(T\)</span> is the total time of flight):
+    <span class="arithmatex">\(<span class="arithmatex">\(0 = (v_0 \sin(\theta)) T - \frac{1}{2} g T^2\)</span>\)</span>
+    Solving for <span class="arithmatex">\(T\)</span> (and discarding the trivial solution <span class="arithmatex">\(T=0\)</span>):
+    <span class="arithmatex">\(<span class="arithmatex">\(T = \frac{2 v_0 \sin(\theta)}{g}\)</span>\)</span></p>
+</li>
+<li>
+<p><strong>Horizontal Range:</strong>
+    The horizontal range <span class="arithmatex">\(R\)</span> is the horizontal distance covered during this time <span class="arithmatex">\(T\)</span>. Since the horizontal velocity is constant:
+    <span class="arithmatex">\(<span class="arithmatex">\(R = v_{0x} T = (v_0 \cos(\theta)) \left(\frac{2 v_0 \sin(\theta)}{g}\right)\)</span>\)</span></p>
+</li>
+<li>
+<p><strong>Using a Trigonometric Identity:</strong>
+    We use the identity <span class="arithmatex">\(2 \sin(\theta) \cos(\theta) = \sin(2\theta)\)</span> to simplify the expression:
+    <span class="arithmatex">\(<span class="arithmatex">\(R = \frac{v_0^2 \sin(2\theta)}{g}\)</span>\)</span></p>
+</li>
+</ol>
+<p><strong>The Formula for Horizontal Range:</strong></p>
+<p>The horizontal range (<span class="arithmatex">\(R\)</span>) of a projectile launched with an initial velocity (<span class="arithmatex">\(v_0\)</span>) at an angle (<span class="arithmatex">\(\theta\)</span>) with respect to the horizontal, under constant gravitational acceleration (<span class="arithmatex">\(g\)</span>), is given by:</p>
+<div class="arithmatex">\[R = \frac{v_0^2 \sin(2\theta)}{g}\]</div>
 <h3 id="other-factors-affect-the-range-too">Other factors affect the range too:</h3>
 <p><strong><em>Speed:</em></strong> A faster throw (e.g., 20 m/s vs. 10 m/s) sends it much farther.</p>
 <p><strong><em>Gravity:</em></strong> On the Moon (gravity = 1.62 m/s²), the range is way longer than on Earth.</p>
