@@ -229,28 +229,31 @@ This creates a “family” of paths—each mix of speed, angle, height, or grav
 <p><strong>Derivation of the Horizontal Range Formula</strong></p>
 <ol>
 <li>
-<p><strong>Initial Velocity Components:</strong>
-    A projectile is launched with an initial velocity <span class="arithmatex">\(v_0\)</span> at an angle <span class="arithmatex">\(\theta\)</span> to the horizontal. We break this velocity into horizontal (<span class="arithmatex">\(v_{0x}\)</span>) and vertical (<span class="arithmatex">\(v_{0y}\)</span>) components:
-    <span class="arithmatex">\(<span class="arithmatex">\(v_{0x} = v_0 \cos(\theta)\)</span>\)</span> <span class="arithmatex">\(<span class="arithmatex">\(v_{0y} = v_0 \sin(\theta)\)</span>\)</span></p>
+<p><strong>Initial Velocity Components:</strong></p>
+<p>A projectile is launched with an initial velocity <span class="arithmatex">\(v_0\)</span> at an angle <span class="arithmatex">\(\theta\)</span> to the horizontal.</p>
+<p>We break this velocity into horizontal (<span class="arithmatex">\(v_{0x}\)</span>) and vertical (<span class="arithmatex">\(v_{0y}\)</span>) components:</p>
+<div class="arithmatex">\[v_{0x} = v_0 \cos(\theta)$$   $$v_{0y} = v_0 \sin(\theta)\]</div>
 </li>
 <li>
 <p><strong>Time of Flight:</strong>
-    The projectile lands when its vertical displacement is zero (<span class="arithmatex">\(y=0\)</span>). Using the vertical motion equation:
-    <span class="arithmatex">\(<span class="arithmatex">\(y(t) = v_{0y} t - \frac{1}{2} g t^2\)</span>\)</span>
-    Setting <span class="arithmatex">\(y(T) = 0\)</span> (where <span class="arithmatex">\(T\)</span> is the total time of flight):
-    <span class="arithmatex">\(<span class="arithmatex">\(0 = (v_0 \sin(\theta)) T - \frac{1}{2} g T^2\)</span>\)</span>
-    Solving for <span class="arithmatex">\(T\)</span> (and discarding the trivial solution <span class="arithmatex">\(T=0\)</span>):
-    <span class="arithmatex">\(<span class="arithmatex">\(T = \frac{2 v_0 \sin(\theta)}{g}\)</span>\)</span></p>
+    The projectile lands when its vertical displacement is zero (<span class="arithmatex">\(y=0\)</span>).</p>
+<p>Using the vertical motion equation:</p>
+<div class="arithmatex">\[y(t) = v_{0y} t - \frac{1}{2} g t^2\]</div>
+<p>Setting <span class="arithmatex">\(y(T) = 0\)</span> (where <span class="arithmatex">\(T\)</span> is the total time of flight):</p>
+<div class="arithmatex">\[0 = (v_0 \sin(\theta)) T - \frac{1}{2} g T^2\]</div>
+<p>Solving for <span class="arithmatex">\(T\)</span> (and discarding the trivial solution <span class="arithmatex">\(T=0\)</span>):</p>
+<div class="arithmatex">\[T = \frac{2 v_0 \sin(\theta)}{g}\]</div>
 </li>
 <li>
-<p><strong>Horizontal Range:</strong>
-    The horizontal range <span class="arithmatex">\(R\)</span> is the horizontal distance covered during this time <span class="arithmatex">\(T\)</span>. Since the horizontal velocity is constant:
-    <span class="arithmatex">\(<span class="arithmatex">\(R = v_{0x} T = (v_0 \cos(\theta)) \left(\frac{2 v_0 \sin(\theta)}{g}\right)\)</span>\)</span></p>
+<p><strong>Horizontal Range:</strong></p>
+<p>The horizontal range <span class="arithmatex">\(R\)</span> is the horizontal distance covered during this time <span class="arithmatex">\(T\)</span>.</p>
+<p>Since the horizontal velocity is constant:</p>
+<div class="arithmatex">\[R = v_{0x} T = (v_0 \cos(\theta)) \left(\frac{2 v_0 \sin(\theta)}{g}\right)\]</div>
 </li>
 <li>
-<p><strong>Using a Trigonometric Identity:</strong>
-    We use the identity <span class="arithmatex">\(2 \sin(\theta) \cos(\theta) = \sin(2\theta)\)</span> to simplify the expression:
-    <span class="arithmatex">\(<span class="arithmatex">\(R = \frac{v_0^2 \sin(2\theta)}{g}\)</span>\)</span></p>
+<p><strong>Using a Trigonometric Identity:</strong></p>
+<p>We use the identity <span class="arithmatex">\(2 \sin(\theta) \cos(\theta) = \sin(2\theta)\)</span> to simplify the expression:</p>
+<div class="arithmatex">\[R = \frac{v_0^2 \sin(2\theta)}{g}\]</div>
 </li>
 </ol>
 <p><strong>The Formula for Horizontal Range:</strong></p>
