@@ -118,16 +118,34 @@ Symmetry can form quickly, depending on the number of trials (n) and the probabi
 Larger variances in the population will lead to wider spread (more variability) in the sample mean distribution, even as the sample size increases.
 
 ```python
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+np.random.seed(42)
+population_size = 100000
+uniform_pop = np.random.uniform(0, 1, population_size)
+exponential_pop = np.random.exponential(scale=1, size=population_size)
+binomial_pop = np.random.binomial(n=10, p=0.5, size=population_size)
+sample_sizes = [5, 10, 30, 50]
+n_iterations = 1000
 def calculate_variance(sample_means):
     return np.var(sample_means)
-uniform_variances = {}
-exponential_variances = {}
-binomial_variances = {}
-for size in sample_sizes:
-    uniform_variances[size] = calculate_variance(uniform_sample_means[size])
-    exponential_variances[size] = calculate_variance(exponential_sample_means[size])
-    binomial_variances[size] = calculate_variance(binomial_sample_means[size])
-
+def sample_means_from_population(population, sample_sizes, n_iterations):
+    sample_means = {}
+    
+    for size in sample_sizes:
+        means = []
+        for _ in range(n_iterations):
+            sample = np.random.choice(population, size=size)
+            means.append(np.mean(sample))
+        sample_means[size] = means
+    return sample_means
+uniform_sample_means = sample_means_from_population(uniform_pop, sample_sizes, n_iterations)
+exponential_sample_means = sample_means_from_population(exponential_pop, sample_sizes, n_iterations)
+binomial_sample_means = sample_means_from_population(binomial_pop, sample_sizes, n_iterations)
+uniform_variances = {size: calculate_variance(means) for size, means in uniform_sample_means.items()}
+exponential_variances = {size: calculate_variance(means) for size, means in exponential_sample_means.items()}
+binomial_variances = {size: calculate_variance(means) for size, means in binomial_sample_means.items()}
 plt.figure(figsize=(10, 6))
 plt.plot(sample_sizes, list(uniform_variances.values()), label='Uniform', marker='o', color='green')
 plt.plot(sample_sizes, list(exponential_variances.values()), label='Exponential', marker='o', color='red')
