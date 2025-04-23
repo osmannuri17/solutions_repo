@@ -85,3 +85,61 @@ plt.show()
 ```
 
 ![alt text](Unknown-3.png) 
+
+
+# Parameter Exploration:
+
+***Investigating the effects of the original distribution and sample size.***
+
+We’ll explore how:
+
+The shape of the original distribution (uniform, exponential, binomial) affects the rate of convergence to a normal distribution as the sample size increases.
+
+The population variance influences the spread of the sample mean distribution.
+
+***Key Insights to Explore:***
+
+## Shape of the original distribution:
+
+### For uniform:
+
+The distribution is already flat, so it might converge to normality fairly quickly.
+
+### For exponential:
+
+This is right-skewed, and convergence to normal might take a bit longer.
+
+### For binomial:
+
+Symmetry can form quickly, depending on the number of trials (n) and the probability (p).
+
+### Effect of population variance:
+
+Larger variances in the population will lead to wider spread (more variability) in the sample mean distribution, even as the sample size increases.
+
+```python
+def calculate_variance(sample_means):
+    return np.var(sample_means)
+uniform_variances = {}
+exponential_variances = {}
+binomial_variances = {}
+for size in sample_sizes:
+    uniform_variances[size] = calculate_variance(uniform_sample_means[size])
+    exponential_variances[size] = calculate_variance(exponential_sample_means[size])
+    binomial_variances[size] = calculate_variance(binomial_sample_means[size])
+
+plt.figure(figsize=(10, 6))
+plt.plot(sample_sizes, list(uniform_variances.values()), label='Uniform', marker='o', color='green')
+plt.plot(sample_sizes, list(exponential_variances.values()), label='Exponential', marker='o', color='red')
+plt.plot(sample_sizes, list(binomial_variances.values()), label='Binomial', marker='o', color='blue')
+plt.title('Variance of Sample Means vs. Sample Size')
+plt.xlabel('Sample Size')
+plt.ylabel('Variance of Sample Means')
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+
+![alt text](graphics.png) 
+
+
