@@ -91,6 +91,38 @@ The range (how far the projectile lands) depends heavily on the launch angle:
 
 ***No range:*** Throwing straight up (90°) or flat (0°) means it doesn’t go anywhere horizontally.
 
+
+You're right, I got a bit carried away with the explanation! Let's get straight to the formula for the horizontal range of a projectile and how it's derived.
+
+**Derivation of the Horizontal Range Formula**
+
+1.  **Initial Velocity Components:**
+    A projectile is launched with an initial velocity $v_0$ at an angle $\theta$ to the horizontal. We break this velocity into horizontal ($v_{0x}$) and vertical ($v_{0y}$) components:
+    $$v_{0x} = v_0 \cos(\theta)$$   $$v_{0y} = v_0 \sin(\theta)$$
+
+2.  **Time of Flight:**
+    The projectile lands when its vertical displacement is zero ($y=0$). Using the vertical motion equation:
+    $$y(t) = v_{0y} t - \frac{1}{2} g t^2$$
+    Setting $y(T) = 0$ (where $T$ is the total time of flight):
+    $$0 = (v_0 \sin(\theta)) T - \frac{1}{2} g T^2$$
+    Solving for $T$ (and discarding the trivial solution $T=0$):
+    $$T = \frac{2 v_0 \sin(\theta)}{g}$$
+
+3.  **Horizontal Range:**
+    The horizontal range $R$ is the horizontal distance covered during this time $T$. Since the horizontal velocity is constant:
+    $$R = v_{0x} T = (v_0 \cos(\theta)) \left(\frac{2 v_0 \sin(\theta)}{g}\right)$$
+
+4.  **Using a Trigonometric Identity:**
+    We use the identity $2 \sin(\theta) \cos(\theta) = \sin(2\theta)$ to simplify the expression:
+    $$R = \frac{v_0^2 \sin(2\theta)}{g}$$
+
+**The Formula for Horizontal Range:**
+
+The horizontal range ($R$) of a projectile launched with an initial velocity ($v_0$) at an angle ($\theta$) with respect to the horizontal, under constant gravitational acceleration ($g$), is given by:
+
+$$R = \frac{v_0^2 \sin(2\theta)}{g}$$
+
+
 ### Other factors affect the range too:
 
 ***Speed:*** A faster throw (e.g., 20 m/s vs. 10 m/s) sends it much farther.
