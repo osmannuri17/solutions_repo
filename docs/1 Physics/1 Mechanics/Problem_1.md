@@ -102,7 +102,7 @@ You're right, I got a bit carried away with the explanation! Let's get straight 
 
      We break this velocity into horizontal ($v_{0x}$) and vertical ($v_{0y}$) components:
 
-    $$v_{0x} = v_0 \cos(\theta)$$   $$v_{0y} = v_0 \sin(\theta)$$
+    v_{0x} = v_0 \cos(\theta)   v_{0y} = v_0 \sin(\theta)
 
 2.  **Time of Flight:**
     The projectile lands when its vertical displacement is zero ($y=0$).
@@ -130,7 +130,7 @@ You're right, I got a bit carried away with the explanation! Let's get straight 
 4.  **Using a Trigonometric Identity:**
 
     We use the identity $2 \sin(\theta) \cos(\theta) = \sin(2\theta)$ to simplify the expression:
-    
+
     $$R = \frac{v_0^2 \sin(2\theta)}{g}$$
 
 **The Formula for Horizontal Range:**
