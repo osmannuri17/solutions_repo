@@ -6,16 +6,71 @@
 
 The speed to orbit a celestial body without falling back. Gravity pulls it down, but its speed keeps it moving forward, resulting in a continuous circle.
 
+
+1.  **Gravity equals centripetal force:** 
+
+For a stable low orbit, the gravitational force ($G \frac{Mm}{R^2}$) equals the centripetal force ($m \frac{v_1^2}{R}$).
+
+2.  **Equation:**
+
+    $$G \frac{Mm}{R^2} = m \frac{v_1^2}{R}$$
+
+3.  **Solve for $v_1$:**
+    * Cancel $m$:  $G \frac{M}{R^2} = \frac{v_1^2}{R}$
+    * Multiply by $R$: $G \frac{M}{R} = v_1^2$
+    * Take square root: $v_1 = \sqrt{\frac{GM}{R}}$
+
+4.  **Using surface gravity ($g = \frac{GM}{R^2}$):**
+
+    $v_1 = \sqrt{\frac{GM}{R}} = \sqrt{\frac{GM}{R^2} \cdot R} = \sqrt{gR}$
+
+**Formula for First Cosmic Velocity:**
+
+$$v_1 = \sqrt{\frac{GM}{R}} \quad \text{or} \quad v_1 = \sqrt{gR}$$
+
 ***Second Cosmic Velocity (Escape Velocity):***
 
 The speed to break free from a celestial body's gravity completely and never return. It's the point where the object has enough energy to overcome the gravitational pull.
 
+1.  **Conservation of Energy:**
+
+ For an object to escape the gravitational pull of a celestial body, its initial kinetic energy must be at least equal to the magnitude of its initial gravitational potential energy.
+
+2.  **Energy Equation:**
+    $$\frac{1}{2} m v_2^2 - G \frac{Mm}{R} = 0$$
+    where:
+    * $v_2$ is the second cosmic velocity.
+    * $m$ is the mass of the escaping object.
+    * $M$ is the mass of the celestial body.
+    * $R$ is the distance from the center of the celestial body (typically its radius when launching from the surface).
+    * $G$ is the universal gravitational constant.
+
+3.  **Solve for $v_2$:**
+    * Move the potential energy term to the right side:
+        $$\frac{1}{2} m v_2^2 = G \frac{Mm}{R}$$
+    * Cancel out the mass of the escaping object ($m$):
+        $$\frac{1}{2} v_2^2 = G \frac{M}{R}$$
+    * Multiply by 2:
+        $$v_2^2 = 2 G \frac{M}{R}$$
+    * Take the square root:
+        $$v_2 = \sqrt{\frac{2GM}{R}}$$
+
+4.  **Using surface gravity ($g = \frac{GM}{R^2}$):**
+
+    $$v_2 = \sqrt{2 \cdot \frac{GM}{R} \cdot \frac{R}{R}} = \sqrt{2 \cdot \frac{GM}{R^2} \cdot R} = \sqrt{2gR}$$
+
+**Formula for Second Cosmic Velocity:**
+
+$$v_2 = \sqrt{\frac{2GM}{R}} \quad \text{or} \quad v_2 = \sqrt{2gR}$$
+
+
 ***Third Cosmic Velocity (Solar System Escape Velocity):***
 The speed needed, when launching from Earth, to escape the Sun's gravity and leave the entire solar system. It's about overcoming the Sun's pull while already moving with Earth.
 
+ The generally accepted value is approximately 16.7 km/s.
+
+
 # Analyzing mathematical derivations of velocities:
-
-
 
 ### First Cosmic Velocity (Orbital Velocity)
 
