@@ -19,7 +19,6 @@ Weaker gravity (like the Moon’s) stretches the path
 This creates a “family” of paths—each mix of speed, angle, height, or gravity gives a unique curve. For example, a hard throw at 45°
  travels far, while a soft throw straight up lands close. These variations fit many scenarios, from sports to space launches.
 
- You got it! Let's keep it super simple. Imagine a toy car that you give a push.
 
 **The Basic Idea**
 
