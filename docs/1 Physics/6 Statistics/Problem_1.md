@@ -45,32 +45,43 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-population_size = 10000
-num_samples = 500
-sample_sizes = [5, 20, 50]
+# Set style for seaborn
+sns.set(style="whitegrid")
 
-def plot_sampling_distribution(population, population_name, sample_sizes, num_samples):
-    """
-    Generates and plots the sampling distribution of the mean for a given population
-    and different sample sizes.
-    """
-    plt.figure(figsize=(15, 5 * len(sample_sizes)))
-    for i, sample_size in enumerate(sample_sizes):
+# Parameters
+sample_sizes = [5, 10, 30, 50]
+n_repeats = 1000
+population_size = 100000
+
+# Distributions to simulate
+distributions = {
+    "Uniform": np.random.uniform(0, 100, population_size),
+    "Exponential": np.random.exponential(scale=10, size=population_size),
+    "Binomial": np.random.binomial(n=20, p=0.5, size=population_size),
+}
+
+# Create subplots
+fig, axs = plt.subplots(len(distributions), len(sample_sizes), figsize=(20, 12))
+fig.suptitle('Sampling Distributions of the Sample Mean for Different Populations and Sample Sizes', fontsize=16)
+
+# Loop over each distribution
+for i, (dist_name, population) in enumerate(distributions.items()):
+    # Loop over each sample size
+    for j, sample_size in enumerate(sample_sizes):
         sample_means = []
-        for _ in range(num_samples):
+        for _ in range(n_repeats):
             sample = np.random.choice(population, size=sample_size, replace=False)
             sample_means.append(np.mean(sample))
+        # Plot histogram of sample means
+        ax = axs[i, j]
+        sns.histplot(sample_means, kde=True, ax=ax, stat="density", color="skyblue", bins=30)
+        ax.set_title(f'{dist_name} Dist - Sample Size {sample_size}')
+        ax.set_xlabel('Sample Mean')
+        ax.set_ylabel('Density')
 
-        plt.subplot(len(sample_sizes), 1, i + 1)
-        sns.histplot(sample_means, kde=True)
-        plt.title(f'Sampling Distribution of Mean ({population_name}, Sample Size = {sample_size})')
-        plt.xlabel('Sample Mean')
-        plt.ylabel('Frequency')
-    plt.tight_layout()
-    plt.show()
-plot_sampling_distribution(uniform_population, 'Uniform', sample_sizes, num_samples)
-plot_sampling_distribution(exponential_population, 'Exponential', sample_sizes, num_samples)
-plot_sampling_distribution(binomial_population, 'Binomial', sample_sizes, num_samples)
+plt.tight_layout(rect=[0, 0, 1, 0.96])
+plt.show()
+
 ```
 
-![alt text](Unknown-1.png)
+![alt text](Unknown-2.png)
