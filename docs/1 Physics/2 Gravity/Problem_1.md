@@ -25,7 +25,7 @@ A planet farther from the Sun also has a much bigger circle (orbit) to travel ar
 1.  **Orbital Speed ($v$):**
 
     The speed of an object in a circular orbit is constant and can be expressed in terms of the orbital radius ($r$) and the orbital period ($T$):
-    
+
     $$v = \frac{2\pi r}{T}$$
 
 2.  **Orbital Speed in terms of Central Mass and Radius:**
@@ -54,9 +54,12 @@ A planet farther from the Sun also has a much bigger circle (orbit) to travel ar
 
     Substituting the expression for orbital speed ($v = \sqrt{\frac{GM}{r}}$),
 
-   ***we get:***
+   we get:
 
-    $$E = \frac{1}{2}m\left(\frac{GM}{r}\right) - \frac{GMm}{r} = -\frac{GMm}{2r}$$
+    $$E = 
+
+    $$frac{1}{2}m\left(\frac{GM}{r}\right) - \frac{GMm}{r} = -\frac{GMm}{2r}$$
+
     The negative sign indicates that the orbit is bound.
 
 
