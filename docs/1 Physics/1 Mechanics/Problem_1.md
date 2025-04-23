@@ -71,7 +71,7 @@ Now, let's put everything together to get the position directly:
 
 We know $v = v_0 + \frac{F}{m}t$. Substitute this into the distance formula:
 
-$$x = x_0 + \left(\frac{(v_0 + \frac{F}{m}t) + v_0}{2}\right) \times t$$$$x = x_0 + \left(\frac{2v_0 + \frac{F}{m}t}{2}\right) \times t$$$$x(t) = x_0 + v_0 t + \frac{1}{2} \frac{F}{m} t^2$$
+$$x = x_0 + \left(\frac{(v_0 + \frac{F}{m}t) + v_0}{2}\right) \times tx = x_0 + \left(\frac{2v_0 + \frac{F}{m}t}{2}\right) \times tx(t) = x_0 + v_0 t + \frac{1}{2} \frac{F}{m} t^2$$
 
 **The Role of Starting Conditions**
 
