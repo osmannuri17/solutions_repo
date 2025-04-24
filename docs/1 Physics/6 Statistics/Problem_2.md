@@ -26,9 +26,7 @@ The key idea is to calculate the ratio of points that fall **inside** the circle
 
   \[
   \text{Probability} =
-
    \frac{\text{Area of Circle}}{\text{Area of Square}} =
-   
     \frac{\pi \cdot 1^2}{4} = \frac{\pi}{4}
   \]
 
@@ -108,6 +106,7 @@ for num_points, pi_approx in zip(point_counts, pi_estimates):
 #### **• Step 2: Count the Points Inside the Circle**
 
 - A point lies **inside** the unit circle if it satisfies the condition:
+
   \[
   x^2 + y^2 \leq 1
   \]
