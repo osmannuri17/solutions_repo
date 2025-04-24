@@ -172,6 +172,35 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="theoretical-foundation">Theoretical Foundation:</h1>
+<p>Great, thanks for sharing the first task. Here's the response based on it:</p>
+<hr/>
+<h3 id="1-theoretical-foundation"><strong>1. Theoretical Foundation</strong></h3>
+<h4 id="explanation-using-the-ratio-to-estimate"><strong>• Explanation: Using the Ratio to Estimate π</strong></h4>
+<p>To estimate π using the Monte Carlo method, consider a square enclosing a circle:</p>
+<ul>
+<li>Imagine a <strong>unit circle</strong> (radius = 1) centered at the origin (0, 0).</li>
+<li>This circle fits perfectly inside a square that spans from (-1, -1) to (1, 1), so the square has a side length of 2 and an area of 4.</li>
+<li>Random points are uniformly generated inside this square.</li>
+</ul>
+<p>The key idea is to calculate the ratio of points that fall <strong>inside</strong> the circle to the total number of points in the square:</p>
+<ul>
+<li>A point <span class="arithmatex">\((x, y)\)</span> lies <strong>inside</strong> the unit circle if <span class="arithmatex">\(x^2 + y^2 \leq 1\)</span>.</li>
+<li>The probability of a point landing inside the circle is equal to the ratio of the <strong>area of the circle</strong> to the <strong>area of the square</strong>:
+  [
+  \text{Probability} = \frac{\text{Area of Circle}}{\text{Area of Square}} = \frac{\pi \cdot 1^2}{4} = \frac{\pi}{4}
+  ]</li>
+</ul>
+<h4 id="derivation-of-formula"><strong>• Derivation of Formula</strong></h4>
+<p>Let <span class="arithmatex">\(N\)</span> be the total number of random points, and <span class="arithmatex">\(N_{\text{in}}\)</span> be the number of points inside the circle.</p>
+<p>Using the ratio:
+[
+\frac{N_{\text{in}}}{N} \approx \frac{\pi}{4}
+]</p>
+<p>Multiply both sides by 4 to estimate π:
+[
+\pi \approx 4 \cdot \left( \frac{N_{\text{in}}}{N} \right)
+]</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
