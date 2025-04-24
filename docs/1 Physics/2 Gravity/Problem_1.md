@@ -53,13 +53,7 @@ A planet farther from the Sun also has a much bigger circle (orbit) to travel ar
     $$E = K + U = \frac{1}{2}mv^2 - \frac{GMm}{r}$$
 
     Substituting the expression for orbital speed ($v = \sqrt{\frac{GM}{r}}$),
-
-   we get:
-
-    $$E = 
-
-    $$frac{1}{2}m\left(\frac{GM}{r}\right) - \frac{GMm}{r} = -\frac{GMm}{2r}$$
-
+    
     The negative sign indicates that the orbit is bound.
 
 
