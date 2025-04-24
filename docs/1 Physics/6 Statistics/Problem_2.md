@@ -25,7 +25,11 @@ The key idea is to calculate the ratio of points that fall **inside** the circle
 - The probability of a point landing inside the circle is equal to the ratio of the **area of the circle** to the **area of the square**:
 
   \[
-  \text{Probability} = \frac{\text{Area of Circle}}{\text{Area of Square}} = \frac{\pi \cdot 1^2}{4} = \frac{\pi}{4}
+  \text{Probability} =
+
+   \frac{\text{Area of Circle}}{\text{Area of Square}} =
+   
+    \frac{\pi \cdot 1^2}{4} = \frac{\pi}{4}
   \]
 
 #### **• Derivation of Formula**
@@ -94,7 +98,9 @@ for num_points, pi_approx in zip(point_counts, pi_estimates):
 
 
 - The square spans from \(-1\) to \(1\) in both x and y directions.
+
 - We use a random number generator (e.g., NumPy's `np.random.uniform`) to generate coordinates \((x, y)\) such that:
+
   \[
   x \in [-1, 1],\quad y \in [-1, 1]
   \]
