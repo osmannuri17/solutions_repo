@@ -186,22 +186,26 @@
 </ul>
 <p>The key idea is to calculate the ratio of points that fall <strong>inside</strong> the circle to the total number of points in the square:</p>
 <ul>
-<li>A point <span class="arithmatex">\((x, y)\)</span> lies <strong>inside</strong> the unit circle if <span class="arithmatex">\(x^2 + y^2 \leq 1\)</span>.</li>
-<li>The probability of a point landing inside the circle is equal to the ratio of the <strong>area of the circle</strong> to the <strong>area of the square</strong>:
-  [
-  \text{Probability} = \frac{\text{Area of Circle}}{\text{Area of Square}} = \frac{\pi \cdot 1^2}{4} = \frac{\pi}{4}
-  ]</li>
+<li>
+<p>A point <span class="arithmatex">\((x, y)\)</span> lies <strong>inside</strong> the unit circle if <span class="arithmatex">\(x^2 + y^2 \leq 1\)</span>.</p>
+</li>
+<li>
+<p>The probability of a point landing inside the circle is equal to the ratio of the <strong>area of the circle</strong> to the <strong>area of the square</strong>:</p>
+</li>
 </ul>
+<p>[
+  \text{Probability} = \frac{\text{Area of Circle}}{\text{Area of Square}} = \frac{\pi \cdot 1^2}{4} = \frac{\pi}{4}
+  ]</p>
 <h4 id="derivation-of-formula"><strong>• Derivation of Formula</strong></h4>
 <p>Let <span class="arithmatex">\(N\)</span> be the total number of random points, and <span class="arithmatex">\(N_{\text{in}}\)</span> be the number of points inside the circle.</p>
-<p>Using the ratio:
-[
+<p>Using the ratio:</p>
+<div class="arithmatex">\[
 \frac{N_{\text{in}}}{N} \approx \frac{\pi}{4}
-]</p>
-<p>Multiply both sides by 4 to estimate π:
-[
+\]</div>
+<p>Multiply both sides by 4 to estimate π:</p>
+<div class="arithmatex">\[
 \pi \approx 4 \cdot \left( \frac{N_{\text{in}}}{N} \right)
-]</p>
+\]</div>
 <h1 id="simulation">Simulation</h1>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
