@@ -111,6 +111,7 @@ for num_points, pi_approx in zip(point_counts, pi_estimates):
 #### **• Step 3: Estimate π**
 
 Using the formula derived earlier:
+
 \[
 \pi \approx 4 \cdot \left( \frac{\text{Number of points inside the circle}}{\text{Total number of points}} \right)
 \]
