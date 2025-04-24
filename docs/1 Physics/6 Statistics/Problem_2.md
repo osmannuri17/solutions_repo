@@ -125,6 +125,32 @@ This ratio approximates π because the area of the unit circle is π, and the ar
 
 The proportion of points falling inside the circle mirrors the ratio of these areas.
 
+# Visualization
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+num_points = 10000
+x = np.random.uniform(-1, 1, num_points)
+y = np.random.uniform(-1, 1, num_points)
+inside_circle = (x**2 + y**2) <= 1
+plt.figure(figsize=(6, 6))
+plt.scatter(x[inside_circle], y[inside_circle], color='blue', s=1, label='Inside Circle')
+plt.scatter(x[~inside_circle], y[~inside_circle], color='red', s=1, label='Outside Circle')
+plt.gca().set_aspect('equal')
+plt.title(f'Monte Carlo Simulation\n{num_points} Points')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+plt.grid(True)
+plt.savefig('monte_carlo_pi_visualization.png')
+plt.show()
+```
+
+![alt text](<Unknown kopyası 2.png>)
+
+
+
 
 
 
