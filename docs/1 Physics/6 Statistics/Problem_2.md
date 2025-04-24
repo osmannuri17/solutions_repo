@@ -21,7 +21,9 @@ To estimate π using the Monte Carlo method, consider a square enclosing a circl
 The key idea is to calculate the ratio of points that fall **inside** the circle to the total number of points in the square:
 
 - A point \((x, y)\) lies **inside** the unit circle if \(x^2 + y^2 \leq 1\).
+
 - The probability of a point landing inside the circle is equal to the ratio of the **area of the circle** to the **area of the square**:
+
   \[
   \text{Probability} = \frac{\text{Area of Circle}}{\text{Area of Square}} = \frac{\pi \cdot 1^2}{4} = \frac{\pi}{4}
   \]
@@ -31,11 +33,13 @@ The key idea is to calculate the ratio of points that fall **inside** the circle
 Let \(N\) be the total number of random points, and \(N_{\text{in}}\) be the number of points inside the circle.
 
 Using the ratio:
+
 \[
 \frac{N_{\text{in}}}{N} \approx \frac{\pi}{4}
 \]
 
 Multiply both sides by 4 to estimate π:
+
 \[
 \pi \approx 4 \cdot \left( \frac{N_{\text{in}}}{N} \right)
 \]
