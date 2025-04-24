@@ -149,7 +149,64 @@ plt.show()
 
 ![alt text](<Unknown kopyası 2.png>)
 
+# Analysis 
 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import time
+
+def monte_carlo_pi(num_points):
+    x = np.random.uniform(-1, 1, num_points)
+    y = np.random.uniform(-1, 1, num_points)
+    inside_circle = (x**2 + y**2) <= 1
+    num_inside = np.sum(inside_circle)
+    pi_estimate = 4 * num_inside / num_points
+    return pi_estimate
+
+point_counts = [100, 1000, 10000, 100000, 1000000]
+errors = []
+times = []
+
+for num_points in point_counts:
+    start_time = time.time()
+    pi_approx = monte_carlo_pi(num_points)
+    end_time = time.time()
+    error = abs(pi_approx - np.pi)
+    errors.append(error)
+    times.append(end_time - start_time)
+    print(f"Points: {num_points}, Estimated π: {pi_approx:.5f}, Error: {error:.5f}, Time: {times[-1]:.5f} sec")
+
+plt.figure(figsize=(8, 5))
+plt.plot(point_counts, errors, marker='o', label='Absolute Error')
+plt.xscale('log')
+plt.yscale('log')
+plt.title('Error in π Estimate vs. Number of Points')
+plt.xlabel('Number of Points (log scale)')
+plt.ylabel('Absolute Error (log scale)')
+plt.grid(True)
+plt.legend()
+plt.savefig('monte_carlo_pi_error_analysis.png')
+plt.show()
+```
+
+![alt text](<Unknown kopyası 3.png>)
+
+
+
+### Discussion
+
+- **Accuracy**:
+
+Error decreases with more points, as shown in the plot. For 1M points, error is typically ~0.001–0.01.
+
+- **Convergence**:
+
+ Rate is \( O(1/\sqrt{N}) \), so error reduces slowly—e.g., 100x points cuts error by 10x.
+
+- **Computation**:
+
+Time and memory scale as \( O(N) \). For 1M points, it takes ~0.1–0.5 sec. Parallelization can help for large \( N \).
 
 
 
