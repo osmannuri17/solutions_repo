@@ -77,29 +77,6 @@ $$
 
 ### **4. Uncertainty Analysis**
 
-#### **Uncertainty in g**
-
-Using error propagation:
-
-$$
-\frac{\Delta g}{g} = \sqrt{ \left( \frac{\Delta L}{L} \right)^2 + \left( 2 \cdot \frac{\Delta T}{T} \right)^2 }
-$$
-
-Substitute values:
-
-$$
-\frac{\Delta g}{g} = \sqrt{ \left( \frac{0.002}{0.800} \right)^2 + \left( 2 \cdot \frac{0.010}{1.790} \right)^2 } \approx 0.0118
-$$
-
-$$
-\Delta g = 0.0118 \cdot 9.86 \approx 0.12 \, \text{m/s}^2
-$$
-
-$$
-\boxed{g = 9.86 \pm 0.12 \, \text{m/s}^2}
-$$
-
----
 
 ### **5. Discussion**
 
