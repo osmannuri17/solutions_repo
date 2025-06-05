@@ -92,6 +92,26 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#experiment-measuring-the-acceleration-due-to-gravity-using-a-pendulum">Experiment: Measuring the Acceleration Due to Gravity Using a Pendulum</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-objective">1. Objective</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-materials">2. Materials</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-setup">3. Setup</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-measurement">4. Measurement</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#5-calculations">5. Calculations</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#6-final-result">6. Final Result</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#7-python-code">7. Python Code</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#tabulated-data">Tabulated Data:</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -172,6 +192,182 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h2 id="experiment-measuring-the-acceleration-due-to-gravity-using-a-pendulum"><strong>Experiment: Measuring the Acceleration Due to Gravity Using a Pendulum</strong></h2>
+<hr/>
+<h3 id="1-objective"><strong>1. Objective</strong></h3>
+<p>To determine the local gravitational acceleration <span class="arithmatex">\(g\)</span> using a simple pendulum and to analyze the uncertainties.</p>
+<hr/>
+<h3 id="2-materials"><strong>2. Materials</strong></h3>
+<ul>
+<li>String (\~1.0 m)</li>
+<li>Small dense weight (bob)</li>
+<li>Ruler (±0.005 m uncertainty)</li>
+<li>Stopwatch or phone timer</li>
+</ul>
+<hr/>
+<h3 id="3-setup"><strong>3. Setup</strong></h3>
+<ul>
+<li>Suspend the pendulum from a fixed point.</li>
+<li>Measure length <span class="arithmatex">\(L\)</span> from pivot to the <strong>center of the bob</strong>.</li>
+<li>Use small swing angles (&lt;10°) to ensure the formula is valid:</li>
+</ul>
+<p>$$
+  T = 2\pi \sqrt{\frac{L}{g}}
+  $$</p>
+<hr/>
+<h3 id="4-measurement"><strong>4. Measurement</strong></h3>
+<p><strong>Pendulum length</strong>:</p>
+<div class="arithmatex">\[
+L = 1.000 \pm 0.005 \, \text{m}
+\]</div>
+<p><strong>Time for 10 oscillations (10 trials)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Trial</th>
+<th>Time (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>20.1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>20.2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>20.0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>20.1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>20.3</td>
+</tr>
+<tr>
+<td>6</td>
+<td>20.2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>20.1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>20.2</td>
+</tr>
+<tr>
+<td>9</td>
+<td>20.0</td>
+</tr>
+<tr>
+<td>10</td>
+<td>20.1</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="5-calculations"><strong>5. Calculations</strong></h3>
+<p><strong>Mean time for 10 oscillations</strong>:</p>
+<div class="arithmatex">\[
+\overline{T_{10}} = 20.13 \, \text{s}
+\]</div>
+<p><strong>Standard deviation</strong>:</p>
+<div class="arithmatex">\[
+\sigma = 0.095 \, \text{s}
+\]</div>
+<p><strong>Uncertainty in mean</strong>:</p>
+<div class="arithmatex">\[
+\Delta T_{10} = \frac{0.095}{\sqrt{10}} = 0.030 \, \text{s}
+\]</div>
+<p><strong>Period of one oscillation</strong>:</p>
+<div class="arithmatex">\[
+T = \frac{20.13}{10} = 2.013 \, \text{s}
+\]</div>
+<div class="arithmatex">\[
+\Delta T = \frac{0.030}{10} = 0.003 \, \text{s}
+\]</div>
+<p><strong>Gravitational acceleration</strong>:</p>
+<div class="arithmatex">\[
+g = \frac{4\pi^2 L}{T^2} = \frac{4\pi^2 \cdot 1.000}{(2.013)^2} = 9.74 \, \text{m/s}^2
+\]</div>
+<p><strong>Uncertainty in <span class="arithmatex">\(g\)</span></strong>:</p>
+<div class="arithmatex">\[
+\frac{\Delta g}{g} = \sqrt{ \left( \frac{0.005}{1.000} \right)^2 + \left( 2 \cdot \frac{0.003}{2.013} \right)^2 } = 0.0058
+\]</div>
+<div class="arithmatex">\[
+\Delta g = 0.0058 \cdot 9.74 = 0.06 \, \text{m/s}^2
+\]</div>
+<hr/>
+<h3 id="6-final-result"><strong>6. Final Result</strong></h3>
+<div class="arithmatex">\[
+\boxed{g = 9.74 \pm 0.06 \, \text{m/s}^2}
+\]</div>
+<hr/>
+<h3 id="7-python-code"><strong>7. Python Code</strong></h3>
+<pre><code class="language-python">import numpy as np
+
+L = 1.000  
+delta_L = 0.005
+
+T10_values = np.array([20.1, 20.2, 20.0, 20.1, 20.3, 20.2, 20.1, 20.2, 20.0, 20.1])
+
+mean_T10 = np.mean(T10_values)
+std_T10 = np.std(T10_values, ddof=1)
+delta_T10 = std_T10 / np.sqrt(len(T10_values))
+
+T = mean_T10 / 10
+delta_T = delta_T10 / 10
+
+g = (4 * np.pi**2 * L) / (T**2)
+
+rel_uncertainty_g = np.sqrt((delta_L / L)**2 + (2 * delta_T / T)**2)
+delta_g = rel_uncertainty_g * g
+
+print(f"Mean T10 = {mean_T10:.2f} s")
+print(f"Standard deviation = {std_T10:.3f} s")
+print(f"Period T = {T:.3f} s ± {delta_T:.4f} s")
+print(f"g = {g:.2f} m/s^2 ± {delta_g:.2f} m/s^2")
+</code></pre>
+<p>Mean T10 = 20.13 s
+Standard deviation = 0.095 s
+Period T = 2.013 s ± 0.0030 s
+g = 9.74 m/s^2 ± 0.06 m/s^2</p>
+<hr/>
+<pre><code class="language-python">import numpy as np
+L = 1.000 
+delta_L = 0.005 
+T_10_measurements = np.array([20.10, 20.15, 20.08, 20.12, 20.09]) 
+T_10_avg = np.mean(T_10_measurements)
+sigma_T = np.std(T_10_measurements, ddof=1)
+delta_T_10 = sigma_T / np.sqrt(len(T_10_measurements))
+T = T_10_avg / 10
+delta_T = delta_T_10 / 10
+g = 4 * np.pi**2 * L / (T**2)
+relative_delta_g = (delta_L / L) + 2 * (delta_T / T)
+delta_g = g * relative_delta_g
+print("Tabulated Data:")
+print("| Variable        | Value          | Uncertainty      |")
+print(f"| \\( L \\)         | {L:.3f} m        | \\( \\Delta L \\) = {delta_L:.3f} m  |")
+print(f"| \\( T_{{10}} \\)    | {T_10_avg:.3f} s       | \\( \\Delta T_{{10}} \\) = {delta_T_10:.4f} s |")
+print(f"| \\( \\overline{{T}}_{{10}} \\) | {T_10_avg:.3f} s | -                |")
+print(f"| \\( \\sigma_T \\)  | {sigma_T:.4f} s       | -                |")
+print(f"| \\( T \\)         | {T:.4f} s       | \\( \\Delta T \\) = {delta_T:.4f} s |")
+print(f"| \\( g \\)         | {g:.3f} m/s²     | \\( \\Delta g \\) = {delta_g:.3f} m/s² |")
+</code></pre>
+<h3 id="tabulated-data">Tabulated Data:</h3>
+<p>| Variable        | Value          | Uncertainty      |
+| <span class="arithmatex">\( L \)</span>         | 1.000 m        | <span class="arithmatex">\( \Delta L \)</span> = 0.005 m  |
+| <span class="arithmatex">\( T_{10} \)</span>    | 20.108 s       | <span class="arithmatex">\( \Delta T_{10} \)</span> = 0.0124 s |
+| <span class="arithmatex">\( \overline{T}_{10} \)</span> | 20.108 s | -                |
+| <span class="arithmatex">\( \sigma_T \)</span>  | 0.0277 s       | -                |
+| <span class="arithmatex">\( T \)</span>         | 2.0108 s       | <span class="arithmatex">\( \Delta T \)</span> = 0.0012 s |
+| <span class="arithmatex">\( g \)</span>         | 9.764 m/s²     | <span class="arithmatex">\( \Delta g \)</span> = 0.061 m/s² |</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
