@@ -1,5 +1,138 @@
 # Problem 1
 
+---
+
+### **Task: Measuring the Acceleration Due to Gravity (g) Using a Pendulum and Analyzing Uncertainties**
+
+---
+
+#### **Objective**
+
+To measure the acceleration due to gravity, $g$, using a simple pendulum, and to conduct a thorough analysis of the uncertainties involved in the measurement.
+
+---
+
+### **1. Theoretical Background**
+
+For a simple pendulum of length $L$ undergoing small amplitude oscillations, the period $T$ of oscillation is given by:
+
+$$
+T = 2\pi \sqrt{\frac{L}{g}}
+$$
+
+Solving for $g$:
+
+$$
+g = \frac{4\pi^2 L}{T^2}
+$$
+
+---
+
+### **2. Experimental Procedure**
+
+#### **Materials Needed**
+
+* String
+* Small dense bob (e.g., metal sphere)
+* Meter stick or ruler
+* Stopwatch or digital timer
+* Clamp stand or fixed support
+* Protractor (optional, to ensure small angles)
+
+#### **Steps**
+
+1. **Set up the pendulum:** Attach the bob to one end of the string and fix the other end to a support.
+2. **Measure the length $L$:** Measure from the point of suspension to the center of the bob. Record this with its uncertainty.
+3. **Displace and release:** Displace the pendulum by a small angle (less than \~10°) and release it.
+4. **Measure the time for $N$ oscillations:** Use a stopwatch to time multiple oscillations (e.g., 20 swings) for better accuracy.
+5. **Calculate period $T$:**
+
+   $$
+   T = \frac{t_{\text{total}}}{N}
+   $$
+6. **Repeat the experiment:** Conduct multiple trials to average and reduce random error.
+
+---
+
+### **3. Sample Calculations**
+
+Assume:
+
+* Measured length: $L = 0.800 \pm 0.002 \, \text{m}$
+* Time for 20 oscillations: $t = 35.8 \pm 0.2 \, \text{s}$
+* Period: $T = \frac{35.8}{20} = 1.790 \, \text{s}$
+* Uncertainty in $T$:
+
+  $$
+  \Delta T = \frac{0.2}{20} = 0.010 \, \text{s}
+  $$
+
+Then:
+
+$$
+g = \frac{4\pi^2 \cdot 0.800}{(1.790)^2} \approx 9.86 \, \text{m/s}^2
+$$
+
+---
+
+### **4. Uncertainty Analysis**
+
+#### **Uncertainty in g**
+
+Using error propagation:
+
+$$
+\frac{\Delta g}{g} = \sqrt{ \left( \frac{\Delta L}{L} \right)^2 + \left( 2 \cdot \frac{\Delta T}{T} \right)^2 }
+$$
+
+Substitute values:
+
+$$
+\frac{\Delta g}{g} = \sqrt{ \left( \frac{0.002}{0.800} \right)^2 + \left( 2 \cdot \frac{0.010}{1.790} \right)^2 } \approx 0.0118
+$$
+
+$$
+\Delta g = 0.0118 \cdot 9.86 \approx 0.12 \, \text{m/s}^2
+$$
+
+$$
+\boxed{g = 9.86 \pm 0.12 \, \text{m/s}^2}
+$$
+
+---
+
+### **5. Discussion**
+
+* **Accuracy**: The measured value is close to the standard $9.81 \, \text{m/s}^2$, indicating good accuracy.
+
+* **Sources of Uncertainty**:
+
+  * Human reaction time in stopwatch use (\~0.2 s typical)
+  * Uncertainty in length measurement (e.g., due to bob center approximation)
+  * Air resistance and pivot friction (neglected here)
+  * Angle of release (nonlinearities for large angles)
+
+* **Improvement Suggestions**:
+
+  * Use a photogate timer for precise period measurement.
+  * Ensure more trials and better length calibration.
+  * Minimize amplitude to stay within the small-angle approximation.
+
+---
+
+### **Conclusion**
+
+By carefully measuring the period of a simple pendulum and analyzing uncertainties, we determined the local gravitational acceleration to be:
+
+$$
+\boxed{g = 9.86 \pm 0.12 \, \text{m/s}^2}
+$$
+
+This exercise demonstrates the importance of precision and uncertainty analysis in experimental physics.
+
+---
+
+
 
 ## **Experiment: Measuring the Acceleration Due to Gravity Using a Pendulum**
 
