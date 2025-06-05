@@ -279,12 +279,12 @@ print(f"| \\( T \\)         | {T:.4f} s       | \\( \\Delta T \\) = {delta_T:.4f
 print(f"| \\( g \\)         | {g:.3f} m/s²     | \\( \\Delta g \\) = {delta_g:.3f} m/s² |")
 ```
 
-### Tabulated Data:
-| Variable        | Value          | Uncertainty      |
-| \( L \)         | 1.000 m        | \( \Delta L \) = 0.005 m  |
-| \( T_{10} \)    | 20.108 s       | \( \Delta T_{10} \) = 0.0124 s |
-| \( \overline{T}_{10} \) | 20.108 s | -                |
-| \( \sigma_T \)  | 0.0277 s       | -                |
-| \( T \)         | 2.0108 s       | \( \Delta T \) = 0.0012 s |
-| \( g \)         | 9.764 m/s²     | \( \Delta g \) = 0.061 m/s² |
-
+# Tabulate the data
+print("Tabulated Data:")
+print("| Variable        | Value          | Uncertainty      |")
+print(f"| \\( L \\)         | {L:.3f} m        | \\( \\Delta L \\) = {delta_L:.3f} m  |")
+print(f"| \\( T_{{10}} \\)    | {T_10_avg:.3f} s       | \\( \\Delta T_{{10}} \\) = {delta_T_10:.4f} s |")
+print(f"| \\( \\overline{{T}}_{{10}} \\) | {T_10_avg:.3f} s | -                |")
+print(f"| \\( \\sigma_T \\)  | {sigma_T:.4f} s       | -                |")
+print(f"| \\( T \\)         | {T:.4f} s       | \\( \\Delta T \\) = {delta_T:.4f} s |")
+print(f"| \\( g \\)         | {g:.3f} m/s²     | \\( \\Delta g \\) = {delta_g:.3f} m/s² |")
