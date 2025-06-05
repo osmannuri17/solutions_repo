@@ -92,6 +92,34 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#task-measuring-the-acceleration-due-to-gravity-g-using-a-pendulum-and-analyzing-uncertainties">Task: Measuring the Acceleration Due to Gravity (g) Using a Pendulum and Analyzing Uncertainties</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#objective">Objective</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#1-theoretical-background">1. Theoretical Background</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-experimental-procedure">2. Experimental Procedure</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#materials-needed">Materials Needed</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#steps">Steps</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-sample-calculations">3. Sample Calculations</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-uncertainty-analysis">4. Uncertainty Analysis</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#uncertainty-in-g">Uncertainty in g</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-discussion">5. Discussion</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#experiment-measuring-the-acceleration-due-to-gravity-using-a-pendulum">Experiment: Measuring the Acceleration Due to Gravity Using a Pendulum</a>
 <ul>
 <li class="toctree-l4"><a class="reference internal" href="#1-objective">1. Objective</a>
@@ -192,6 +220,111 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<hr/>
+<h3 id="task-measuring-the-acceleration-due-to-gravity-g-using-a-pendulum-and-analyzing-uncertainties"><strong>Task: Measuring the Acceleration Due to Gravity (g) Using a Pendulum and Analyzing Uncertainties</strong></h3>
+<hr/>
+<h4 id="objective"><strong>Objective</strong></h4>
+<p>To measure the acceleration due to gravity, <span class="arithmatex">\(g\)</span>, using a simple pendulum, and to conduct a thorough analysis of the uncertainties involved in the measurement.</p>
+<hr/>
+<h3 id="1-theoretical-background"><strong>1. Theoretical Background</strong></h3>
+<p>For a simple pendulum of length <span class="arithmatex">\(L\)</span> undergoing small amplitude oscillations, the period <span class="arithmatex">\(T\)</span> of oscillation is given by:</p>
+<div class="arithmatex">\[
+T = 2\pi \sqrt{\frac{L}{g}}
+\]</div>
+<p>Solving for <span class="arithmatex">\(g\)</span>:</p>
+<div class="arithmatex">\[
+g = \frac{4\pi^2 L}{T^2}
+\]</div>
+<hr/>
+<h3 id="2-experimental-procedure"><strong>2. Experimental Procedure</strong></h3>
+<h4 id="materials-needed"><strong>Materials Needed</strong></h4>
+<ul>
+<li>String</li>
+<li>Small dense bob (e.g., metal sphere)</li>
+<li>Meter stick or ruler</li>
+<li>Stopwatch or digital timer</li>
+<li>Clamp stand or fixed support</li>
+<li>Protractor (optional, to ensure small angles)</li>
+</ul>
+<h4 id="steps"><strong>Steps</strong></h4>
+<ol>
+<li><strong>Set up the pendulum:</strong> Attach the bob to one end of the string and fix the other end to a support.</li>
+<li><strong>Measure the length <span class="arithmatex">\(L\)</span>:</strong> Measure from the point of suspension to the center of the bob. Record this with its uncertainty.</li>
+<li><strong>Displace and release:</strong> Displace the pendulum by a small angle (less than \~10°) and release it.</li>
+<li><strong>Measure the time for <span class="arithmatex">\(N\)</span> oscillations:</strong> Use a stopwatch to time multiple oscillations (e.g., 20 swings) for better accuracy.</li>
+<li><strong>Calculate period <span class="arithmatex">\(T\)</span>:</strong></li>
+</ol>
+<p>$$
+   T = \frac{t_{\text{total}}}{N}
+   $$
+6. <strong>Repeat the experiment:</strong> Conduct multiple trials to average and reduce random error.</p>
+<hr/>
+<h3 id="3-sample-calculations"><strong>3. Sample Calculations</strong></h3>
+<p>Assume:</p>
+<ul>
+<li>Measured length: <span class="arithmatex">\(L = 0.800 \pm 0.002 \, \text{m}\)</span></li>
+<li>Time for 20 oscillations: <span class="arithmatex">\(t = 35.8 \pm 0.2 \, \text{s}\)</span></li>
+<li>Period: <span class="arithmatex">\(T = \frac{35.8}{20} = 1.790 \, \text{s}\)</span></li>
+<li>Uncertainty in <span class="arithmatex">\(T\)</span>:</li>
+</ul>
+<p>$$
+  \Delta T = \frac{0.2}{20} = 0.010 \, \text{s}
+  $$</p>
+<p>Then:</p>
+<div class="arithmatex">\[
+g = \frac{4\pi^2 \cdot 0.800}{(1.790)^2} \approx 9.86 \, \text{m/s}^2
+\]</div>
+<hr/>
+<h3 id="4-uncertainty-analysis"><strong>4. Uncertainty Analysis</strong></h3>
+<h4 id="uncertainty-in-g"><strong>Uncertainty in g</strong></h4>
+<p>Using error propagation:</p>
+<div class="arithmatex">\[
+\frac{\Delta g}{g} = \sqrt{ \left( \frac{\Delta L}{L} \right)^2 + \left( 2 \cdot \frac{\Delta T}{T} \right)^2 }
+\]</div>
+<p>Substitute values:</p>
+<div class="arithmatex">\[
+\frac{\Delta g}{g} = \sqrt{ \left( \frac{0.002}{0.800} \right)^2 + \left( 2 \cdot \frac{0.010}{1.790} \right)^2 } \approx 0.0118
+\]</div>
+<div class="arithmatex">\[
+\Delta g = 0.0118 \cdot 9.86 \approx 0.12 \, \text{m/s}^2
+\]</div>
+<div class="arithmatex">\[
+\boxed{g = 9.86 \pm 0.12 \, \text{m/s}^2}
+\]</div>
+<hr/>
+<h3 id="5-discussion"><strong>5. Discussion</strong></h3>
+<ul>
+<li>
+<p><strong>Accuracy</strong>: The measured value is close to the standard <span class="arithmatex">\(9.81 \, \text{m/s}^2\)</span>, indicating good accuracy.</p>
+</li>
+<li>
+<p><strong>Sources of Uncertainty</strong>:</p>
+</li>
+<li>
+<p>Human reaction time in stopwatch use (\~0.2 s typical)</p>
+</li>
+<li>Uncertainty in length measurement (e.g., due to bob center approximation)</li>
+<li>Air resistance and pivot friction (neglected here)</li>
+<li>
+<p>Angle of release (nonlinearities for large angles)</p>
+</li>
+<li>
+<p><strong>Improvement Suggestions</strong>:</p>
+</li>
+<li>
+<p>Use a photogate timer for precise period measurement.</p>
+</li>
+<li>Ensure more trials and better length calibration.</li>
+<li>Minimize amplitude to stay within the small-angle approximation.</li>
+</ul>
+<hr/>
+<h3 id="conclusion"><strong>Conclusion</strong></h3>
+<p>By carefully measuring the period of a simple pendulum and analyzing uncertainties, we determined the local gravitational acceleration to be:</p>
+<div class="arithmatex">\[
+\boxed{g = 9.86 \pm 0.12 \, \text{m/s}^2}
+\]</div>
+<p>This exercise demonstrates the importance of precision and uncertainty analysis in experimental physics.</p>
+<hr/>
 <h2 id="experiment-measuring-the-acceleration-due-to-gravity-using-a-pendulum"><strong>Experiment: Measuring the Acceleration Due to Gravity Using a Pendulum</strong></h2>
 <hr/>
 <h3 id="1-objective"><strong>1. Objective</strong></h3>
