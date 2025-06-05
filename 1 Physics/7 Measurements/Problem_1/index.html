@@ -130,8 +130,6 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#7-python-code">7. Python Code</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#tabulated-data">Tabulated Data:</a>
-</li>
 </ul>
 </li>
 </ul>
@@ -470,14 +468,15 @@ print(f"| \\( \\sigma_T \\)  | {sigma_T:.4f} s       | -                |")
 print(f"| \\( T \\)         | {T:.4f} s       | \\( \\Delta T \\) = {delta_T:.4f} s |")
 print(f"| \\( g \\)         | {g:.3f} m/s²     | \\( \\Delta g \\) = {delta_g:.3f} m/s² |")
 </code></pre>
-<h3 id="tabulated-data">Tabulated Data:</h3>
-<p>| Variable        | Value          | Uncertainty      |
-| <span class="arithmatex">\( L \)</span>         | 1.000 m        | <span class="arithmatex">\( \Delta L \)</span> = 0.005 m  |
-| <span class="arithmatex">\( T_{10} \)</span>    | 20.108 s       | <span class="arithmatex">\( \Delta T_{10} \)</span> = 0.0124 s |
-| <span class="arithmatex">\( \overline{T}_{10} \)</span> | 20.108 s | -                |
-| <span class="arithmatex">\( \sigma_T \)</span>  | 0.0277 s       | -                |
-| <span class="arithmatex">\( T \)</span>         | 2.0108 s       | <span class="arithmatex">\( \Delta T \)</span> = 0.0012 s |
-| <span class="arithmatex">\( g \)</span>         | 9.764 m/s²     | <span class="arithmatex">\( \Delta g \)</span> = 0.061 m/s² |</p>
+<h1 id="tabulate-the-data">Tabulate the data</h1>
+<p>print("Tabulated Data:")
+print("| Variable        | Value          | Uncertainty      |")
+print(f"| \( L \)         | {L:.3f} m        | \( \Delta L \) = {delta_L:.3f} m  |")
+print(f"| \( T_{{10}} \)    | {T_10_avg:.3f} s       | \( \Delta T_{{10}} \) = {delta_T_10:.4f} s |")
+print(f"| \( \overline{{T}}_{{10}} \) | {T_10_avg:.3f} s | -                |")
+print(f"| \( \sigma_T \)  | {sigma_T:.4f} s       | -                |")
+print(f"| \( T \)         | {T:.4f} s       | \( \Delta T \) = {delta_T:.4f} s |")
+print(f"| \( g \)         | {g:.3f} m/s²     | \( \Delta g \) = {delta_g:.3f} m/s² |")</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
