@@ -75,8 +75,6 @@ $$
 
 ---
 
-### **4. Uncertainty Analysis**
-
 
 ### **5. Discussion**
 
